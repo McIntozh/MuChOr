@@ -1,0 +1,19 @@
+[
+  {
+    "key": "100",
+    "name": "Color"
+  },
+  {
+    "key": "200",
+    "name": "ROM"
+  },
+  {
+    "key": "201",
+    "name": "RAM"
+  },
+  {
+    "key": "300",
+    "name": "Connectivity"
+  }
+
+]

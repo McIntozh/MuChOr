@@ -1,0 +1,197 @@
+[
+  {
+    "sku": "fooHMT3GrL16",
+    "variationKey": "fooHMT3",
+    "gtin": "6901443178254",
+    "name": "MediaPad T3 Space Gray LTE 16GB",
+    "mpn": "53018672",
+    "mediaLinks": [
+      {
+        "priority": 0,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_0.png"
+      },
+      {
+        "priority": 1,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_1.png"
+      }],
+    "attributes": {
+      "100": {
+        "value": "Gray"
+      },
+      "200": {
+        "value": "16",
+        "unit": "GB"
+      },
+      "201": {
+        "value": "2",
+        "unit": "GB"
+      },
+      "300": {
+        "value": "LTE"
+      }
+    },
+    "languageSpecifics": {
+      "de": {
+        "attributes": {
+          "100": {
+            "value": "Grau"
+          }
+        }
+      },
+      "fr": {
+        "name": "MediaPad T3 Space Gray LTE 16GO",
+        "attributes": {
+          "100": {
+            "value": "Gris"
+          }
+        }
+      }
+    },
+    "channelSpecifics": {
+      "GOOG": {
+        "categoryAssignments": {
+          "taxonomy": "4745"
+        }
+      },
+      "AMZN": {
+        "catalogId": "B06XWKF7TD"
+      }
+    },
+    "channelInstanceSpecifics": {
+      "FooShopGOOG": {
+      }
+    }
+  },
+
+  {
+    "sku": "fooHMT3GrW16",
+    "variationKey": "fooHMT3",
+    "gtin": "6901443178254",
+    "name": "MediaPad T3 Space Gray WiFi 16GB",
+    "mpn": "53018679",
+    "mediaLinks": [
+      {
+        "priority": 0,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_0.png"
+      },
+      {
+        "priority": 1,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_1.png"
+      }],
+    "attributes": {
+      "100": {
+        "value": "Gray"
+      },
+      "200": {
+        "value": "16",
+        "unit": "GB"
+      },
+      "201": {
+        "value": "2",
+        "unit": "GB"
+      },
+      "300": {
+        "value": "WiFi"
+      }
+    },
+    "languageSpecifics": {
+      "de": {
+        "attributes": {
+          "100": {
+            "value": "Grau"
+          }
+        }
+      },
+      "fr": {
+        "name": "MediaPad T3 Space Gray WiFi 16GO",
+        "attributes": {
+          "100": {
+            "value": "Gris"
+          }
+        }
+      }
+    },
+    "channelSpecifics": {
+      "GOOG": {
+        "categoryAssignments": {
+          "taxonomy": "4745"
+        }
+      },
+      "AMZN": {
+        "catalogId": "B06XX31L73"
+      }
+    },
+    "channelInstanceSpecifics": {
+      "FooShopGOOG": {
+      }
+    }
+  },
+
+  {
+    "sku": "fooHMT3GoW16",
+    "variationKey": "fooHMT3",
+    "gtin": "6901443178254",
+    "name": "MediaPad T3 Luxurious Gold WiFi 32GB",
+    "mpn": "53018679",
+    "mediaLinks": [
+      {
+        "priority": 0,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_0.png"
+      },
+      {
+        "priority": 1,
+        "type": "IMAGE",
+        "url": "http://foo.bar/media/fooHMT3_1.png"
+      }],
+    "attributes": {
+      "100": {
+        "value": "Gold"
+      },
+      "200": {
+        "value": "32",
+        "unit": "GB"
+      },
+      "201": {
+        "value": "2",
+        "unit": "GB"
+      },
+      "300": {
+        "value": "WiFi"
+      }
+    },
+    "languageSpecifics": {
+      "de": {
+        "attributes": {
+          "100": {
+            "value": "Gold"
+          }
+        }
+      },
+      "fr": {
+        "name": "MediaPad T3 Luxurious Gold WiFi 16GO",
+        "attributes": {
+          "100": {
+            "value": "Or"
+          }
+        }
+      }
+    },
+    "channelSpecifics": {
+      "GOOG": {
+        "categoryAssignments": {
+          "taxonomy": "4745"
+        }
+      }
+    },
+    "channelInstanceSpecifics": {
+      "FooShopGOOG": {
+      }
+    }
+  }
+
+]

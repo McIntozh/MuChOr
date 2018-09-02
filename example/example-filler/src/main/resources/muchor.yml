@@ -1,0 +1,18 @@
+
+persistence:
+  mongo:
+    cluster: localhost
+    user: muchor
+    db: muchor
+    pwd: passwd
+    
+jobs:
+  exampleDataImport:
+    class: de.websplatter.muchor.example.filler.ExampleDataImport
+    runAtStartup: true
+    schedule:
+      minute: "22"
+      hour: "22"
+
+
+

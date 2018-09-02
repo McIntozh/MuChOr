@@ -1,0 +1,24 @@
+
+persistence:
+  mongo:
+    cluster: localhost
+    user: muchor
+    db: muchor
+    pwd: passwd
+    
+    
+channel:
+  MNMN:
+    FooShopMNMN:
+        
+
+jobs:
+  manomano-order-import-FooShopMNMN:
+    class: manomano.job.ImportOrders
+    schedule:
+      second: "*/30"
+      minute: "*"
+      hour: "*"
+    params:
+      shippingCostsSKU: ShiCos
+      channelInstance: FooShopMNMN

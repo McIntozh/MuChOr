@@ -1,0 +1,67 @@
+
+persistence:
+  mongo:
+    cluster: localhost
+    user: muchor
+    db: muchor
+    pwd: passwd
+    
+    
+channel:
+  GOOG:
+    FooShopGOOG:
+      dryRun: true
+      merchantId: 1234455
+      oAuthEmail: xxx@yyy.gserviceaccount.com
+      p12File: FooShopGOOG.p12
+      #storeCode: 
+        
+
+jobs:
+  google-taxonomy-import:
+    class: google.job.TaxonomyImport
+    schedule:
+      minute: 5
+      hour: 4
+    params:
+      languageCode: en
+      countryCode: US
+      
+  google-attribute-import:
+    class: google.job.AttributeImport
+    schedule:
+      minute: 5
+      hour: 4
+      day: 1
+      month: 8
+      year: 2018
+      
+  google-product-export-FooShopGOOG:
+    class: google.job.ProductExport
+    schedule:
+      second: "*/20"
+      minute: "*"
+      hour: "*"
+    params:
+      languageCode: de
+      countryCode: DE
+      channelInstance: FooShopGOOG
+      
+  google-inventory-export-FooShopGOOG:
+    class: google.job.InventoryExport
+    schedule:
+      second: "*/30"
+      minute: "*"
+      hour: "*"
+    params:
+      channelInstance: FooShopGOOG
+      
+#  manomano-order-import-FooShopMNMN:
+#    class: manomano.job.ImportOrders
+#    schedule:
+#      second: "*/30"
+#      minute: "*"
+#      hour: "*"
+#    params:
+#      shippingCostsSKU: ShiCos
+#      channelInstance: FooShopMNMN

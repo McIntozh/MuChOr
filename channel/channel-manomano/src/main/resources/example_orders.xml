@@ -1,0 +1,79 @@
+<content>
+  <code><![CDATA[0]]></code>
+  <message><![CDATA[Success]]></message>
+  <datas>
+    <order>
+      <order_ref><![CDATA[M121100000002]]></order_ref>
+      <order_time><![CDATA[2012-11-07 16:34:49]]></order_time>
+      <total_price><![CDATA[17.10]]></total_price>
+      <payment_solution><![CDATA[1X]]></payment_solution>
+      <payment_solution_value><![CDATA[1]]></payment_solution_value>
+      <products_price><![CDATA[19.70]]></products_price>
+      <shipping_price><![CDATA[6.90]]></shipping_price>
+      <firstname><![CDATA[Jeremy]]></firstname>
+      <lastname><![CDATA[Accard]]></lastname>
+      <fiscalnb><![CDATA[123456A]]></fiscalnb>
+      <billing_address>
+        <lastname><![CDATA[Accard]]></lastname>
+        <firstname><![CDATA[Jeremy]]></firstname>
+        <company><![CDATA[Colibri SA]]></company >
+        <is_professional><![CDATA[yes]]></is_professional >
+        <address_1><![CDATA[54 rue du paradis]]></address_1>
+        <address_2><![CDATA[batiment A]]></address_2>
+        <address_3><![CDATA[2ème étage]]></address_3>
+        <zipcode><![CDATA[75010]]></zipcode>
+        <city><![CDATA[Paris]]></city>
+        <country><![CDATA[France]]></country>
+        <country_iso><![CDATA[FR]]></country_iso>
+        <phone><![CDATA[0630033177]]></phone>
+        <email><![CDATA[jeremy@monechelle.com]]></email>
+      </billing_address>
+      <shipping_address>
+        <lastname><![CDATA[Accard]]></lastname>
+        <firstname><![CDATA[Jeremy]]></firstname>
+        <company><![CDATA[Colibri SA]]></company >
+        <address_1><![CDATA[54 rue du paradis]]></address_1>
+        <address_2><![CDATA[batiment A]]></address_2>
+        <address_3><![CDATA[2ème étage]]></address_3>
+        <zipcode><![CDATA[75010]]></zipcode>
+        <city><![CDATA[Paris]]></city>
+        <region_1><![CDATA[Ile-de-France]]></region_1>
+        <region_2><![CDATA[Paris]]></region_2>
+        <region_3><![CDATA[]]></region_3>
+        <country><![CDATA[France]]></country>
+        <country_iso><![CDATA[FR]]></country_iso>
+        <phone><![CDATA[0630033177]]></phone>
+        <email><![CDATA[jeremy@monechelle.com]]></email>
+      </shipping_address>
+      <relay>
+        <id><![CDATA[R124556]]></id>
+        <name><![CDATA[Boulangerie les cerisiers]]></name>
+        <address><![CDATA[70 rue du paradis]]></address>
+        <zipcode><![CDATA[75010]]></zipcode>
+        <city><![CDATA[Paris]]></city>
+        <country><![CDATA[France]]></country>
+        <country_iso><![CDATA[FR]]></country_iso>
+      </relay>
+      <products>
+        <product>
+          <sku><![CDATA[276]]></sku>
+          <quantity><![CDATA[1]]></quantity>
+          <price><![CDATA[10.20]]></price>
+          <vat_rate><![CDATA[19.60]]></vat_rate>
+          <shipping_vat_rate><![CDATA[19.60]]></shipping_vat_rate >
+          <carrier><![CDATA[Relais colis]]></carrier>
+          <title><![CDATA[Vis torx 20x10]]></title>
+        </product>
+        <product>
+          <sku><![CDATA[280]]></sku>
+          <quantity><![CDATA[1]]></quantity>
+          <price><![CDATA[9.50]]></price>
+          <vat_rate><![CDATA[19.60]]></vat_rate>
+          <shipping_vat_rate><![CDATA[19.60]]></shipping_vat_rate >
+          <carrier><![CDATA[Relais colis]]></carrier>
+          <title><![CDATA[Vis torx 20x12]]></title>
+        </product>
+      </products>
+    </order>
+  </datas>
+</content>

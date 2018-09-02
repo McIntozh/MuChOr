@@ -1,0 +1,39 @@
+[
+  {
+    "sku": "fooHMT3GrL16",
+    "channelInstance": "FooShopGOOG",
+    "stockQuantity": 5,
+    "netPrice": 25000,
+    "grossPrice": 29705,
+    "vatPercentage": 19.0,
+    "processingTimeInDays": 1,
+    "shippingTimeInDays": 2,
+    "restockable": true,
+    "restockTimeInDays": 5,
+    "restockQuantity": 20
+  },
+  {
+    "sku": "fooHMT3GrW16",
+    "channelInstance": "FooShopGOOG",
+    "stockQuantity": 3,
+    "netPrice": 20000,
+    "grossPrice": 23800,
+    "vatPercentage": 19.0,
+    "processingTimeInDays": 1,
+    "shippingTimeInDays": 2,
+    "restockable": false
+  },
+  {
+    "sku": "fooHMT3GoW16",
+    "channelInstance": "FooShopGOOG",
+    "stockQuantity": 4,
+    "netPrice": 20000,
+    "grossPrice": 23800,
+    "vatPercentage": 19.0,
+    "processingTimeInDays": 1,
+    "shippingTimeInDays": 2,
+    "restockable": true,
+    "restockTimeInDays": 5,
+    "restockQuantity": 5
+  }
+]
