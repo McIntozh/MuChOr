@@ -17,8 +17,10 @@ package de.websplatter.muchor.scheduler.quartz;
 
 import de.websplatter.muchor.MuChOr.Config;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
@@ -105,7 +107,8 @@ public class QuartzScheduler {
       trigger = newTrigger()
           .withIdentity(entry.getKey())
           .withSchedule(cronSchedule(scheduleConfig.toString())
-              .withMisfireHandlingInstructionDoNothing())
+              .withMisfireHandlingInstructionDoNothing()
+          )
           .build();
 
       try {
@@ -136,8 +139,17 @@ public class QuartzScheduler {
 
   public static class JobWrapper<K> implements Job {
 
+    private static final Set<String> CURRENT_JOBS = new HashSet<>();
+
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
+      synchronized (CURRENT_JOBS) {
+        if (!CURRENT_JOBS.add(context.getJobDetail().getKey().toString())) {
+          Logger.getLogger(JobWrapper.class.getName()).log(Level.INFO, "{0} already running", context.getJobDetail().getKey().getName());
+          return;
+        }
+      }
+
       Map<String, Object> requestDataStore = new HashMap<>();
       BoundRequestContext boundRequestContext = CDI.current().select(BoundRequestContext.class).get();
       try {
@@ -159,6 +171,9 @@ public class QuartzScheduler {
         } finally {
           boundRequestContext.dissociate(requestDataStore);
         }
+      }
+      synchronized (CURRENT_JOBS) {
+        CURRENT_JOBS.remove(context.getJobDetail().getKey().toString());
       }
     }
   }
