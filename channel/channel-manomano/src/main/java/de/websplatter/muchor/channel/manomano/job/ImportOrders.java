@@ -16,6 +16,7 @@
 package de.websplatter.muchor.channel.manomano.job;
 
 import com.google.gson.Gson;
+import de.websplatter.muchor.Constants;
 import de.websplatter.muchor.channel.manomano.api.Address;
 import de.websplatter.muchor.channel.manomano.api.Order;
 import de.websplatter.muchor.channel.manomano.api.OrdersResponse;
@@ -28,6 +29,7 @@ import de.websplatter.muchor.channel.manomano.Api;
 import de.websplatter.muchor.channel.manomano.api.ResponseCodes;
 import de.websplatter.muchor.persistence.dao.ChannelOrderDAO;
 import de.websplatter.muchor.persistence.entity.ChannelOrder;
+import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
 import de.websplatter.muchor.persistence.entity.ChannelOrderLineItem;
 import de.websplatter.muchor.persistence.entity.ChannelOrderParty;
 import java.text.ParseException;
@@ -38,7 +40,6 @@ import java.util.stream.Collectors;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
-import javax.xml.bind.JAXB;
 
 /**
  *
@@ -101,13 +102,14 @@ public class ImportOrders extends Job {
     }
 
     if (manoOrder.getBillingAddress() != null) {
-      co.getParties().put("invoice", map(manoOrder.getBillingAddress()));
-    }
-    if (manoOrder.getShippingAddress() != null) {
-      co.getParties().put("shipping", map(manoOrder.getShippingAddress()));
+      co.getParties().put(Constants.ORDER_PARTY_INVOICE, map(manoOrder.getBillingAddress()));
     }
     if (manoOrder.getRelay() != null) {
-      co.getParties().put("relay", map(manoOrder.getRelay()));
+      co.getParties().put(Constants.ORDER_PARTY_SHIPPING, map(manoOrder.getRelay()));
+    } else {
+      if (manoOrder.getShippingAddress() != null) {
+        co.getParties().put(Constants.ORDER_PARTY_SHIPPING, map(manoOrder.getShippingAddress()));
+      }
     }
 
     int lineItemCounter = 0;
@@ -119,14 +121,12 @@ public class ImportOrders extends Job {
       lineItemCounter++;
     }
     if (manoOrder.getShippingPrice().signum() != 0) {
-      ChannelOrderLineItem coli = CDI.current().select(ChannelOrderLineItem.class).get();
-      coli.setSku(getStringParameter("shippingCostsSKU"));
-      coli.setName("Shipping");
-      coli.setOrderQuantity(1);
-      coli.setSinglePrice(manoOrder.getShippingPrice().movePointRight(2).intValue());
-      coli.setLineId(String.valueOf(lineItemCounter));
-      coli.setLineNo(String.valueOf(lineItemCounter));
-      co.getLineItems().add(coli);
+      ChannelOrderCharge charge = CDI.current().select(ChannelOrderCharge.class).get();
+      charge.setType(Constants.ORDER_CHARGE_SHIPPING);
+      charge.setPrice(manoOrder.getShippingPrice().movePointRight(2).intValue());
+      charge.setName(getStringParameter("shippingCostChargeKey"));
+      charge.setName(getStringParameter("shippingCostChargeName"));
+      co.getCharges().add(charge);
     }
 
     return co;
@@ -163,7 +163,7 @@ public class ImportOrders extends Job {
     ChannelOrderParty cop = CDI.current().select(ChannelOrderParty.class).get();
 
     cop.setName(manoRelay.getName());
-    cop.setAddress(manoRelay.getAddress());
+    cop.setAddress(manoRelay.getAddress() + "\n" + manoRelay.getId());
 
     cop.setCity(manoRelay.getZipcode() + " " + manoRelay.getCity());
     cop.setCountryCode(manoRelay.getCountryIso());
@@ -185,8 +185,11 @@ public class ImportOrders extends Job {
     if (getParameter("channelInstance") == null) {
       throw new RuntimeException("Parameter 'channelInstance' is required");
     }
-    if (getParameter("shippingCostsSKU") == null) {
-      throw new RuntimeException("Parameter 'shippingCostsSKU' is required");
+    if (getParameter("shippingCostChargeKey") == null) {
+      throw new RuntimeException("Parameter 'shippingCostChargeKey' is required");
+    }
+    if (getParameter("shippingCostChargeName") == null) {
+      throw new RuntimeException("Parameter 'shippingCostChargeName' is required");
     }
   }
 

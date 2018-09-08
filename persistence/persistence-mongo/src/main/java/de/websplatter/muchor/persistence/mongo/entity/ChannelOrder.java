@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import de.websplatter.muchor.persistence.entity.ChannelOrderParty;
 import de.websplatter.muchor.persistence.entity.ChannelOrderLineItem;
+import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
 import javax.enterprise.context.Dependent;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Field;
@@ -45,6 +46,7 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   public Date importDate;
   public Map<String, de.websplatter.muchor.persistence.mongo.entity.ChannelOrderParty> parties;
   public List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderLineItem> lineItems;
+  public List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderCharge> charges;
 
   @PrePersist
   private void genAndSetId() {
@@ -128,6 +130,14 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
       lineItems = new LinkedList<>();
     }
     return (List<ChannelOrderLineItem>) (List) lineItems;
+  }
+
+  @Override
+  public List<ChannelOrderCharge> getCharges() {
+    if (charges == null) {
+      charges = new LinkedList<>();
+    }
+    return (List<ChannelOrderCharge>) (List) charges;
   }
 
 }

@@ -5,6 +5,8 @@
  */
 package de.websplatter.muchor.persistence.entity;
 
+import java.util.List;
+
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
@@ -54,5 +56,7 @@ public abstract class ChannelOrderLineItem {
   public abstract String getName();
 
   public abstract void setName(String name);
+
+  public abstract List<ChannelOrderCharge> getCharges();
 
 }

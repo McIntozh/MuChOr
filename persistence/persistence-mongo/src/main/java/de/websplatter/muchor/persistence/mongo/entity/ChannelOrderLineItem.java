@@ -5,7 +5,10 @@
  */
 package de.websplatter.muchor.persistence.mongo.entity;
 
+import java.util.LinkedList;
+import java.util.List;
 import javax.enterprise.context.Dependent;
+import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
 
 /**
  *
@@ -25,6 +28,7 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   private int returnQuantity;
   private int singlePrice;
   private String name;
+  public List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderCharge> charges;
 
   public String getLineNo() {
     return lineNo;
@@ -114,4 +118,11 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
     this.name = name;
   }
 
+    @Override
+  public List<ChannelOrderCharge> getCharges() {
+    if (charges == null) {
+      charges = new LinkedList<>();
+    }
+    return (List<ChannelOrderCharge>) (List) charges;
+  }
 }

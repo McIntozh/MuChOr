@@ -20,5 +20,6 @@ jobs:
       minute: "*"
       hour: "*"
     params:
-      shippingCostsSKU: ShiCos
       channelInstance: FooShopMNMN
+      shippingCostChargeKey: SHIP
+      shippingCostChargeName: Shipping costs

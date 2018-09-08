@@ -39,4 +39,6 @@ public abstract class ChannelOrder {
 
   public abstract List<ChannelOrderLineItem> getLineItems();
 
+  public abstract List<ChannelOrderCharge> getCharges();
+
 }
