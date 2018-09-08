@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.CDI;
+import javax.enterprise.inject.spi.InjectionPoint;
 
 /**
  *
@@ -67,14 +68,29 @@ public class Notifier {
           ll = Level.SEVERE;
           break;
       }
-      if (nBuilder.exception != null) {
-        Logger.getLogger(Notifier.class.getName()).log(ll, nBuilder.message, nBuilder.exception);
+      StringBuilder msg = new StringBuilder();
+      if (nBuilder.job != null) {
+        msg.append(nBuilder.job);
+        if (nBuilder.channelInstance != null) {
+          msg.append(" - ");
+          msg.append(nBuilder.channelInstance);
+        }
+        msg.append(": ");
       } else {
-        Logger.getLogger(Notifier.class.getName()).log(ll, nBuilder.message);
+        if (nBuilder.channelInstance != null) {
+          msg.append(nBuilder.channelInstance);
+          msg.append(": ");
+        }
+      }
+      msg.append(nBuilder.message);
+      if (nBuilder.exception != null) {
+        Logger.getLogger(Notifier.class.getName()).log(ll, msg.toString(), nBuilder.exception);
+      } else {
+        Logger.getLogger(Notifier.class.getName()).log(ll, msg.toString());
       }
     }
     if (aBuilder != null) {
-      String msg="Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.message != null ? " (" + aBuilder.message + ")" : "") + "'.";
+      String msg = "Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.message != null ? " (" + aBuilder.message + ")" : "") + "'.";
       Logger.getLogger(Notifier.class.getName()).log(Level.WARNING, msg);
     }
   }
@@ -125,6 +141,8 @@ public class Notifier {
     private Severity severity;
     private Exception exception;
     private String message;
+    private String channelInstance;
+    private String job;
 
     private NotificationBuilder() {
     }
@@ -136,6 +154,16 @@ public class Notifier {
 
     public NotificationBuilder message(String message) {
       this.message = message;
+      return this;
+    }
+
+    public NotificationBuilder channelInstance(String channelInstance) {
+      this.channelInstance = channelInstance;
+      return this;
+    }
+
+    public NotificationBuilder job(String job) {
+      this.job = job;
       return this;
     }
 

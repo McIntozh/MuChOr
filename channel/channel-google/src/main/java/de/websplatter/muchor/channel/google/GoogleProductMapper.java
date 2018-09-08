@@ -29,6 +29,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Queue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -191,10 +193,7 @@ public class GoogleProductMapper {
         }
       }
     } catch (InvocationTargetException | IllegalArgumentException | IllegalAccessException | InstantiationException | SecurityException e) {
-      Notifier.builder(Notifier.Severity.WARNING)
-          .message("Could net set attribute '" + attributeKey + "' ")
-          .exception(e)
-          .publish();
+      Logger.getLogger(GoogleProductMapper.class.getName()).log(Level.WARNING, "Could net set attribute '" + attributeKey + "' ", e);
     }
   }
 }

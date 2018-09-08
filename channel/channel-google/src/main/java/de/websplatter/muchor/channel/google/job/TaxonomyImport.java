@@ -78,6 +78,7 @@ public class TaxonomyImport extends Job {
 
       if (connection.getResponseCode() != 200) {
         Notifier.builder(Notifier.Severity.WARNING)
+            .job(TaxonomyImport.class.getSimpleName())
             .message("Got HTTP error downloading taxonomy: " + connection.getHeaderField(0))
             .publish();
         monitor.fail();
@@ -87,6 +88,7 @@ public class TaxonomyImport extends Job {
       lines = readLines(connection.getInputStream());
       if (lines.isEmpty()) {
         Notifier.builder(Notifier.Severity.WARNING)
+            .job(TaxonomyImport.class.getSimpleName())
             .message("Taxonomy is empty")
             .publish();
         monitor.fail();
@@ -95,6 +97,7 @@ public class TaxonomyImport extends Job {
     } catch (IOException ex) {
       Notifier.builder(Notifier.Severity.WARNING)
           .message("Got error downloading taxonomy")
+          .job(TaxonomyImport.class.getSimpleName())
           .exception(ex)
           .publish();
       monitor.fail();
@@ -134,6 +137,7 @@ public class TaxonomyImport extends Job {
       });
     } catch (RuntimeException ex) {
       Notifier.builder(Notifier.Severity.WARNING)
+          .job(TaxonomyImport.class.getSimpleName())
           .message("Got error parsing/saving taxonomy")
           .exception(ex)
           .publish();

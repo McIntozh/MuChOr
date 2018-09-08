@@ -164,7 +164,11 @@ public class ProductExport extends Job {
       monitor.succeed();
     } catch (Exception e) {
       monitor.fail();
-      Notifier.builder(Notifier.Severity.WARNING).exception(e).publish();
+      Notifier.builder(Notifier.Severity.WARNING)
+          .channelInstance(channelInstance)
+          .job(ProductExport.class.getSimpleName())
+          .exception(e)
+          .publish();
     }
 
   }

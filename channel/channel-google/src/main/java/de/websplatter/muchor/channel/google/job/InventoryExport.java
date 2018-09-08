@@ -121,7 +121,10 @@ public class InventoryExport extends Job {
       monitor.succeed();
     } catch (Exception e) {
       monitor.fail();
-      Notifier.builder(Notifier.Severity.WARNING).exception(e).publish();
+      Notifier.builder(Notifier.Severity.WARNING)
+          .channelInstance(channelInstance)
+          .job(InventoryExport.class.getSimpleName())
+          .exception(e).publish();
     }
 
   }

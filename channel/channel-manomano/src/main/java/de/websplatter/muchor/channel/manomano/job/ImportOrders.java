@@ -67,6 +67,8 @@ public class ImportOrders extends Job {
       if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
         monitor.fail();
         Notifier.builder(Notifier.Severity.WARNING)
+            .channelInstance(channelInstance)
+            .job(ImportOrders.class.getSimpleName())
             .message("Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
             .publish();
         return;
@@ -84,6 +86,8 @@ public class ImportOrders extends Job {
     } catch (Exception e) {
       monitor.fail();
       Notifier.builder(Notifier.Severity.WARNING)
+          .channelInstance(channelInstance)
+          .job(ImportOrders.class.getSimpleName())
           .exception(e)
           .publish();
     }
