@@ -66,7 +66,10 @@ public class ImportOrders extends Job {
 //      OrdersResponse apiResponse = JAXB.unmarshal(ImportOrders.class.getResourceAsStream("/example_orders.xml"), OrdersResponse.class);
       if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
         monitor.fail();
-        Notifier.builder(Notifier.Severity.WARNING).message("Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")").publish();
+        Notifier.builder(Notifier.Severity.WARNING)
+            .message("Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
+            .publish();
+        return;
       }
 
       for (Order manoOrder : apiResponse.getOrderList().getOrders()) {
@@ -80,7 +83,9 @@ public class ImportOrders extends Job {
       monitor.succeed();
     } catch (Exception e) {
       monitor.fail();
-      Notifier.builder(Notifier.Severity.WARNING).exception(e).publish();
+      Notifier.builder(Notifier.Severity.WARNING)
+          .exception(e)
+          .publish();
     }
   }
 

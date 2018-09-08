@@ -16,7 +16,8 @@
 package de.websplatter.muchor;
 
 import static de.websplatter.muchor.Notifier.Severity.ERROR;
-import java.io.PrintStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.CDI;
 
@@ -57,17 +58,24 @@ public class Notifier {
   public void publish() {
     if (nBuilder != null) {
 
-      PrintStream ps = (nBuilder.severity == ERROR) ? System.err : System.out;
-
-      if (nBuilder.message != null) {
-        ps.println(nBuilder.message);
+      Level ll = Level.INFO;
+      switch (nBuilder.severity) {
+        case WARNING:
+          ll = Level.WARNING;
+          break;
+        case ERROR:
+          ll = Level.SEVERE;
+          break;
       }
       if (nBuilder.exception != null) {
-        nBuilder.exception.printStackTrace(ps);
+        Logger.getLogger(Notifier.class.getName()).log(ll, nBuilder.message, nBuilder.exception);
+      } else {
+        Logger.getLogger(Notifier.class.getName()).log(ll, nBuilder.message);
       }
     }
     if (aBuilder != null) {
-      System.out.println("Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.message != null ? " (" + aBuilder.message + ")" : "") + "'.");
+      String msg="Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.message != null ? " (" + aBuilder.message + ")" : "") + "'.";
+      Logger.getLogger(Notifier.class.getName()).log(Level.WARNING, msg);
     }
   }
 

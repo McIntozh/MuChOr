@@ -15,6 +15,8 @@
  */
 package de.websplatter.muchor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 
 /**
@@ -28,18 +30,18 @@ public class JobMonitor {
 
   public void begin(String jobDescription) {
     this.jobDescription = jobDescription;
-    System.out.println(jobDescription + " started");
+    Logger.getLogger(JobMonitor.class.getName()).log(Level.INFO, "{0} started", jobDescription);
   }
 
   public void log(String message) {
-    System.out.println(jobDescription + ": " + message);
+    Logger.getLogger(JobMonitor.class.getName()).log(Level.INFO, "{0}: {1}", new Object[]{jobDescription, message});
   }
 
   public void succeed() {
-    System.out.println(jobDescription + " succeeded");
+    Logger.getLogger(JobMonitor.class.getName()).log(Level.INFO, "{0} succeeded", jobDescription);
   }
 
   public void fail() {
-    System.out.println(jobDescription + " failed");
+    Logger.getLogger(JobMonitor.class.getName()).log(Level.WARNING, "{0} failed", jobDescription);
   }
 }

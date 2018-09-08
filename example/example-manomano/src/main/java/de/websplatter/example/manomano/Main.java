@@ -15,7 +15,9 @@
  */
 package de.websplatter.example.manomano;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.LogManager;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
@@ -25,7 +27,9 @@ import org.jboss.weld.environment.se.WeldContainer;
  */
 public class Main {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
+    LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("/logging.properties"));
+    
     Weld weld = new Weld();
     try (WeldContainer container = weld.initialize()) {
       new Scanner(System.in).nextLine();

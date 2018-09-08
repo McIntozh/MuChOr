@@ -1,1 +1,13 @@
 nb-configuration.xml
+/base/core/target/
+/persistence/persistence-mongo/target/
+/scheduler/scheduler-quartz/target/
+/channel/channel-google/target/
+/mapping/mapping-mustache/target/
+/mapping/mapping-nashorn/target/
+/channel/channel-manomano/target/
+/example/example-plain/target/
+/example/example-filler/target/
+/example/example-ui/target/
+/example/example-google/target/
+/example/example-manomano/target/
