@@ -21,7 +21,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.content.ShoppingContent;
 import com.google.api.services.content.ShoppingContentScopes;
-import de.websplatter.muchor.ChannelDescription;
 import de.websplatter.muchor.MuChOr;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
