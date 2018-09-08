@@ -13,37 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.websplatter.muchor.channel.manomano.api;
+package de.websplatter.muchor.channel.manomano.api.bean;
 
+import java.util.LinkedList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Response {
+public class OrderList {
 
-  private String code;
-  private String message;
+  @XmlElement(name = "order")
+  private List<Order> orders;
 
-  public String getCode() {
-    return code;
+  public List<Order> getOrders() {
+    if (orders == null) {
+      orders = new LinkedList<>();
+    }
+    return orders;
   }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
 }

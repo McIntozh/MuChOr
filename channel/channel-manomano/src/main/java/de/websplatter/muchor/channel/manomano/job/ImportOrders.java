@@ -17,16 +17,17 @@ package de.websplatter.muchor.channel.manomano.job;
 
 import com.google.gson.Gson;
 import de.websplatter.muchor.Constants;
-import de.websplatter.muchor.channel.manomano.api.Address;
-import de.websplatter.muchor.channel.manomano.api.Order;
-import de.websplatter.muchor.channel.manomano.api.OrdersResponse;
-import de.websplatter.muchor.channel.manomano.api.Product;
-import de.websplatter.muchor.channel.manomano.api.Relay;
+import de.websplatter.muchor.channel.manomano.api.bean.Address;
+import de.websplatter.muchor.channel.manomano.api.bean.Order;
+import de.websplatter.muchor.channel.manomano.api.bean.OrdersResponse;
+import de.websplatter.muchor.channel.manomano.api.bean.Product;
+import de.websplatter.muchor.channel.manomano.api.bean.Relay;
 import de.websplatter.muchor.Job;
 import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.Notifier;
-import de.websplatter.muchor.channel.manomano.Api;
-import de.websplatter.muchor.channel.manomano.api.ResponseCodes;
+import de.websplatter.muchor.channel.manomano.api.Api;
+import de.websplatter.muchor.channel.manomano.api.ApiCall;
+import de.websplatter.muchor.channel.manomano.api.bean.ResponseCodes;
 import de.websplatter.muchor.persistence.dao.ChannelOrderDAO;
 import de.websplatter.muchor.persistence.entity.ChannelOrder;
 import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
@@ -62,7 +63,13 @@ public class ImportOrders extends Job {
 
     monitor.begin(ImportOrders.class.getSimpleName() + " - " + channelInstance);
     try {
-      OrdersResponse apiResponse = api.get("http://ws.monechelle.com/?login=mon_login&password=mon_password&method=get_orders", OrdersResponse.class);
+      ApiCall<OrdersResponse> call = ApiCall.builder(OrdersResponse.class)
+          .forChannelInstance(channelInstance)
+          .onMethod("get_orders").build();
+      call.addParameter("","");
+
+      OrdersResponse apiResponse = api.get(call);
+//      OrdersResponse apiResponse = api.get("http://ws.monechelle.com/?login=mon_login&password=mon_password&method=get_orders", OrdersResponse.class);
 //      OrdersResponse apiResponse = JAXB.unmarshal(ImportOrders.class.getResourceAsStream("/example_orders.xml"), OrdersResponse.class);
       if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
         monitor.fail();

@@ -10,6 +10,9 @@ persistence:
 channel:
   MNMN:
     FooShopMNMN:
+      endpoint: http://login:password@ws.monechelle-test.com
+      login: mon_login
+      password: mon_password
         
 
 jobs:
@@ -23,3 +26,13 @@ jobs:
       channelInstance: FooShopMNMN
       shippingCostChargeKey: SHIP
       shippingCostChargeName: Shipping costs
+
+
+---
+
+config: production
+
+channel:
+  MNMN:
+    FooShopMNMN:
+      endpoint: http://ws.monechelle.com

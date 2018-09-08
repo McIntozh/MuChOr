@@ -15,7 +15,7 @@
  */
 package de.websplatter.muchor.channel.manomano;
 
-import de.websplatter.muchor.channel.manomano.api.Response;
+import de.websplatter.muchor.channel.manomano.api.bean.Response;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
