@@ -18,6 +18,7 @@ package de.websplatter.muchor.channel.manomano.api;
 import de.websplatter.muchor.MuChOr;
 import de.websplatter.muchor.channel.manomano.ManoManoChannel;
 import de.websplatter.muchor.channel.manomano.api.bean.Response;
+import de.websplatter.muchor.channel.manomano.api.bean.ResponseCodes;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -35,20 +36,20 @@ import javax.xml.bind.JAXB;
  */
 @ApplicationScoped
 public class Api {
-
+  
   private static final int CONNECT_TIMEOUT_IN_MILLIS = 9000;
   private static final int READ_TIMEOUT_IN_MILLIS = 1000 * 60 * 5;
-
+  
   private String URL_TEMPLATE = "%s?login=%s&password=%s&method=%s&%s";
-
+  
   @Inject
   private MuChOr.Config config;
   @Inject
   private ManoManoChannel channelDescription;
-
+  
   public <RES extends Response> RES get(ApiCall<RES> apiCall) throws IOException {
     Map<String, Object> ciConfig = (Map<String, Object>) config.get("channel." + channelDescription.getKey() + "." + apiCall.getChannelInstance());
-
+    
     HttpURLConnection connection = null;
     try {
       URL url = new URL(String.format(URL_TEMPLATE,
@@ -68,19 +69,24 @@ public class Api {
             return key + "=" + value;
           }).collect(Collectors.joining("&"))
       ));
-
+      
       connection = (HttpURLConnection) url.openConnection();
-
+      
       connection.setConnectTimeout(CONNECT_TIMEOUT_IN_MILLIS);
       connection.setReadTimeout(READ_TIMEOUT_IN_MILLIS);
       connection.setDoInput(true);
       connection.setRequestProperty("Accept-Charset", "UTF-8");
       connection.setRequestProperty("Content-Type", "txt/plain");
-
+      
       if (connection.getResponseCode() == 200) {
         return JAXB.unmarshal(connection.getInputStream(), apiCall.getExpectedResponseClass());//TODO this is vurnerable to XXE;
       }
-
+      if (connection.getResponseCode() == 401) {
+        Response unauthorized = new Response();
+        unauthorized.setCode(ResponseCodes.ERROR_AUTH);
+        return (RES) unauthorized;
+      }
+      
     } finally {
       if (connection != null) {
         connection.disconnect();

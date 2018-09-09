@@ -66,7 +66,6 @@ public class ImportOrders extends Job {
       ApiCall<OrdersResponse> call = ApiCall.builder(OrdersResponse.class)
           .forChannelInstance(channelInstance)
           .onMethod("get_orders").build();
-      call.addParameter("","");
 
       OrdersResponse apiResponse = api.get(call);
 //      OrdersResponse apiResponse = api.get("http://ws.monechelle.com/?login=mon_login&password=mon_password&method=get_orders", OrdersResponse.class);
