@@ -25,6 +25,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -36,20 +38,20 @@ import javax.xml.bind.JAXB;
  */
 @ApplicationScoped
 public class Api {
-  
+
   private static final int CONNECT_TIMEOUT_IN_MILLIS = 9000;
   private static final int READ_TIMEOUT_IN_MILLIS = 1000 * 60 * 5;
-  
+
   private String URL_TEMPLATE = "%s?login=%s&password=%s&method=%s&%s";
-  
+
   @Inject
   private MuChOr.Config config;
   @Inject
   private ManoManoChannel channelDescription;
-  
+
   public <RES extends Response> RES get(ApiCall<RES> apiCall) throws IOException {
     Map<String, Object> ciConfig = (Map<String, Object>) config.get("channel." + channelDescription.getKey() + "." + apiCall.getChannelInstance());
-    
+
     HttpURLConnection connection = null;
     try {
       URL url = new URL(String.format(URL_TEMPLATE,
@@ -69,24 +71,28 @@ public class Api {
             return key + "=" + value;
           }).collect(Collectors.joining("&"))
       ));
-      
+
       connection = (HttpURLConnection) url.openConnection();
-      
+
       connection.setConnectTimeout(CONNECT_TIMEOUT_IN_MILLIS);
       connection.setReadTimeout(READ_TIMEOUT_IN_MILLIS);
       connection.setDoInput(true);
       connection.setRequestProperty("Accept-Charset", "UTF-8");
       connection.setRequestProperty("Content-Type", "txt/plain");
-      
+
       if (connection.getResponseCode() == 200) {
         return JAXB.unmarshal(connection.getInputStream(), apiCall.getExpectedResponseClass());//TODO this is vurnerable to XXE;
       }
       if (connection.getResponseCode() == 401) {
-        Response unauthorized = new Response();
-        unauthorized.setCode(ResponseCodes.ERROR_AUTH);
-        return (RES) unauthorized;
+        try {
+          RES unauthorized = apiCall.getExpectedResponseClass().newInstance();
+          unauthorized.setCode(ResponseCodes.ERROR_AUTH);
+          return unauthorized;
+        } catch (InstantiationException | IllegalAccessException ex) {
+          throw new IOException(ex);
+        }
       }
-      
+
     } finally {
       if (connection != null) {
         connection.disconnect();
