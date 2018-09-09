@@ -23,6 +23,8 @@ import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.spi.CDI;
 import javax.inject.Inject;
@@ -43,25 +45,34 @@ public class AttributeImport extends Job {
 
   @Override
   public void run() {
-    monitor.log("Creating channel attributes");
+    monitor.begin(AttributeImport.class.getSimpleName() + " - " + channelConfig.getKey());
 
-    createChannelAttributes().forEach((ca) -> {
-      ChannelAttribute entity = channelAttributeDAO.findByChannelAndCategorySetAndKey(ca.getChannel(), ca.getCategorySet(), ca.getKey());
-      if (entity == null) {
-        entity = ca;
-      } else {
-        entity.setName(ca.getName());
-        entity.setDescription(ca.getDescription());
-        entity.setType(ca.getType());
-        entity.setDataType(ca.getDataType());
-        entity.getPossibleValuesKey().clear();
-        entity.getPossibleValuesKey().addAll(ca.getPossibleValuesKey());
-        entity.getPossibleValuesDescription().clear();
-        entity.getPossibleValuesDescription().addAll(ca.getPossibleValuesDescription());
-      }
+    try {
 
-      channelAttributeDAO.save(entity);
-    });
+      monitor.log("Creating channel attributes");
+
+      createChannelAttributes().forEach((ca) -> {
+        ChannelAttribute entity = channelAttributeDAO.findByChannelAndCategorySetAndKey(ca.getChannel(), ca.getCategorySet(), ca.getKey());
+        if (entity == null) {
+          entity = ca;
+        } else {
+          entity.setName(ca.getName());
+          entity.setDescription(ca.getDescription());
+          entity.setType(ca.getType());
+          entity.setDataType(ca.getDataType());
+          entity.getPossibleValuesKey().clear();
+          entity.getPossibleValuesKey().addAll(ca.getPossibleValuesKey());
+          entity.getPossibleValuesDescription().clear();
+          entity.getPossibleValuesDescription().addAll(ca.getPossibleValuesDescription());
+        }
+
+        channelAttributeDAO.save(entity);
+      });
+      monitor.succeed();
+    } catch (Exception e) {
+      Logger.getLogger(AttributeImport.class.getName()).log(Level.WARNING, "AttributeImport failed", e);
+      monitor.fail();
+    }
   }
 
   private List<ChannelAttribute> createChannelAttributes() {
