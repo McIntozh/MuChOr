@@ -16,6 +16,7 @@
 package de.websplatter.muchor.projection;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +39,7 @@ public class DefaultProjectedArticle {
   private Brand brand;
   private Manufacturer manufacturer;
   private String catalogId;
-  private String variationKey;
+  private Variation variation;
   private Map<String, Attribute> attributes;
   private Map<String, List<Media>> media;
   private Map<String, String> category;
@@ -109,14 +110,6 @@ public class DefaultProjectedArticle {
     this.catalogId = catalogId;
   }
 
-  public String getVariationKey() {
-    return variationKey;
-  }
-
-  public void setVariationKey(String variationKey) {
-    this.variationKey = variationKey;
-  }
-
   public Brand getBrand() {
     return brand;
   }
@@ -131,6 +124,14 @@ public class DefaultProjectedArticle {
 
   public void setManufacturer(Manufacturer manufacturer) {
     this.manufacturer = manufacturer;
+  }
+
+  public Variation getVariation() {
+    return variation;
+  }
+
+  public void setVariation(Variation variation) {
+    this.variation = variation;
   }
 
   public Map<String, Attribute> getAttributes() {
@@ -212,6 +213,25 @@ public class DefaultProjectedArticle {
 
     public void setName(String name) {
       this.name = name;
+    }
+
+  }
+
+  public static class Variation {
+
+    private String key;
+    private List<String> attributes = new LinkedList<>();
+
+    public String getKey() {
+      return key;
+    }
+
+    public void setKey(String key) {
+      this.key = key;
+    }
+
+    public List<String> getAttributes() {
+      return attributes;
     }
 
   }
