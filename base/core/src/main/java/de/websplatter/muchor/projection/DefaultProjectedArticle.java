@@ -38,6 +38,7 @@ public class DefaultProjectedArticle {
   private Brand brand;
   private Manufacturer manufacturer;
   private String catalogId;
+  private String variationKey;
   private Map<String, Attribute> attributes;
   private Map<String, List<Media>> media;
   private Map<String, String> category;
@@ -106,6 +107,14 @@ public class DefaultProjectedArticle {
 
   public void setCatalogId(String catalogId) {
     this.catalogId = catalogId;
+  }
+
+  public String getVariationKey() {
+    return variationKey;
+  }
+
+  public void setVariationKey(String variationKey) {
+    this.variationKey = variationKey;
   }
 
   public Brand getBrand() {

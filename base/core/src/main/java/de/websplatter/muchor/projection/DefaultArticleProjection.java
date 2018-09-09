@@ -99,6 +99,7 @@ public class DefaultArticleProjection {
     }
     pa.setGtin(article.getGtin());
     pa.setMpn(article.getMpn());
+    pa.setVariationKey(article.getVariationKey());
     
     mapNamed(article, pa);
     mapAttributed(article, pa);
