@@ -55,13 +55,3 @@ jobs:
       hour: "*"
     params:
       channelInstance: FooShopGOOG
-      
-#  manomano-order-import-FooShopMNMN:
-#    class: manomano.job.ImportOrders
-#    schedule:
-#      second: "*/30"
-#      minute: "*"
-#      hour: "*"
-#    params:
-#      shippingCostsSKU: ShiCos
-#      channelInstance: FooShopMNMN
