@@ -20,7 +20,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
@@ -98,8 +100,14 @@ public class QuartzScheduler {
 
       Trigger trigger;
       Object scheduleConfig = jobInfo.get("schedule");
+      TimeZone tz = TimeZone.getDefault();
+      
       if (scheduleConfig instanceof Map) {
-        scheduleConfig = convertScheduleToCron((Map<String, Object>) scheduleConfig);
+        Map<String, Object> m = (Map<String, Object>) scheduleConfig;
+        if (m.get("tz") != null) {
+          tz = TimeZone.getTimeZone(m.get("tz").toString());
+        }
+        scheduleConfig = convertScheduleToCron(m);
       }
 
       Logger.getLogger(QuartzScheduler.class.getName()).log(Level.INFO, "Scheduling ''{0}'' with {1}", new Object[]{jobClass, scheduleConfig.toString()});
@@ -107,6 +115,7 @@ public class QuartzScheduler {
       trigger = newTrigger()
           .withIdentity(entry.getKey())
           .withSchedule(cronSchedule(scheduleConfig.toString())
+              .inTimeZone(tz)
               .withMisfireHandlingInstructionDoNothing()
           )
           .build();
