@@ -16,6 +16,17 @@ channel:
         
 
 jobs:
+  
+  manomano-attribute-import:
+    class: manomano.job.AttributeImport
+    runAtStartup: true
+    schedule:
+      minute: 5
+      hour: 4
+      day: 1
+#      month: 8
+#      year: 2018
+  
   manomano-order-import-FooShopMNMN:
     class: manomano.job.ImportOrders
     schedule:
@@ -26,7 +37,16 @@ jobs:
       channelInstance: FooShopMNMN
       shippingCostChargeKey: SHIP
       shippingCostChargeName: Shipping costs
-
+  
+  manomano-article-feed-FooShopMNMN:
+    class: manomano.job.ArticleFeedGenerator
+    schedule:
+      second: "*/30"
+      minute: "*"
+      hour: "*"
+    params:
+      channelInstance: FooShopMNMN
+      languageCode: de
 
 ---
 

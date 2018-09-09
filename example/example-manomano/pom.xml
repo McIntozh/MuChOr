@@ -46,6 +46,11 @@
       <artifactId>scheduler-quartz</artifactId>
       <version>0.9.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>de.websplatter.muchor</groupId>
+      <artifactId>mapping-nashorn</artifactId>
+      <version>0.9.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   
   <build>

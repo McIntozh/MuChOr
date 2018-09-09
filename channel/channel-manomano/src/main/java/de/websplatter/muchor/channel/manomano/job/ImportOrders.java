@@ -68,8 +68,7 @@ public class ImportOrders extends Job {
           .onMethod("get_orders").build();
 
       OrdersResponse apiResponse = api.get(call);
-//      OrdersResponse apiResponse = api.get("http://ws.monechelle.com/?login=mon_login&password=mon_password&method=get_orders", OrdersResponse.class);
-//      OrdersResponse apiResponse = JAXB.unmarshal(ImportOrders.class.getResourceAsStream("/example_orders.xml"), OrdersResponse.class);
+//      OrdersResponse apiResponse = JAXB.unmarshal(ImportOrders.class.getResourceAsStream("../example_orders.xml"), OrdersResponse.class);
       if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
         monitor.fail();
         Notifier.builder(Notifier.Severity.WARNING)

@@ -32,7 +32,7 @@ public class ManoManoChannel extends ChannelDescription {
 
   @Override
   public String[] getCategorySets() {
-    return new String[0];
+    return new String[]{"default"};
   }
 
 }
