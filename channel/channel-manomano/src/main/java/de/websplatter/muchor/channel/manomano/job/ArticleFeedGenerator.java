@@ -83,6 +83,7 @@ public class ArticleFeedGenerator extends Job {
       Queue<PriStoDel> psds = new LinkedList<>(priStoDelDAO.findByChannelInstance(channelInstance));
 
       List<String[]> feedFields = AttributeImport.getFeedFields();
+      feedFields.add(0, new String[]{"sku", "true"});
 
       StringBuilder csv = new StringBuilder();
       csv.append(
@@ -109,8 +110,8 @@ public class ArticleFeedGenerator extends Job {
           ).append('\n');
         }
       }
-      
-//      System.out.println(csv);
+
+      System.out.println(csv);
       //TODO what to do with the CSV (TSV)?
     } catch (IOException ex) {
       Logger.getLogger(ArticleFeedGenerator.class.getName()).log(Level.SEVERE, null, ex);
