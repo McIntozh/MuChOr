@@ -21,8 +21,10 @@ import de.websplatter.muchor.Notifier;
 import de.websplatter.muchor.persistence.dao.ChannelAttributeDAO;
 import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import de.websplatter.muchor.projection.DefaultProjectedArticle;
+import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -31,7 +33,6 @@ import java.util.Optional;
 import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
@@ -96,20 +97,6 @@ public class GoogleProductMapper {
     }
     gp.setTitle(title);
 
-    List<DefaultProjectedArticle.Media> images = pa.getMedia().get("IMAGE");
-    if (images != null && !images.isEmpty()) {
-      gp.setImageLink(images.get(0).getUrl());
-      if (images.size() > 1) {
-        gp.setAdditionalImageLinks(images.subList(1, images.size()).stream().map(DefaultProjectedArticle.Media::getUrl).collect(Collectors.toList()));
-      }
-    } else {
-      Notifier.article(pa.getSku())
-          .channelInstance(channelInstance)
-          .code("ERROR_NO_PICTURES")//TODO define codes
-          .publish();
-      return null;
-    }
-
     String categoryKey = pa.getCategory().get(channelConfig.getCategorySets()[0]);
     if (categoryKey != null) {
       gp.setGoogleProductCategory(categoryKey);
@@ -133,6 +120,15 @@ public class GoogleProductMapper {
         reflectionMagic(gp, ca.getKey(), result);
       }
     }
+
+    if (gp.getImageLink() == null || gp.getImageLink().trim().isEmpty()) {
+      Notifier.article(pa.getSku())
+          .channelInstance(channelInstance)
+          .code("ERROR_NO_PICTURES")//TODO define codes
+          .publish();
+      return null;
+    }
+
     return gp;
   }
 
@@ -182,6 +178,14 @@ public class GoogleProductMapper {
             setterMethod.invoke(objectToSet, Boolean.parseBoolean(result.toString()));
           } else if (c == String.class) {
             setterMethod.invoke(objectToSet, result.toString());
+          } else if (c == List.class) {
+            if (result instanceof List) {
+              setterMethod.invoke(objectToSet, result);
+            }
+            if (result.getClass().isArray()) {
+              setterMethod.invoke(objectToSet, Arrays.asList((Object[]) result));
+            }
+
           }
         } else {
           Object newParam = getterMethod.invoke(objectToSet);

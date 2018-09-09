@@ -16,7 +16,9 @@
 package de.websplatter.muchor.channel.google;
 
 import com.google.api.services.content.model.Product;
+import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.LinkedList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -41,6 +43,14 @@ public class GoogleProductMapperTest {
     assertEquals("kg", p.getUnitPricingMeasure().getUnit());
     assertEquals(0.5d, p.getUnitPricingMeasure().getValue(), 0d);
     assertEquals(50l, p.getUnitPricingBaseMeasure().getValue(), 0);
+
+    instance.reflectionMagic(p, "additionalImageLinks", Lists.newArrayList("Link1", "Link2"));
+    assertEquals(2, p.getAdditionalImageLinks().size(), 0);
+
+    p.setAdditionalImageLinks(null);
+    instance.reflectionMagic(p, "additionalImageLinks", new String[]{"Link1", "Link2"});
+    System.out.println(p.getAdditionalImageLinks());
+    assertEquals(2, p.getAdditionalImageLinks().size(), 0);
 
   }
 
