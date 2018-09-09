@@ -44,13 +44,21 @@ public class GoogleProductMapperTest {
     assertEquals(0.5d, p.getUnitPricingMeasure().getValue(), 0d);
     assertEquals(50l, p.getUnitPricingBaseMeasure().getValue(), 0);
 
+    instance.reflectionMagic(p, "additionalImageLinks", "Link1");
+    assertEquals(1, p.getAdditionalImageLinks().size(), 0);
+    assertEquals("Link1", p.getAdditionalImageLinks().get(0));
+
     instance.reflectionMagic(p, "additionalImageLinks", Lists.newArrayList("Link1", "Link2"));
     assertEquals(2, p.getAdditionalImageLinks().size(), 0);
+    assertEquals("Link1", p.getAdditionalImageLinks().get(0));
+    assertEquals("Link2", p.getAdditionalImageLinks().get(1));
 
     p.setAdditionalImageLinks(null);
     instance.reflectionMagic(p, "additionalImageLinks", new String[]{"Link1", "Link2"});
     System.out.println(p.getAdditionalImageLinks());
     assertEquals(2, p.getAdditionalImageLinks().size(), 0);
+    assertEquals("Link1", p.getAdditionalImageLinks().get(0));
+    assertEquals("Link2", p.getAdditionalImageLinks().get(1));
 
   }
 

@@ -24,8 +24,11 @@ import de.websplatter.muchor.projection.DefaultProjectedArticle;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -166,27 +169,24 @@ public class GoogleProductMapper {
         }
         if (keyPath.isEmpty()) {
           Class c = setterMethod.getParameterTypes()[0];
-          if (c == Double.class) {
-            setterMethod.invoke(objectToSet, Double.parseDouble(result.toString()));
-          } else if (c == Float.class) {
-            setterMethod.invoke(objectToSet, Float.parseFloat(result.toString()));
-          } else if (c == Integer.class) {
-            setterMethod.invoke(objectToSet, Integer.parseInt(result.toString()));
-          } else if (c == Long.class) {
-            setterMethod.invoke(objectToSet, Long.parseLong(result.toString()));
-          } else if (c == Boolean.class) {
-            setterMethod.invoke(objectToSet, Boolean.parseBoolean(result.toString()));
-          } else if (c == String.class) {
-            setterMethod.invoke(objectToSet, result.toString());
-          } else if (c == List.class) {
+
+          Object value = tryParsingToClass(c, result);
+
+          if (c == List.class) {
             if (result instanceof List) {
               setterMethod.invoke(objectToSet, result);
-            }
-            if (result.getClass().isArray()) {
+            } else if (result.getClass().isArray()) {
               setterMethod.invoke(objectToSet, Arrays.asList((Object[]) result));
-            }
+            } else {
+              ParameterizedType genericType = (ParameterizedType) setterMethod.getGenericParameterTypes()[0];
+              c = (Class) genericType.getActualTypeArguments()[0];
 
+              setterMethod.invoke(objectToSet, Collections.singletonList(tryParsingToClass(c, result)));
+            }
+          } else {
+            setterMethod.invoke(objectToSet, value);
           }
+
         } else {
           Object newParam = getterMethod.invoke(objectToSet);
           if (newParam == null) {
@@ -199,5 +199,22 @@ public class GoogleProductMapper {
     } catch (InvocationTargetException | IllegalArgumentException | IllegalAccessException | InstantiationException | SecurityException e) {
       Logger.getLogger(GoogleProductMapper.class.getName()).log(Level.WARNING, "Could net set attribute '" + attributeKey + "' ", e);
     }
+  }
+
+  private Object tryParsingToClass(Class c, Object o) {
+    if (c == Double.class) {
+      return Double.parseDouble(o.toString());
+    } else if (c == Float.class) {
+      return Float.parseFloat(o.toString());
+    } else if (c == Integer.class) {
+      return Integer.parseInt(o.toString());
+    } else if (c == Long.class) {
+      return Long.parseLong(o.toString());
+    } else if (c == Boolean.class) {
+      return Boolean.parseBoolean(o.toString());
+    } else if (c == String.class) {
+      return o.toString();
+    }
+    return o;
   }
 }
