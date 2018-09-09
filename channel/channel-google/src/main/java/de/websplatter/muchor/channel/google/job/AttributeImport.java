@@ -203,6 +203,17 @@ public class AttributeImport extends Job {
         "The cut of the item. Recommended for apparel items.",
         new String[]{"maternity", "oversize", "petite", "regular"}
     ));
+    result.add(createStringAttr(
+        "imageLink",
+        "Image link",
+        "URL of an image of the item.",
+        null
+    ));
+    result.add(createStringListAttr(
+        "additionalImageLinks",
+        "Additional image links",
+        "Additional URLs of images of the item."
+    ));
 
     return result;
   }
@@ -244,6 +255,20 @@ public class AttributeImport extends Job {
       attr.getPossibleValuesKey().addAll(valList);
       attr.getPossibleValuesDescription().addAll(valList);
     }
+
+    return attr;
+  }
+
+  private ChannelAttribute createStringListAttr(String key, String name, String desc) {
+    ChannelAttribute attr = CDI.current().select(ChannelAttribute.class).get();
+    attr.setKey(key);
+    attr.setChannel(channelConfig.getKey());
+    attr.setCategorySet(channelConfig.getCategorySets()[0]);
+
+    attr.setName(name);
+    attr.setDescription(desc);
+    attr.setType(ChannelAttribute.Type.MULTIPLE);
+    attr.setDataType(ChannelAttribute.DataType.STRING);
 
     return attr;
   }
