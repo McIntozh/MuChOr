@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Id;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-@Entity(value = "article", noClassnameStored = true)
+@Entity(value = "variation", noClassnameStored = true)
 @Dependent
 public class Variation extends de.websplatter.muchor.persistence.entity.Variation {
 
