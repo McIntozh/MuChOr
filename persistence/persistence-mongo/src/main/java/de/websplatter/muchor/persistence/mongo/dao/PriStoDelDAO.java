@@ -49,7 +49,12 @@ public class PriStoDelDAO extends de.websplatter.muchor.persistence.dao.PriStoDe
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.PriStoDel entity) {
+  public void create(de.websplatter.muchor.persistence.entity.PriStoDel entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.PriStoDel entity) {
     datastore.save(entity);
   }
 

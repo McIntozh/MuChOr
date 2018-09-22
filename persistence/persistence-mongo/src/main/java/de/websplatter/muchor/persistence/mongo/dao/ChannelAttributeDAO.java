@@ -44,7 +44,12 @@ public class ChannelAttributeDAO extends de.websplatter.muchor.persistence.dao.C
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.ChannelAttribute entity) {
+  public void create(de.websplatter.muchor.persistence.entity.ChannelAttribute entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.ChannelAttribute entity) {
     datastore.save(entity);
   }
 

@@ -129,12 +129,13 @@ public class ProductExport extends Job {
               ExportHistory eh = CDI.current().select(ExportHistory.class).get();
               eh.setSku(pa.getSku());
               eh.setChannelInstance(channelInstance);
+              exportHistoryDAO.create(eh);
               return eh;
             });
 
         if (hasChanged(history, hashCode)) {
           history.getStatus().put(ExportHistoryKeys.ProductHashInUpload.name(), hashCode);
-          exportHistoryDAO.save(history);
+          exportHistoryDAO.update(history);
           productsToInsert.add(new ProductWrapper(gp, history));
         }
 
@@ -256,7 +257,7 @@ public class ProductExport extends Job {
         ExportHistory hist = wrapper.history;
         hist.getStatus().put(ExportHistoryKeys.ProductHash.name(), hist.getStatus().remove(ExportHistoryKeys.ProductHashInUpload.name()));
         hist.getStatus().put(ExportHistoryKeys.GoogleProductId.name(), entry.getProduct().getId());
-        exportHistoryDAO.save(hist);
+        exportHistoryDAO.update(hist);
         if (entry.getProduct().getWarnings() != null) {
           entry.getProduct().getWarnings().forEach((w) -> {
             Notifier.article(sku)
@@ -323,7 +324,7 @@ public class ProductExport extends Job {
             product.getStatus().remove(ExportHistoryKeys.GoogleProductId.name());
             product.getStatus().remove(ExportHistoryKeys.ProductHash.name());
             product.getStatus().remove(ExportHistoryKeys.ProductHashInUpload.name());
-            exportHistoryDAO.save(product);
+            exportHistoryDAO.update(product);
           } else {
             Notifier.article(product.getSku())
                 .channelInstance(product.getChannelInstance())

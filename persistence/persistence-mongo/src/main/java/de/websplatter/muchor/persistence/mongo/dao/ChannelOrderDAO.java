@@ -39,13 +39,18 @@ public class ChannelOrderDAO extends de.websplatter.muchor.persistence.dao.Chann
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.ChannelOrder entity) {
+  public List<? extends de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
+    return datastore.find(ChannelOrder.class).field("channelInstance").equal(channelInstance).asList();
+  }
+
+  @Override
+  public void create(de.websplatter.muchor.persistence.entity.ChannelOrder entity) {
     datastore.save(entity);
   }
 
   @Override
-  public List<? extends de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
-    return datastore.find(ChannelOrder.class).field("channelInstance").equal(channelInstance).asList();
+  public void update(de.websplatter.muchor.persistence.entity.ChannelOrder entity) {
+    datastore.save(entity);
   }
 
 }

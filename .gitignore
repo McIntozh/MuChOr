@@ -13,3 +13,4 @@ nb-configuration.xml
 /example/example-manomano/target/
 /protocol/protocol-smb/target/
 /protocol/protocol-file/target/
+/persistence/persistence-eclipselink/target/

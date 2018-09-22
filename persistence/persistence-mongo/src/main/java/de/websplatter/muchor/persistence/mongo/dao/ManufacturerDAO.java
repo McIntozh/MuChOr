@@ -38,7 +38,12 @@ public class ManufacturerDAO extends de.websplatter.muchor.persistence.dao.Manuf
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Manufacturer entity) {
+  public void create(de.websplatter.muchor.persistence.entity.Manufacturer entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Manufacturer entity) {
     datastore.save(entity);
   }
 

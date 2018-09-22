@@ -38,7 +38,12 @@ public class AttributeDAO extends de.websplatter.muchor.persistence.dao.Attribut
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Attribute entity) {
+  public void create(de.websplatter.muchor.persistence.entity.Attribute entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Attribute entity) {
     datastore.save(entity);
   }
 

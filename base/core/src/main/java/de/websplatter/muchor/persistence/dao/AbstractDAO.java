@@ -21,6 +21,8 @@ package de.websplatter.muchor.persistence.dao;
  */
 public abstract class AbstractDAO<ENTITY> {
 
-  public abstract void save(ENTITY entity);
+  public abstract void create(ENTITY entity);
+
+  public abstract void update(ENTITY entity);
 
 }

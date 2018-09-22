@@ -38,7 +38,12 @@ public class BrandDAO extends de.websplatter.muchor.persistence.dao.BrandDAO {
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Brand entity) {
+  public void create(de.websplatter.muchor.persistence.entity.Brand entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Brand entity) {
     datastore.save(entity);
   }
 

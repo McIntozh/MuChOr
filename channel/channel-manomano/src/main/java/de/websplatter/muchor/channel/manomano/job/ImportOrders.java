@@ -83,7 +83,7 @@ public class ImportOrders extends Job {
         ChannelOrder co = channelOrderDAO.findByChannelInstanceAndOrderId(channelInstance, manoOrder.getOrderRef());
         if (co == null) {
           co = map(manoOrder);
-          channelOrderDAO.save(co);
+          channelOrderDAO.create(co);
           System.out.println(new Gson().toJson(co));
         }
       }

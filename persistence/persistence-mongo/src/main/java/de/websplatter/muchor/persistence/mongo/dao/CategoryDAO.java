@@ -44,7 +44,12 @@ public class CategoryDAO extends de.websplatter.muchor.persistence.dao.CategoryD
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Category entity) {
+  public void create(de.websplatter.muchor.persistence.entity.Category entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Category entity) {
     datastore.save(entity);
   }
 

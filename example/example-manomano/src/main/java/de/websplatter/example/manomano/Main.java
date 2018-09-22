@@ -106,7 +106,7 @@ public class Main {
           break;
       }
 
-      channelAttributeDAO.save(entity);
+      channelAttributeDAO.update(entity);
     }
 
   }

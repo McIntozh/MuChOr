@@ -35,6 +35,7 @@
   <modules>
     <module>base/core</module>
     
+    <module>persistence/persistence-eclipselink</module>
     <module>persistence/persistence-mongo</module>
     
     <module>scheduler/scheduler-quartz</module>

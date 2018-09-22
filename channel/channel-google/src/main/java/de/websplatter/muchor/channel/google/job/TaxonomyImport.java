@@ -122,18 +122,18 @@ public class TaxonomyImport extends Job {
         if (lCat == null) {
           if (dbCat.getOutdated() == null) {
             dbCat.setOutdated(new Date());
-            categoryDAO.save(dbCat);
+            categoryDAO.update(dbCat);
           }
         } else {
           if (!lCat.getPath().equals(dbCat.getPath())) {
             dbCat.setPath(dbCat.getPath());
-            categoryDAO.save(dbCat);
+            categoryDAO.update(dbCat);
           }
         }
       });
 
       loadedCategoriesByKey.values().forEach((lCat) -> {
-        categoryDAO.save(lCat);
+        categoryDAO.create(lCat);
       });
     } catch (RuntimeException ex) {
       Notifier.builder(Notifier.Severity.WARNING)

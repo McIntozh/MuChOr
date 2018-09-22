@@ -54,7 +54,7 @@ public class AttributeImport extends Job {
       createChannelAttributes().forEach((ca) -> {
         ChannelAttribute entity = channelAttributeDAO.findByChannelAndCategorySetAndKey(ca.getChannel(), ca.getCategorySet(), ca.getKey());
         if (entity == null) {
-          entity = ca;
+          channelAttributeDAO.create(ca);
         } else {
           entity.setName(ca.getName());
           entity.setDescription(ca.getDescription());
@@ -64,9 +64,9 @@ public class AttributeImport extends Job {
           entity.getPossibleValuesKey().addAll(ca.getPossibleValuesKey());
           entity.getPossibleValuesDescription().clear();
           entity.getPossibleValuesDescription().addAll(ca.getPossibleValuesDescription());
+          channelAttributeDAO.update(entity);
         }
 
-        channelAttributeDAO.save(entity);
       });
       monitor.succeed();
     } catch (Exception e) {

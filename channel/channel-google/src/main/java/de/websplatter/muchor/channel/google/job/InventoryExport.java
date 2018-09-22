@@ -106,7 +106,7 @@ public class InventoryExport extends Job {
 
         if (hasChanged(history, hashCode)) {
           history.getStatus().put(ExportHistoryKeys.InventoryHashInUpload.name(), hashCode);
-          exportHistoryDAO.save(history);
+          exportHistoryDAO.update(history);
           inventoriesBatch.add(new InventoryWrapper(inventory, history));
         }
 
@@ -193,13 +193,13 @@ public class InventoryExport extends Job {
       Errors errs = entry.getErrors();
       if (errs == null) {
         history.getStatus().put(ExportHistoryKeys.InventoryHash.name(), history.getStatus().remove(ExportHistoryKeys.InventoryHashInUpload.name()));
-        exportHistoryDAO.save(history);
+        exportHistoryDAO.update(history);
       } else {
         String sku = history.getSku();
         if (errs.getCode() == 404) {
           //Product was not found - reset all hashes and GoogleProductId to trigger a product export
           history.getStatus().clear();
-          exportHistoryDAO.save(history);
+          exportHistoryDAO.update(history);
           Notifier.article(sku)
               .code("WARN_PRODUCT_NOT_FOUND")//TODO code
               .publish();

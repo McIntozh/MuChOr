@@ -49,7 +49,12 @@ public class ExportHistoryDAO extends de.websplatter.muchor.persistence.dao.Expo
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.ExportHistory entity) {
+  public void create(de.websplatter.muchor.persistence.entity.ExportHistory entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.ExportHistory entity) {
     datastore.save(entity);
   }
 

@@ -31,14 +31,19 @@ public class ArticleDAO extends de.websplatter.muchor.persistence.dao.ArticleDAO
   @Inject
   @MuChOr
   Datastore datastore;
-  
+
   @Override
   public de.websplatter.muchor.persistence.entity.Article findBySKU(String sku) {
     return datastore.find(Article.class).field("sku").equal(sku).get();
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Article article) {
+  public void create(de.websplatter.muchor.persistence.entity.Article article) {
+    datastore.save(article);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Article article) {
     datastore.save(article);
   }
 

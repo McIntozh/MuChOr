@@ -38,7 +38,12 @@ public class VariationDAO extends de.websplatter.muchor.persistence.dao.Variatio
   }
 
   @Override
-  public void save(de.websplatter.muchor.persistence.entity.Variation entity) {
+  public void create(de.websplatter.muchor.persistence.entity.Variation entity) {
+    datastore.save(entity);
+  }
+
+  @Override
+  public void update(de.websplatter.muchor.persistence.entity.Variation entity) {
     datastore.save(entity);
   }
 
