@@ -1,4 +1,4 @@
-# File transfer vi Samba
+# File transfer via Samba
 
 Protocol quailifier is `smb`
 
