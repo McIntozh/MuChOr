@@ -17,6 +17,7 @@ package de.websplatter.muchor.channel.manomano.job;
 
 import de.websplatter.muchor.CategoryAttributeMapper;
 import de.websplatter.muchor.Job;
+import de.websplatter.muchor.MuchorProtocol;
 import de.websplatter.muchor.Notifier;
 import de.websplatter.muchor.channel.manomano.ManoManoChannel;
 import de.websplatter.muchor.persistence.dao.ArticleDAO;
@@ -27,7 +28,6 @@ import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import de.websplatter.muchor.persistence.entity.PriStoDel;
 import de.websplatter.muchor.projection.DefaultArticleProjection;
 import de.websplatter.muchor.projection.DefaultProjectedArticle;
-import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -111,9 +111,20 @@ public class ArticleFeedGenerator extends Job {
         }
       }
 
-      System.out.println(csv);
-      //TODO what to do with the CSV (TSV)?
-    } catch (IOException ex) {
+      //TODO save via CommunicationArchiver
+      try (MuchorProtocol prot = MuchorProtocol.get((Map<String, String>) getParameter("target"))) {
+        String targetFile = getOrDefaultStringParameter("fileName", "Export.csv");
+
+        String tmpFile = targetFile + ".tmp";
+        prot.remove("", tmpFile);
+        prot.save("",
+            tmpFile,
+            csv.toString().getBytes("UTF-8"));
+        prot.remove("", targetFile);
+        prot.rename("", tmpFile, targetFile);
+      }
+
+    } catch (Exception ex) {
       Logger.getLogger(ArticleFeedGenerator.class.getName()).log(Level.SEVERE, null, ex);
     }
   }

@@ -47,6 +47,10 @@ jobs:
     params:
       channelInstance: FooShopMNMN
       languageCode: de
+      fileName: ManoMano.csv
+      target:
+        protocol: file
+        directory: /tmp
 
 ---
 

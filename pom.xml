@@ -42,6 +42,9 @@
     <module>mapping/mapping-mustache</module>
     <module>mapping/mapping-nashorn</module>
     
+    <module>protocol/protocol-file</module>
+    <module>protocol/protocol-smb</module>
+    
     <module>channel/channel-google</module>
     <module>channel/channel-manomano</module>
     
