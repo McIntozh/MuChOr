@@ -23,10 +23,10 @@ import de.websplatter.muchor.persistence.dao.ArticleDAO;
 import de.websplatter.muchor.persistence.dao.AttributeDAO;
 import de.websplatter.muchor.persistence.dao.PriStoDelDAO;
 import de.websplatter.muchor.persistence.dao.VariationDAO;
-import de.websplatter.muchor.persistence.mongo.entity.Article;
-import de.websplatter.muchor.persistence.mongo.entity.Attribute;
-import de.websplatter.muchor.persistence.mongo.entity.PriStoDel;
-import de.websplatter.muchor.persistence.mongo.entity.Variation;
+import de.websplatter.muchor.persistence.eclipselink.entity.Article;
+import de.websplatter.muchor.persistence.eclipselink.entity.Attribute;
+import de.websplatter.muchor.persistence.eclipselink.entity.PriStoDel;
+import de.websplatter.muchor.persistence.eclipselink.entity.Variation;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import javax.enterprise.context.RequestScoped;
@@ -59,16 +59,18 @@ public class ExampleDataImport extends Job {
 
       monitor.log("Importing Attributes");
       Arrays.stream((Attribute[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/attributes.json"))), Attribute[].class))
-          .forEach(attributeDAO::save);
+          .forEach(attributeDAO::create);
       monitor.log("Importing Variations");
       Arrays.stream((Variation[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/variations.json"))), Variation[].class))
-          .forEach(variationDAO::save);
+          .forEach(variationDAO::create);
       monitor.log("Importing Articles");
       Arrays.stream((Article[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/articles.json"))), Article[].class))
-          .forEach(articleDAO::save);
+          .forEach(articleDAO::create);
       monitor.log("Importing PriStoDels");
       Arrays.stream((PriStoDel[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/pristodel.json"))), PriStoDel[].class))
-          .forEach(priStoDelDAO::save);
+          .forEach(priStoDelDAO::create);
+
+      System.out.println(articleDAO.findBySKU("fooHMT3GrL16").getLanguageSpecifics().size());
       monitor.succeed();
     } catch (Exception e) {
       monitor.fail();

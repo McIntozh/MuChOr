@@ -2,9 +2,17 @@
 persistence:
   mongo:
     cluster: localhost
-    user: muchor
     db: muchor
+    user: muchor
     pwd: passwd
+  eclipselink:
+    driver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/muchor?useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false
+    user: muchor
+    password: passwd
+    loggingLevel: WARNING
+#    ddlGeneration: none
+    ddlGeneration: drop-and-create-tables
     
 jobs:
   exampleDataImport:
