@@ -62,7 +62,7 @@ import javax.inject.Inject;
 public class ProductExport extends Job {
 
   private static final int BATCH_SIZE = 500;
-  private static final SimpleDateFormat FILE_DATE_FORMAT = new SimpleDateFormat("HHmmss");
+  private final SimpleDateFormat FILE_DATE_FORMAT = new SimpleDateFormat("HHmmss");
 
   @Inject
   private GoogleChannel channelConfig;
@@ -208,10 +208,7 @@ public class ProductExport extends Job {
       batchIdToWrapper.put(batchEntry.getBatchId(), googlePropductToUpdate);
     }
 
-    String fileIdentifier;
-    synchronized (FILE_DATE_FORMAT) {
-      fileIdentifier = FILE_DATE_FORMAT.format(new Date()) + ".json";
-    }
+    String fileIdentifier = FILE_DATE_FORMAT.format(new Date()) + ".json";
 
     try (OutputStream out = CommunicationArchiver.builder()
         .channel(channelConfig.getKey())
@@ -294,10 +291,7 @@ public class ProductExport extends Job {
       batchIdToHistory.put(batchEntry.getBatchId(), history);
     }
 
-    String fileIdentifier;
-    synchronized (FILE_DATE_FORMAT) {
-      fileIdentifier = FILE_DATE_FORMAT.format(new Date()) + ".json";
-    }
+    String fileIdentifier = FILE_DATE_FORMAT.format(new Date()) + ".json";
 
     try (OutputStream out = CommunicationArchiver.builder()
         .channel(channelConfig.getKey())
