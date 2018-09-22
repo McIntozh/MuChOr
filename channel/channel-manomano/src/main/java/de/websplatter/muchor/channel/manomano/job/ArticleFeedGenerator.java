@@ -16,6 +16,7 @@
 package de.websplatter.muchor.channel.manomano.job;
 
 import de.websplatter.muchor.CategoryAttributeMapper;
+import de.websplatter.muchor.CommunicationArchiver;
 import de.websplatter.muchor.Job;
 import de.websplatter.muchor.MuchorProtocol;
 import de.websplatter.muchor.Notifier;
@@ -28,7 +29,10 @@ import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import de.websplatter.muchor.persistence.entity.PriStoDel;
 import de.websplatter.muchor.projection.DefaultArticleProjection;
 import de.websplatter.muchor.projection.DefaultProjectedArticle;
+import java.io.OutputStream;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -111,15 +115,25 @@ public class ArticleFeedGenerator extends Job {
         }
       }
 
-      //TODO save via CommunicationArchiver
+      byte[] output = csv.toString().getBytes("UTF-8");
+      csv.setLength(0);//Cleanup StringBuilder ;)
+
+      String fileIdentifier = new SimpleDateFormat("HHmmss").format(new Date()) + ".csv";
+      try (OutputStream out = CommunicationArchiver.builder()
+          .channel(channelConfig.getKey())
+          .channelInstance(channelInstance)
+          .fileType("Catalog")
+          .fileName("Catalog_" + fileIdentifier)
+          .build().openStream()) {
+        out.write(output);
+      }
+
       try (MuchorProtocol prot = MuchorProtocol.get((Map<String, String>) getParameter("target"))) {
-        String targetFile = getOrDefaultStringParameter("fileName", "Export.csv");
+        String targetFile = getOrDefaultStringParameter("fileName", "Catalog.csv");
 
         String tmpFile = targetFile + ".tmp";
         prot.remove("", tmpFile);
-        prot.save("",
-            tmpFile,
-            csv.toString().getBytes("UTF-8"));
+        prot.save("", tmpFile, output);
         prot.remove("", targetFile);
         prot.rename("", tmpFile, targetFile);
       }
