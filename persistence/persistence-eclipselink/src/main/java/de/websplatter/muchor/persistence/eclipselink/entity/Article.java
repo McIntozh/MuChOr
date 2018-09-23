@@ -45,7 +45,7 @@ import javax.persistence.Table;
 public class Article extends de.websplatter.muchor.persistence.entity.Article implements Serializable {
 
   @Id
-  @Column(name = "sku")
+  @Column(name = "sku", length = 36)
   private String sku;
   @Column(name = "variationKey")
   private String variationKey;

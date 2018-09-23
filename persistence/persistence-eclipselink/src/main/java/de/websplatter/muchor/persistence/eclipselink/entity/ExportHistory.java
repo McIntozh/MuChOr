@@ -54,9 +54,9 @@ public class ExportHistory extends de.websplatter.muchor.persistence.entity.Expo
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Integer id;
-  @Column(name = "sku")
+  @Column(name = "sku", length = 36)
   private String sku;
-  @Column(name = "channelInstance")
+  @Column(name = "channelInstance", length = 36)
   private String channelInstance;
   @ElementCollection
   @CollectionTable(name = "export_history_status", joinColumns = @JoinColumn(name = "export_history_id"))

@@ -34,11 +34,11 @@ import javax.persistence.Table;
 public class Variation extends de.websplatter.muchor.persistence.entity.Variation {
 
   @Id
-  @Column(name = "id")
+  @Column(name = "id", length = 36)
   private String key;
   @ElementCollection
-  @CollectionTable(name = "variation_attribute",joinColumns = @JoinColumn(name = "variation_id"))
-  @Column(name="attribute")
+  @CollectionTable(name = "variation_attribute", joinColumns = @JoinColumn(name = "variation_id"))
+  @Column(name = "attribute", length = 36)
   private List<String> attributes;
 
   @Override

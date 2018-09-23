@@ -50,11 +50,11 @@ public class Category extends de.websplatter.muchor.persistence.entity.Category 
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Integer id;
-  @Column(name = "channel")
+  @Column(name = "channel", length = 4)
   private String channel;
-  @Column(name = "categorySet")
+  @Column(name = "categorySet", length = 10)
   private String categorySet;
-  @Column(name = "categoryKey")
+  @Column(name = "categoryKey", length = 36)
   private String key;
   @Column(name = "fullPath")
   private String path;

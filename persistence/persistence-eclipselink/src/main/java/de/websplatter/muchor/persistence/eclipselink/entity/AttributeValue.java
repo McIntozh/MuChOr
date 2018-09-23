@@ -39,17 +39,17 @@ import javax.persistence.Table;
 @DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue(value = "X")
 @Dependent
-public abstract class AttributeValue extends de.websplatter.muchor.persistence.entity.AttributeValue implements Serializable {
+public class AttributeValue extends de.websplatter.muchor.persistence.entity.AttributeValue implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id")
   private Integer id;
-  @Column(name = "val")
+  @Column(name = "val", length = 1024)
   private String value;
   @Column(name = "unit")
   private String unit;
-  @Column(name = "attribute")
+  @Column(name = "attribute", length = 36)
   private String attribute;
 
   public AttributeValue() {

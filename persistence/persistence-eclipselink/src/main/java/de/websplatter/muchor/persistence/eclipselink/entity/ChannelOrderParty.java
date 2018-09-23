@@ -46,7 +46,7 @@ public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.
   private String customerNo;
   @Column(name = "name")
   private String name;
-  @Column(name = "address")
+  @Column(name = "address", length = 1024)
   private String address;
   @Column(name = "city")
   private String city;

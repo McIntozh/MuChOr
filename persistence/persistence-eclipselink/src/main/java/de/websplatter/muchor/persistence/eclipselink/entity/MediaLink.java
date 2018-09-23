@@ -39,7 +39,7 @@ import javax.persistence.Table;
 @DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue(value = "X")
 @Dependent
-public abstract class MediaLink extends de.websplatter.muchor.persistence.entity.MediaLink implements Serializable {
+public class MediaLink extends de.websplatter.muchor.persistence.entity.MediaLink implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

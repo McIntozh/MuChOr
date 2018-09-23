@@ -61,9 +61,9 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Integer id;
-  @Column(name = "channelInstance")
+  @Column(name = "channelInstance", length = 36)
   private String channelInstance;
-  @Column(name = "orderId")
+  @Column(name = "orderId", length = 50)
   private String orderId;
   @Column(name = "orderNo")
   private String orderNo;

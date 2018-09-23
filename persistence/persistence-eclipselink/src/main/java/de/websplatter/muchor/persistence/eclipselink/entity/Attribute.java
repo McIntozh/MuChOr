@@ -32,7 +32,7 @@ import javax.persistence.Table;
 public class Attribute extends de.websplatter.muchor.persistence.entity.Attribute implements Serializable {
 
   @Id
-  @Column(name = "id")
+  @Column(name = "id", length = 36)
   private String key;
   @Column(name = "name")
   private String name;

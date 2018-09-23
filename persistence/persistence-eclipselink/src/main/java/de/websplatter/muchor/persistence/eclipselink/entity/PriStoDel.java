@@ -42,10 +42,10 @@ import javax.persistence.Table;
 public class PriStoDel extends de.websplatter.muchor.persistence.entity.PriStoDel implements Serializable {
 
   @Id
-  @Column(name = "sku")
+  @Column(name = "sku", length = 36)
   private String sku;
   @Id
-  @Column(name = "channelInstance")
+  @Column(name = "channelInstance", length = 36)
   private String channelInstance;
   @Column(name = "stockQuantity")
   private int stockQuantity;

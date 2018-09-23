@@ -15,7 +15,6 @@
  */
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
-import javax.enterprise.context.Dependent;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -27,7 +26,6 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 @DiscriminatorValue(value = "c")
-@Dependent
 public class ChannelAttributeValue extends AttributeValue {
 
   @ManyToOne

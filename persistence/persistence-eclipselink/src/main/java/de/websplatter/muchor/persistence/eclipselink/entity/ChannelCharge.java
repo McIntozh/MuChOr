@@ -16,14 +16,35 @@
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
 import java.io.Serializable;
+import javax.enterprise.context.Dependent;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class AbstractChannelOrderCharge extends de.websplatter.muchor.persistence.entity.ChannelOrderCharge implements Serializable {
+@Entity
+@Table(name = "channel_charge")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue(value = "X")
+@Dependent
+public class ChannelCharge extends de.websplatter.muchor.persistence.entity.ChannelOrderCharge implements Serializable {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  private Integer id;
   @Column(name = "channelChargeKey")
   private String channelChargeKey;
   @Column(name = "type")
@@ -32,6 +53,14 @@ public abstract class AbstractChannelOrderCharge extends de.websplatter.muchor.p
   private int price;
   @Column(name = "name")
   private String name;
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
   @Override
   public String getChannelChargeKey() {

@@ -32,7 +32,7 @@ import javax.persistence.Table;
 public class Brand extends de.websplatter.muchor.persistence.entity.Brand implements Serializable {
 
   @Id
-  @Column(name = "id")
+  @Column(name = "id", length = 36)
   private String key;
   @Column(name = "name")
   private String name;
