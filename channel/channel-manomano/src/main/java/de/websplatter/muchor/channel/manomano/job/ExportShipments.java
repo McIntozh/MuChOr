@@ -86,21 +86,23 @@ public class ExportShipments extends Job {
             call.addParameter("products[" + i + "][sku]", item.sku)
                 .addParameter("products[" + i + "][quantity]", String.valueOf(item.entity.getQuantity()));
             i++;
-            item.entity.setExportTime(new Date());
           }
           call.build();
 
           Response apiResponse = api.get(call);
-          if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
+          if (ResponseCodes.OK.equals(apiResponse.getCode())) {
+            shipment.products.forEach((item) -> {
+              item.entity.setExportTime(new Date());
+            });
+          } else {
             Notifier.builder(Notifier.Severity.WARNING)
                 .channelInstance(channelInstance)
                 .job(ImportOrders.class.getSimpleName())
                 .message("Could not add shipments for order '" + shipment.orderRef + "' Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
                 .publish();
-          } else {
-            channelOrderDAO.update(co);
           }
         }
+        channelOrderDAO.update(co);
       }
       monitor.succeed();
     } catch (Exception e) {
