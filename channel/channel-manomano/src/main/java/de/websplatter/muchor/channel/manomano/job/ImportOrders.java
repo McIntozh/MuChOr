@@ -15,7 +15,6 @@
  */
 package de.websplatter.muchor.channel.manomano.job;
 
-import com.google.gson.Gson;
 import de.websplatter.muchor.Constants;
 import de.websplatter.muchor.channel.manomano.api.bean.Address;
 import de.websplatter.muchor.channel.manomano.api.bean.Order;
@@ -27,12 +26,14 @@ import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.Notifier;
 import de.websplatter.muchor.channel.manomano.api.Api;
 import de.websplatter.muchor.channel.manomano.api.ApiCall;
+import de.websplatter.muchor.channel.manomano.api.bean.Response;
 import de.websplatter.muchor.channel.manomano.api.bean.ResponseCodes;
 import de.websplatter.muchor.persistence.dao.ChannelOrderDAO;
 import de.websplatter.muchor.persistence.entity.ChannelOrder;
 import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
 import de.websplatter.muchor.persistence.entity.ChannelOrderLineItem;
 import de.websplatter.muchor.persistence.entity.ChannelOrderParty;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -84,8 +85,8 @@ public class ImportOrders extends Job {
         if (co == null) {
           co = map(manoOrder);
           channelOrderDAO.create(co);
-          System.out.println(new Gson().toJson(co));
         }
+        acceptOrder(manoOrder);//Accept order, even if already imported, perhaps last time accept failed
       }
       monitor.succeed();
     } catch (Exception e) {
@@ -98,7 +99,7 @@ public class ImportOrders extends Job {
     }
   }
 
-  private static final SimpleDateFormat MANO_ORDER_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+  private final SimpleDateFormat MANO_ORDER_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
   private ChannelOrder map(Order manoOrder) {
     ChannelOrder co = CDI.current().select(ChannelOrder.class).get();
@@ -109,13 +110,11 @@ public class ImportOrders extends Job {
     co.setPaymentType(manoOrder.getPaymentSolution());
     co.setCurrencyCode(manoOrder.getCurrencyCode());
 
-    synchronized (MANO_ORDER_DATE_FORMAT) {
-      try {
-        co.setOrderDate(MANO_ORDER_DATE_FORMAT.parse(manoOrder.getOrderTime()));
-      } catch (ParseException ex) {
-        co.setOrderDate(new Date());
-        //TODO log?
-      }
+    try {
+      co.setOrderDate(MANO_ORDER_DATE_FORMAT.parse(manoOrder.getOrderTime()));
+    } catch (ParseException ex) {
+      co.setOrderDate(new Date());
+      //TODO log?
     }
 
     if (manoOrder.getBillingAddress() != null) {
@@ -201,6 +200,24 @@ public class ImportOrders extends Job {
   private void verifyParameters() {
     if (getParameter("channelInstance") == null) {
       throw new RuntimeException("Parameter 'channelInstance' is required");
+    }
+  }
+
+  private void acceptOrder(Order manoOrder) throws IOException {
+    String channelInstance = getStringParameter("channelInstance");
+    ApiCall<Response> call = ApiCall.builder(Response.class)
+        .forChannelInstance(channelInstance)
+        .onMethod("accept_order")
+        .addParameter("order_ref", manoOrder.getOrderRef())
+        .build();
+
+    Response apiResponse = api.get(call);
+    if (!ResponseCodes.OK.equals(apiResponse.getCode())) {
+      Notifier.builder(Notifier.Severity.WARNING)
+          .channelInstance(channelInstance)
+          .job(ImportOrders.class.getSimpleName())
+          .message("Could not mark order '" + manoOrder.getOrderRef() + "' as accepted. Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
+          .publish();
     }
   }
 

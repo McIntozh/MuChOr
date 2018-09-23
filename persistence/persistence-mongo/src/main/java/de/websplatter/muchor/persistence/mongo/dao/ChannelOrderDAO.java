@@ -17,6 +17,8 @@ package de.websplatter.muchor.persistence.mongo.dao;
 
 import de.websplatter.muchor.annotation.MuChOr;
 import de.websplatter.muchor.persistence.mongo.entity.ChannelOrder;
+import de.websplatter.muchor.persistence.mongo.entity.ChannelOrderLineItem;
+import de.websplatter.muchor.persistence.mongo.entity.ChannelOrderLineItemState;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -39,8 +41,21 @@ public class ChannelOrderDAO extends de.websplatter.muchor.persistence.dao.Chann
   }
 
   @Override
-  public List<? extends de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
-    return datastore.find(ChannelOrder.class).field("channelInstance").equal(channelInstance).asList();
+  public List<de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
+    return (List<de.websplatter.muchor.persistence.entity.ChannelOrder>) (List) datastore.find(ChannelOrder.class).field("channelInstance").equal(channelInstance).asList();
+  }
+
+  @Override
+  public List<de.websplatter.muchor.persistence.entity.ChannelOrder> findWithNewOrderStatesForChannelInstance(String channelInstance) {
+    return (List<de.websplatter.muchor.persistence.entity.ChannelOrder>) (List) datastore.find(ChannelOrder.class)
+        .disableValidation()
+        .field("channelInstance").equal(channelInstance)
+        .field("lineItems").elemMatch(
+        datastore.createQuery(ChannelOrderLineItem.class).disableValidation().field("states").elemMatch(
+            datastore.createQuery(ChannelOrderLineItemState.class).disableValidation().field("exportTime").not().exists()
+        )
+    )
+        .asList();
   }
 
   @Override

@@ -28,6 +28,8 @@ public abstract class ChannelOrderDAO extends AbstractDAO<ChannelOrder> {
 
   public abstract ChannelOrder findByChannelInstanceAndOrderId(String channelInstance, String orderId);
 
-  public abstract List<? extends ChannelOrder> findByChannelInstance(String channelInstance);
+  public abstract List<ChannelOrder> findByChannelInstance(String channelInstance);
+
+  public abstract List<ChannelOrder> findWithNewOrderStatesForChannelInstance(String channelInstance);
 
 }

@@ -48,7 +48,7 @@ public class ExampleOrderTest {
     try {
 //Create new order
       ChannelOrder order = CDI.current().select(ChannelOrder.class).get();
-      order.setChannelInstance("TEST");
+      order.setChannelInstance("FooShopMNMN");
       order.setImportDate(new Date());
       order.setOrderId("TestId123");
       order.setOrderNo("TestNo123");

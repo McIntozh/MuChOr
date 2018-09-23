@@ -44,8 +44,20 @@ public class ChannelOrderDAO extends de.websplatter.muchor.persistence.dao.Chann
   }
 
   @Override
-  public List<? extends de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
-    return em.createNamedQuery("ChannelOrder.byChannelInstance", ChannelOrder.class)
+  public List<de.websplatter.muchor.persistence.entity.ChannelOrder> findByChannelInstance(String channelInstance) {
+    return (List<de.websplatter.muchor.persistence.entity.ChannelOrder>) (List) em.createNamedQuery("ChannelOrder.byChannelInstance", ChannelOrder.class)
+        .setParameter("channelInstance", channelInstance)
+        .getResultList();
+  }
+
+  @Override
+  public List<de.websplatter.muchor.persistence.entity.ChannelOrder> findWithNewOrderStatesForChannelInstance(String channelInstance) {
+    return (List<de.websplatter.muchor.persistence.entity.ChannelOrder>) (List) em.createQuery("SELECT co FROM ChannelOrder co "
+        + "JOIN ChannelOrderLineItem coli ON coli.channelOrder=co "
+        + "JOIN ChannelOrderLineItemState colis ON colis.channelOrderLineItem=coli "
+        + "WHERE co.channelInstance=:channelInstance "
+        + "AND colis.exportTime IS NULL",
+        ChannelOrder.class)
         .setParameter("channelInstance", channelInstance)
         .getResultList();
   }

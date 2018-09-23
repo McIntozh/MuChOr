@@ -72,6 +72,7 @@ public class Api {
           }).collect(Collectors.joining("&"))
       ));
 
+      Logger.getLogger(Api.class.getName()).log(Level.INFO, "Calling: {0}", url.toString());
       connection = (HttpURLConnection) url.openConnection();
 
       connection.setConnectTimeout(CONNECT_TIMEOUT_IN_MILLIS);
