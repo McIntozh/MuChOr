@@ -15,20 +15,7 @@
  */
 package de.websplatter.muchor.example.filler;
 
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 import de.websplatter.muchor.Job;
-import de.websplatter.muchor.JobMonitor;
-import de.websplatter.muchor.persistence.dao.ArticleDAO;
-import de.websplatter.muchor.persistence.dao.AttributeDAO;
-import de.websplatter.muchor.persistence.dao.PriStoDelDAO;
-import de.websplatter.muchor.persistence.dao.VariationDAO;
-import de.websplatter.muchor.persistence.eclipselink.entity.Article;
-import de.websplatter.muchor.persistence.eclipselink.entity.Attribute;
-import de.websplatter.muchor.persistence.eclipselink.entity.PriStoDel;
-import de.websplatter.muchor.persistence.eclipselink.entity.Variation;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 

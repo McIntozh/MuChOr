@@ -36,13 +36,13 @@
       <artifactId>scheduler-quartz</artifactId>
       <version>0.9.1-SNAPSHOT</version>
     </dependency>
-    <!--        <dependency>
+    <dependency>
       <groupId>de.websplatter.muchor</groupId>
       <artifactId>persistence-mongo</artifactId>
       <version>0.9.1-SNAPSHOT</version>
-    </dependency>-->
+    </dependency>
     
-    <dependency>
+    <!--    <dependency>
       <groupId>de.websplatter.muchor</groupId>
       <artifactId>persistence-eclipselink</artifactId>
       <version>0.9.1-SNAPSHOT</version>
@@ -51,7 +51,7 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>6.0.6</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
   
   <build>
