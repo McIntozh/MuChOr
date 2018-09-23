@@ -31,7 +31,7 @@ import javax.persistence.ManyToOne;
 public class LanguageMediaLink extends MediaLink {
 
   @ManyToOne
-  @JoinColumn(name = "languageSpecificId", nullable = false)
+  @JoinColumn(name = "languageSpecificId")
   private LanguageSpecifics languageSpecific;
 
   public LanguageSpecifics getLanguageSpecific() {

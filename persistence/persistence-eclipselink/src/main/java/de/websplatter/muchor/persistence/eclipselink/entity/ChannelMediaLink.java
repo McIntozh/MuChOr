@@ -31,7 +31,7 @@ import javax.persistence.ManyToOne;
 public class ChannelMediaLink extends MediaLink {
 
   @ManyToOne
-  @JoinColumn(name = "channelSpecificId", nullable = false)
+  @JoinColumn(name = "channelSpecificId")
   private ChannelSpecifics channelSpecific;
 
   public ChannelSpecifics getChannelSpecific() {

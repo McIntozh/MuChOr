@@ -48,7 +48,7 @@ public class ChannelOrderLineItemCharge extends AbstractChannelOrderCharge {
   }
 
   @ManyToOne
-  @JoinColumn(name = "channelOrderLineItemId", nullable = false)
+  @JoinColumn(name = "channelOrderLineItemId")
   private ChannelOrderLineItem channelOrderLineItem;
 
   public ChannelOrderLineItem getChannelOrderLineItem() {

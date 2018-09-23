@@ -31,7 +31,7 @@ import javax.persistence.ManyToOne;
 public class ChannelAttributeValue extends AttributeValue {
 
   @ManyToOne
-  @JoinColumn(name = "channelSpecificId", nullable = false)
+  @JoinColumn(name = "channelSpecificId")
   private ChannelSpecifics channelSpecific;
 
   public ChannelSpecifics getChannelSpecific() {

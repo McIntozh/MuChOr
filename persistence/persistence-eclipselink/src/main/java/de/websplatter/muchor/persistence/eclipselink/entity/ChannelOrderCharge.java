@@ -39,7 +39,7 @@ public class ChannelOrderCharge extends AbstractChannelOrderCharge {
   @Column(name = "id")
   private Integer id;
   @ManyToOne
-  @JoinColumn(name = "channelOrderId", nullable = false)
+  @JoinColumn(name = "channelOrderId")
   private ChannelOrder channelOrder;
 
   public Integer getId() {

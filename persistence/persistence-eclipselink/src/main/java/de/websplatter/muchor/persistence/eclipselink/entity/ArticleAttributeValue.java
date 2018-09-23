@@ -31,7 +31,7 @@ import javax.persistence.ManyToOne;
 public class ArticleAttributeValue extends AttributeValue {
 
   @ManyToOne
-  @JoinColumn(name = "sku", nullable = false)
+  @JoinColumn(name = "sku")
   private Article article;
 
   public Article getArticle() {
