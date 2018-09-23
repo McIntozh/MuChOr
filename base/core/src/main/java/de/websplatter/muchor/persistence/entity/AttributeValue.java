@@ -19,14 +19,14 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class AttributeValue {
+public interface AttributeValue {
 
-  public abstract String getValue();
+  public String getValue();
 
-  public abstract void setValue(String value);
+  public void setValue(String value);
 
-  public abstract String getUnit();
+  public String getUnit();
 
-  public abstract void setUnit(String unit);
+  public void setUnit(String unit);
 
 }

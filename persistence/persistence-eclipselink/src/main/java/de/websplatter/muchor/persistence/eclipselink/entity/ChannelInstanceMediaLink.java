@@ -25,7 +25,7 @@ import javax.persistence.ManyToOne;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Entity
-@DiscriminatorValue(value = "i")
+@DiscriminatorValue(value = "I")
 public class ChannelInstanceMediaLink extends MediaLink {
 
   @ManyToOne

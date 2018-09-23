@@ -36,10 +36,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "channel_charge")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue(value = "X")
 @Dependent
-public class ChannelCharge extends de.websplatter.muchor.persistence.entity.ChannelOrderCharge implements Serializable {
+public abstract class ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelCharge, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

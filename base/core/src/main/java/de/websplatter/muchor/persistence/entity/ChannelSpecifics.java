@@ -21,12 +21,12 @@ import java.util.Map;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelSpecifics implements Named, MediaLinked, Attributed {
+public interface ChannelSpecifics extends Named, MediaLinked, Attributed {
 
-  public abstract String getCatalogId();
+  public String getCatalogId();
 
-  public abstract void setCatalogId(String catalogId);
+  public void setCatalogId(String catalogId);
 
-  public abstract Map<String, String> getCategoryAssignments();
+  public Map<String, String> getCategoryAssignments();
 
 }

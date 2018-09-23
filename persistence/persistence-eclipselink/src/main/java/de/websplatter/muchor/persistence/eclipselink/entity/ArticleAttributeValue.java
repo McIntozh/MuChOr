@@ -25,7 +25,7 @@ import javax.persistence.ManyToOne;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Entity
-@DiscriminatorValue(value = "a")
+@DiscriminatorValue(value = "A")
 public class ArticleAttributeValue extends AttributeValue {
 
   @ManyToOne

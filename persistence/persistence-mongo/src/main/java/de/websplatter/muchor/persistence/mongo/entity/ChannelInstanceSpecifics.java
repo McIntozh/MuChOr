@@ -28,7 +28,7 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class ChannelInstanceSpecifics extends de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics {
+public class ChannelInstanceSpecifics implements de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics {
 
   private String name;
   private List<de.websplatter.muchor.persistence.mongo.entity.MediaLink> mediaLinks;

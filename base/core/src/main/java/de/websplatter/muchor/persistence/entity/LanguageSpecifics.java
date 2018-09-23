@@ -19,6 +19,6 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class LanguageSpecifics implements Named, MediaLinked, Attributed {
+public interface LanguageSpecifics extends Named, MediaLinked, Attributed {
 
 }

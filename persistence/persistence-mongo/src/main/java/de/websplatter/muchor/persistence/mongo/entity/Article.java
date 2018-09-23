@@ -34,7 +34,7 @@ import org.mongodb.morphia.annotations.Id;
  */
 @Entity(value = "article", noClassnameStored = true)
 @Dependent
-public class Article extends de.websplatter.muchor.persistence.entity.Article {
+public class Article implements de.websplatter.muchor.persistence.entity.Article {
 
   @Id
   private String sku;

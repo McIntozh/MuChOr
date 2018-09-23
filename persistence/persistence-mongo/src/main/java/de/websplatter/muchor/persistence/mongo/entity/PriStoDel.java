@@ -37,7 +37,7 @@ import org.mongodb.morphia.annotations.PrePersist;
     )
 )
 @Dependent
-public class PriStoDel extends de.websplatter.muchor.persistence.entity.PriStoDel {
+public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriStoDel {
 
   @Id
   private String id;

@@ -39,7 +39,7 @@ import org.mongodb.morphia.annotations.PrePersist;
     )
 )
 @Dependent
-public class ExportHistory extends de.websplatter.muchor.persistence.entity.ExportHistory {
+public class ExportHistory implements de.websplatter.muchor.persistence.entity.ExportHistory {
 
   @Id
   private String id;
@@ -86,7 +86,7 @@ public class ExportHistory extends de.websplatter.muchor.persistence.entity.Expo
   }
 
   @Override
-  public Map<String, String> getStatus() {
+  public Map<String, String> getState() {
     if (status == null) {
       status = new HashMap<>();
     }

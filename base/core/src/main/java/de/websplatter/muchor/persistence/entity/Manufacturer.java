@@ -19,6 +19,6 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class Manufacturer implements Named, Keyed {
+public interface Manufacturer extends Named, Keyed {
 
 }

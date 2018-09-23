@@ -18,35 +18,38 @@ package de.websplatter.muchor.persistence.mongo.entity;
 import java.util.LinkedList;
 import java.util.List;
 import javax.enterprise.context.Dependent;
-import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
+import de.websplatter.muchor.persistence.entity.ChannelOrderLineItemCharge;
+import de.websplatter.muchor.persistence.entity.ChannelOrderLineItemState;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.entity.ChannelOrderLineItem {
+public class ChannelOrderLineItem implements de.websplatter.muchor.persistence.entity.ChannelOrderLineItem {
 
-  private String lineNo;
+  private int lineNo;
   private String lineId;
   private String sku;
   private String channelSku;
+  private String shippingType;
   private int orderQuantity;
   private int confirmQuantity;
   private int shipQuantity;
   private int cancelQuantity;
-  private int returnQuantity;
+  private int refundQuantity;
   private int singlePrice;
   private String name;
-  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderCharge> charges;
+  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelCharge> charges;
+  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderLineItemState> states;
 
   @Override
-  public String getLineNo() {
+  public int getLineNo() {
     return lineNo;
   }
 
   @Override
-  public void setLineNo(String lineNo) {
+  public void setLineNo(int lineNo) {
     this.lineNo = lineNo;
   }
 
@@ -78,6 +81,16 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   @Override
   public void setChannelSku(String channelSku) {
     this.channelSku = channelSku;
+  }
+
+  @Override
+  public String getShippingType() {
+    return shippingType;
+  }
+
+  @Override
+  public void setShippingType(String shippingType) {
+    this.shippingType = shippingType;
   }
 
   @Override
@@ -121,13 +134,13 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   }
 
   @Override
-  public int getReturnQuantity() {
-    return returnQuantity;
+  public int getRefundQuantity() {
+    return refundQuantity;
   }
 
   @Override
-  public void setReturnQuantity(int returnQuantity) {
-    this.returnQuantity = returnQuantity;
+  public void setRefundQuantity(int refundQuantity) {
+    this.refundQuantity = refundQuantity;
   }
 
   @Override
@@ -151,10 +164,18 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   }
 
   @Override
-  public List<ChannelOrderCharge> getCharges() {
+  public List<ChannelOrderLineItemCharge> getCharges() {
     if (charges == null) {
       charges = new LinkedList<>();
     }
-    return (List<ChannelOrderCharge>) (List) charges;
+    return (List<ChannelOrderLineItemCharge>) (List) charges;
+  }
+
+  @Override
+  public List<ChannelOrderLineItemState> getStates() {
+    if (states == null) {
+      states = new LinkedList<>();
+    }
+    return (List<ChannelOrderLineItemState>) (List) states;
   }
 }

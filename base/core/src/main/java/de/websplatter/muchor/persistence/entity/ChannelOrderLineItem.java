@@ -11,52 +11,54 @@ import java.util.List;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelOrderLineItem {
+public interface ChannelOrderLineItem extends Named {
 
-  public abstract String getLineNo();
+  public int getLineNo();
 
-  public abstract void setLineNo(String lineNo);
+  public void setLineNo(int lineNo);
 
-  public abstract String getLineId();
+  public String getLineId();
 
-  public abstract void setLineId(String lineId);
+  public void setLineId(String lineId);
 
-  public abstract String getSku();
+  public String getSku();
 
-  public abstract void setSku(String sku);
+  public void setSku(String sku);
 
-  public abstract String getChannelSku();
+  public String getShippingType();
 
-  public abstract void setChannelSku(String channelSku);
+  public void setShippingType(String shippingType);
 
-  public abstract int getOrderQuantity();
+  public String getChannelSku();
 
-  public abstract void setOrderQuantity(int orderQuantity);
+  public void setChannelSku(String channelSku);
 
-  public abstract int getConfirmQuantity();
+  public int getOrderQuantity();
 
-  public abstract void setConfirmQuantity(int confirmQuantity);
+  public void setOrderQuantity(int orderQuantity);
 
-  public abstract int getShipQuantity();
+  public int getConfirmQuantity();
 
-  public abstract void setShipQuantity(int shipQuantity);
+  public void setConfirmQuantity(int confirmQuantity);
 
-  public abstract int getCancelQuantity();
+  public int getShipQuantity();
 
-  public abstract void setCancelQuantity(int cancelQuantity);
+  public void setShipQuantity(int shipQuantity);
 
-  public abstract int getReturnQuantity();
+  public int getCancelQuantity();
 
-  public abstract void setReturnQuantity(int returnQuantity);
+  public void setCancelQuantity(int cancelQuantity);
 
-  public abstract int getSinglePrice();
+  public int getRefundQuantity();
 
-  public abstract void setSinglePrice(int singlePrice);
+  public void setRefundQuantity(int refundQuantity);
 
-  public abstract String getName();
+  public int getSinglePrice();
 
-  public abstract void setName(String name);
+  public void setSinglePrice(int singlePrice);
 
-  public abstract List<ChannelOrderCharge> getCharges();
+  public List<ChannelOrderLineItemCharge> getCharges();
+
+  public List<ChannelOrderLineItemState> getStates();
 
 }

@@ -40,7 +40,7 @@ import org.mongodb.morphia.annotations.Indexes;
     )
 )
 @Dependent
-public class Category extends de.websplatter.muchor.persistence.entity.Category {
+public class Category implements de.websplatter.muchor.persistence.entity.Category {
 
   @Id
   private String id;

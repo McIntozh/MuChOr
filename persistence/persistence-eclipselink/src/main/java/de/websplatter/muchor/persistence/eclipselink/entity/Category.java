@@ -44,7 +44,7 @@ import javax.persistence.Temporal;
   ,
   @NamedQuery(name = "Category.byChannelAndCategorySet", query = "SELECT c FROM Category c WHERE c.channel = :channel AND c.categorySet = :categorySet")
 })
-public class Category extends de.websplatter.muchor.persistence.entity.Category implements Serializable {
+public class Category implements de.websplatter.muchor.persistence.entity.Category, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,6 +19,7 @@ import de.websplatter.muchor.persistence.entity.MediaLink;
 import de.websplatter.muchor.persistence.entity.AttributeValue;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -46,7 +47,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "article_channel_specifics")
 @Dependent
-public class ChannelSpecifics extends de.websplatter.muchor.persistence.entity.ChannelSpecifics implements Serializable {
+public class ChannelSpecifics implements de.websplatter.muchor.persistence.entity.ChannelSpecifics, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -103,6 +104,9 @@ public class ChannelSpecifics extends de.websplatter.muchor.persistence.entity.C
 
   @Override
   public List<MediaLink> getMediaLinks() {
+    if (mediaLinks == null) {
+      mediaLinks = new LinkedList<>();
+    }
     return (List<MediaLink>) (List) mediaLinks;
   }
 

@@ -15,11 +15,13 @@
  */
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
+import java.util.LinkedList;
 import java.util.List;
 import javax.enterprise.context.Dependent;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
@@ -28,10 +30,10 @@ import javax.persistence.Table;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-@javax.persistence.Entity
+@Entity
 @Table(name = "variation")
 @Dependent
-public class Variation extends de.websplatter.muchor.persistence.entity.Variation {
+public class Variation implements de.websplatter.muchor.persistence.entity.Variation {
 
   @Id
   @Column(name = "id", length = 36)
@@ -53,6 +55,9 @@ public class Variation extends de.websplatter.muchor.persistence.entity.Variatio
 
   @Override
   public List<String> getAttributes() {
+    if (attributes == null) {
+      attributes = new LinkedList<>();
+    }
     return attributes;
   }
 

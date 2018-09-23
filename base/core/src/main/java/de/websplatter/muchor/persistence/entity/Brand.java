@@ -19,10 +19,10 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class Brand implements Named, Keyed {
+public interface Brand extends Named, Keyed {
 
-  public abstract String getManufacturerKey();
+  public String getManufacturerKey();
 
-  public abstract void setManufacturerKey(String manufacturerKey);
+  public void setManufacturerKey(String manufacturerKey);
 
 }

@@ -17,8 +17,10 @@ package de.websplatter.muchor.persistence.eclipselink.entity;
 
 import java.util.List;
 import javax.enterprise.context.Dependent;
-import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
+import de.websplatter.muchor.persistence.entity.ChannelOrderLineItemCharge;
+import de.websplatter.muchor.persistence.entity.ChannelOrderLineItemState;
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.Optional;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -40,20 +42,22 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "channel_order_line_item")
 @Dependent
-public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.entity.ChannelOrderLineItem implements Serializable {
+public class ChannelOrderLineItem implements de.websplatter.muchor.persistence.entity.ChannelOrderLineItem, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Integer id;
   @Column(name = "lineNo")
-  private String lineNo;
+  private int lineNo;
   @Column(name = "lineId")
   private String lineId;
   @Column(name = "sku")
   private String sku;
   @Column(name = "channelSku")
   private String channelSku;
+  @Column(name = "shippingType")
+  private String shippingType;
   @Column(name = "orderQuantity")
   private int orderQuantity;
   @Column(name = "confirmQuantity")
@@ -62,14 +66,16 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   private int shipQuantity;
   @Column(name = "cancelQuantity")
   private int cancelQuantity;
-  @Column(name = "returnQuantity")
-  private int returnQuantity;
+  @Column(name = "refundQuantity")
+  private int refundQuantity;
   @Column(name = "singlePrice")
   private int singlePrice;
   @Column(name = "name")
   private String name;
   @OneToMany(mappedBy = "channelOrderLineItem", cascade = CascadeType.ALL)
   private List<de.websplatter.muchor.persistence.eclipselink.entity.ChannelOrderLineItemCharge> charges;
+  @OneToMany(mappedBy = "channelOrderLineItem", cascade = CascadeType.ALL)
+  private List<de.websplatter.muchor.persistence.eclipselink.entity.ChannelOrderLineItemState> states;
 
   @ManyToOne
   @JoinColumn(name = "channelOrderId", nullable = false)
@@ -79,6 +85,9 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   @PreUpdate
   public void prePersist() {
     Optional.ofNullable(charges).ifPresent(n -> n.forEach(e -> {
+      e.setChannelOrderLineItem(this);
+    }));
+    Optional.ofNullable(states).ifPresent(n -> n.forEach(e -> {
       e.setChannelOrderLineItem(this);
     }));
   }
@@ -92,12 +101,12 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   }
 
   @Override
-  public String getLineNo() {
+  public int getLineNo() {
     return lineNo;
   }
 
   @Override
-  public void setLineNo(String lineNo) {
+  public void setLineNo(int lineNo) {
     this.lineNo = lineNo;
   }
 
@@ -119,6 +128,16 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   @Override
   public void setSku(String sku) {
     this.sku = sku;
+  }
+
+  @Override
+  public String getShippingType() {
+    return shippingType;
+  }
+
+  @Override
+  public void setShippingType(String shippingType) {
+    this.shippingType = shippingType;
   }
 
   @Override
@@ -172,13 +191,13 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   }
 
   @Override
-  public int getReturnQuantity() {
-    return returnQuantity;
+  public int getRefundQuantity() {
+    return refundQuantity;
   }
 
   @Override
-  public void setReturnQuantity(int returnQuantity) {
-    this.returnQuantity = returnQuantity;
+  public void setRefundQuantity(int refundQuantity) {
+    this.refundQuantity = refundQuantity;
   }
 
   @Override
@@ -202,8 +221,19 @@ public class ChannelOrderLineItem extends de.websplatter.muchor.persistence.enti
   }
 
   @Override
-  public List<ChannelOrderCharge> getCharges() {
-    return (List<ChannelOrderCharge>) (List) charges;
+  public List<ChannelOrderLineItemCharge> getCharges() {
+    if (charges == null) {
+      charges = new LinkedList<>();
+    }
+    return (List<ChannelOrderLineItemCharge>) (List) charges;
+  }
+
+  @Override
+  public List<ChannelOrderLineItemState> getStates() {
+    if (states == null) {
+      states = new LinkedList<>();
+    }
+    return (List<ChannelOrderLineItemState>) (List) states;
   }
 
   public ChannelOrder getChannelOrder() {

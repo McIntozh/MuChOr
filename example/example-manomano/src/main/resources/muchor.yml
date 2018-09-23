@@ -35,7 +35,6 @@ jobs:
       hour: "*"
     params:
       channelInstance: FooShopMNMN
-      shippingCostChargeKey: SHIP
       shippingCostChargeName: Shipping costs
   
   manomano-article-feed-FooShopMNMN:

@@ -22,6 +22,8 @@ import de.websplatter.muchor.persistence.entity.ChannelOrderParty;
 import de.websplatter.muchor.persistence.entity.ChannelOrderLineItem;
 import de.websplatter.muchor.persistence.entity.ChannelOrderCharge;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Optional;
 import javax.enterprise.context.Dependent;
 import javax.persistence.CascadeType;
@@ -55,7 +57,7 @@ import javax.persistence.Temporal;
   ,
   @NamedQuery(name = "ChannelOrder.byChannelInstanceAndOrderId", query = "SELECT co FROM ChannelOrder co WHERE co.channelInstance = :channelInstance AND co.orderId = :orderId")
 })
-public class ChannelOrder extends de.websplatter.muchor.persistence.entity.ChannelOrder implements Serializable {
+public class ChannelOrder implements de.websplatter.muchor.persistence.entity.ChannelOrder, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,9 +69,18 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   private String orderId;
   @Column(name = "orderNo")
   private String orderNo;
+  @Column(name = "currencyCode", length = 3)
+  private String currencyCode;
   @Column(name = "orderDate")
   @Temporal(javax.persistence.TemporalType.TIMESTAMP)
   private Date orderDate;
+  @Column(name = "customerComment", length = 1024)
+  private String customerComment;
+
+  @Column(name = "paymentType")
+  private String paymentType;
+  @Column(name = "paymentTxnRef")
+  private String paymentTxnRef;
   @Column(name = "importDate")
   @Temporal(javax.persistence.TemporalType.TIMESTAMP)
   private Date importDate;
@@ -136,6 +147,16 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   }
 
   @Override
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  @Override
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  @Override
   public Date getOrderDate() {
     return orderDate;
   }
@@ -143,6 +164,36 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   @Override
   public void setOrderDate(Date orderDate) {
     this.orderDate = orderDate;
+  }
+
+  @Override
+  public String getCustomerComment() {
+    return customerComment;
+  }
+
+  @Override
+  public void setCustomerComment(String customerComment) {
+    this.customerComment = customerComment;
+  }
+
+  @Override
+  public String getPaymentType() {
+    return paymentType;
+  }
+
+  @Override
+  public void setPaymentType(String paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  @Override
+  public String getPaymentTxnRef() {
+    return paymentTxnRef;
+  }
+
+  @Override
+  public void setPaymentTxnRef(String paymentTxnRef) {
+    this.paymentTxnRef = paymentTxnRef;
   }
 
   @Override
@@ -157,16 +208,25 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
 
   @Override
   public Map<String, ChannelOrderParty> getParties() {
+    if (parties == null) {
+      parties = new HashMap<>();
+    }
     return (Map<String, ChannelOrderParty>) (Map) parties;
   }
 
   @Override
   public List<ChannelOrderLineItem> getLineItems() {
+    if (lineItems == null) {
+      lineItems = new LinkedList<>();
+    }
     return (List<ChannelOrderLineItem>) (List) lineItems;
   }
 
   @Override
   public List<ChannelOrderCharge> getCharges() {
+    if (charges == null) {
+      charges = new LinkedList<>();
+    }
     return (List<ChannelOrderCharge>) (List) charges;
   }
 

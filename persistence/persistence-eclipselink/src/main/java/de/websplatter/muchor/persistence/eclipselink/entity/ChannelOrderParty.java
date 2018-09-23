@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "channel_order_party")
 @Dependent
-public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.ChannelOrderParty implements Serializable {
+public class ChannelOrderParty implements de.websplatter.muchor.persistence.entity.ChannelOrderParty, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +48,8 @@ public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.
   private String name;
   @Column(name = "address", length = 1024)
   private String address;
+  @Column(name = "zipCode")
+  private String zipCode;
   @Column(name = "city")
   private String city;
   @Column(name = "regionCode")
@@ -104,6 +106,16 @@ public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.
   @Override
   public void setAddress(String address) {
     this.address = address;
+  }
+
+  @Override
+  public String getZipCode() {
+    return zipCode;
+  }
+
+  @Override
+  public void setZipCode(String zipCode) {
+    this.zipCode = zipCode;
   }
 
   @Override

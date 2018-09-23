@@ -21,6 +21,8 @@ import de.websplatter.muchor.persistence.entity.LanguageSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -42,7 +44,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "article")
 @Dependent
-public class Article extends de.websplatter.muchor.persistence.entity.Article implements Serializable {
+public class Article implements de.websplatter.muchor.persistence.entity.Article, Serializable {
 
   @Id
   @Column(name = "sku", length = 36)
@@ -160,11 +162,17 @@ public class Article extends de.websplatter.muchor.persistence.entity.Article im
 
   @Override
   public List<MediaLink> getMediaLinks() {
+    if (mediaLinks == null) {
+      mediaLinks = new LinkedList<>();
+    }
     return (List<MediaLink>) (List) mediaLinks;
   }
 
   @Override
   public Map<String, AttributeValue> getAttributes() {
+    if (attributes == null) {
+      attributes = new HashMap<>();
+    }
     return (Map<String, AttributeValue>) (Map) attributes;
   }
 

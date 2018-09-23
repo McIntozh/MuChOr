@@ -36,10 +36,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "media_link")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue(value = "X")
 @Dependent
-public class MediaLink extends de.websplatter.muchor.persistence.entity.MediaLink implements Serializable {
+public class MediaLink implements de.websplatter.muchor.persistence.entity.MediaLink, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

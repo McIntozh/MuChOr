@@ -13,32 +13,48 @@ import java.util.Map;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelOrder {
+public interface ChannelOrder {
 
-  public abstract String getChannelInstance();
+  public String getChannelInstance();
 
-  public abstract void setChannelInstance(String channelInstance);
+  public void setChannelInstance(String channelInstance);
 
-  public abstract String getOrderId();
+  public String getOrderId();
 
-  public abstract void setOrderId(String orderId);
+  public void setOrderId(String orderId);
 
-  public abstract String getOrderNo();
+  public String getOrderNo();
 
-  public abstract void setOrderNo(String orderNo);
+  public void setOrderNo(String orderNo);
 
-  public abstract Date getOrderDate();
+  public Date getOrderDate();
 
-  public abstract void setOrderDate(Date orderDate);
+  public void setOrderDate(Date orderDate);
 
-  public abstract Date getImportDate();
+  public String getCurrencyCode();
 
-  public abstract void setImportDate(Date importDate);
+  public void setCurrencyCode(String currencyCode);
 
-  public abstract Map<String, ChannelOrderParty> getParties();
+  public String getCustomerComment();
 
-  public abstract List<ChannelOrderLineItem> getLineItems();
+  public void setCustomerComment(String customerComment);
 
-  public abstract List<ChannelOrderCharge> getCharges();
+  public String getPaymentType();
+
+  public void setPaymentType(String paymentType);
+
+  public String getPaymentTxnRef();
+
+  public void setPaymentTxnRef(String paymentTxnRef);
+
+  public Date getImportDate();
+
+  public void setImportDate(Date importDate);
+
+  public Map<String, ChannelOrderParty> getParties();
+
+  public List<ChannelOrderLineItem> getLineItems();
+
+  public List<ChannelOrderCharge> getCharges();
 
 }

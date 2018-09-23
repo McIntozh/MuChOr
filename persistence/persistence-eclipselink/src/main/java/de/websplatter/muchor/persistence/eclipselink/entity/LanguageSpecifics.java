@@ -19,6 +19,7 @@ import de.websplatter.muchor.persistence.entity.AttributeValue;
 import de.websplatter.muchor.persistence.entity.MediaLink;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -44,7 +45,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "article_language_specifics")
 @Dependent
-public class LanguageSpecifics extends de.websplatter.muchor.persistence.entity.LanguageSpecifics implements Serializable {
+public class LanguageSpecifics implements de.websplatter.muchor.persistence.entity.LanguageSpecifics, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -96,6 +97,9 @@ public class LanguageSpecifics extends de.websplatter.muchor.persistence.entity.
 
   @Override
   public List<MediaLink> getMediaLinks() {
+    if (mediaLinks == null) {
+      mediaLinks = new LinkedList<>();
+    }
     return (List<MediaLink>) (List) mediaLinks;
   }
 

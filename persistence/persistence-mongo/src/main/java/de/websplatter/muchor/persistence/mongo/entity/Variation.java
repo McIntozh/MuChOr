@@ -27,7 +27,7 @@ import org.mongodb.morphia.annotations.Id;
  */
 @Entity(value = "variation", noClassnameStored = true)
 @Dependent
-public class Variation extends de.websplatter.muchor.persistence.entity.Variation {
+public class Variation implements de.websplatter.muchor.persistence.entity.Variation {
 
   @Id
   private String key;

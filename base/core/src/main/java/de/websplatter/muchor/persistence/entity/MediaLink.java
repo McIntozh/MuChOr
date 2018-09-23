@@ -19,22 +19,22 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class MediaLink implements Comparable<MediaLink> {
+public interface MediaLink extends Comparable<MediaLink> {
 
-  public abstract int getPriority();
+  public int getPriority();
 
-  public abstract void setPriority(int priority);
+  public void setPriority(int priority);
 
-  public abstract String getType();
+  public String getType();
 
-  public abstract void setType(String type);
+  public void setType(String type);
 
-  public abstract String getUrl();
+  public String getUrl();
 
-  public abstract void setUrl(String url);
+  public void setUrl(String url);
 
   @Override
-  public int compareTo(MediaLink otherMedia) {
+  public default int compareTo(MediaLink otherMedia) {
     if (getType().equals(otherMedia.getType())) {
       return Integer.compare(otherMedia.getPriority(), getPriority());
     }

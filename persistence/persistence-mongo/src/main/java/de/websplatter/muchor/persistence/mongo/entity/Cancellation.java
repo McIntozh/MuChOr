@@ -22,51 +22,18 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class ChannelOrderCharge extends de.websplatter.muchor.persistence.entity.ChannelOrderCharge {
-
-  private String channelChargeKey;
-  private String type;
-  private int price;
-  private String name;
+public class Cancellation extends ChannelOrderLineItemState implements de.websplatter.muchor.persistence.entity.ChannelOrderLineItemState.Cancellation {
+  
+  private String reason;
 
   @Override
-  public String getChannelChargeKey() {
-    return channelChargeKey;
+  public String getReason() {
+    return reason;
   }
 
   @Override
-  public void setChannelChargeKey(String channelChargeKey) {
-    this.channelChargeKey = channelChargeKey;
+  public void setReason(String reason) {
+    this.reason = reason;
   }
-
-  @Override
-  public String getType() {
-    return type;
-  }
-
-  @Override
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  @Override
-  public int getPrice() {
-    return price;
-  }
-
-  @Override
-  public void setPrice(int price) {
-    this.price = price;
-  }
-
-  @Override
-  public String getName() {
-    return name;
-  }
-
-  @Override
-  public void setName(String name) {
-    this.name = name;
-  }
-
+  
 }

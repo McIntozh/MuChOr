@@ -33,6 +33,8 @@ public class Order extends Response {
   private String orderTime;
   @XmlElement(name = "total_price")
   private BigDecimal totalPrice;
+  @XmlElement(name = "currency")
+  private String currencyCode;
   @XmlElement(name = "payment_solution")
   private String paymentSolution;
   @XmlElement(name = "payment_solution_value")
@@ -66,6 +68,10 @@ public class Order extends Response {
 
   public BigDecimal getTotalPrice() {
     return totalPrice;
+  }
+
+  public String getCurrencyCode() {
+    return currencyCode;
   }
 
   public String getPaymentSolution() {

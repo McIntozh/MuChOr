@@ -23,11 +23,12 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.ChannelOrderParty {
+public class ChannelOrderParty implements de.websplatter.muchor.persistence.entity.ChannelOrderParty {
 
   private String customerNo;
   private String name;
   private String address;
+  private String zipCode;
   private String city;
   private String regionCode;
   private String countryCode;
@@ -63,6 +64,16 @@ public class ChannelOrderParty extends de.websplatter.muchor.persistence.entity.
   @Override
   public void setAddress(String address) {
     this.address = address;
+  }
+
+  @Override
+  public String getZipCode() {
+    return zipCode;
+  }
+
+  @Override
+  public void setZipCode(String zipCode) {
+    this.zipCode = zipCode;
   }
 
   @Override

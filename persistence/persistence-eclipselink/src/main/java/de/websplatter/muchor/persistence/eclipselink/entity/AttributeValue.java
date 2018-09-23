@@ -36,10 +36,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "attribute_value")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue(value = "X")
 @Dependent
-public class AttributeValue extends de.websplatter.muchor.persistence.entity.AttributeValue implements Serializable {
+public class AttributeValue implements de.websplatter.muchor.persistence.entity.AttributeValue, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

@@ -28,7 +28,7 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class LanguageSpecifics extends de.websplatter.muchor.persistence.entity.LanguageSpecifics {
+public class LanguageSpecifics implements de.websplatter.muchor.persistence.entity.LanguageSpecifics {
 
   private String name;
   private List<de.websplatter.muchor.persistence.mongo.entity.MediaLink> mediaLinks;

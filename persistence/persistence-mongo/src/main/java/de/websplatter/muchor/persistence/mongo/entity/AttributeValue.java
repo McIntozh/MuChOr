@@ -22,7 +22,7 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class AttributeValue extends de.websplatter.muchor.persistence.entity.AttributeValue {
+public class AttributeValue implements de.websplatter.muchor.persistence.entity.AttributeValue {
 
   private String value;
   private String unit;

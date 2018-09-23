@@ -88,7 +88,7 @@ public class InventoryExport extends Job {
 
       Map<String, ExportHistory> exportHistoryBySku = exportHistoryDAO.findByChannelInstance(channelInstance)
           .stream()
-          .filter(eh -> eh.getStatus().containsKey(ExportHistoryKeys.GoogleProductId.name()))
+          .filter(eh -> eh.getState().containsKey(ExportHistoryKeys.GoogleProductId.name()))
           .collect(Collectors.toMap(ExportHistory::getSku, Function.identity()));
 
       Queue<PriStoDel> psds = new LinkedList<>(priStoDelDAO.findByChannelInstance(channelInstance));
@@ -105,7 +105,7 @@ public class InventoryExport extends Job {
         String hashCode = BigInteger.valueOf(inventory.toPrettyString().hashCode()).toString(36);
 
         if (hasChanged(history, hashCode)) {
-          history.getStatus().put(ExportHistoryKeys.InventoryHashInUpload.name(), hashCode);
+          history.getState().put(ExportHistoryKeys.InventoryHashInUpload.name(), hashCode);
           exportHistoryDAO.update(history);
           inventoriesBatch.add(new InventoryWrapper(inventory, history));
         }
@@ -150,7 +150,7 @@ public class InventoryExport extends Job {
       InventoryCustomBatchRequestEntry batchEntry = new InventoryCustomBatchRequestEntry();
       batchEntry.setMerchantId(merchantId);
       batchEntry.setBatchId(batchId++);
-      batchEntry.setProductId(inventoryToSet.history.getStatus().get(ExportHistoryKeys.GoogleProductId.name()));
+      batchEntry.setProductId(inventoryToSet.history.getState().get(ExportHistoryKeys.GoogleProductId.name()));
       batchEntry.setInventory(inventoryToSet.inventory);
       batchEntry.setStoreCode("online");
 
@@ -192,13 +192,13 @@ public class InventoryExport extends Job {
 
       Errors errs = entry.getErrors();
       if (errs == null) {
-        history.getStatus().put(ExportHistoryKeys.InventoryHash.name(), history.getStatus().remove(ExportHistoryKeys.InventoryHashInUpload.name()));
+        history.getState().put(ExportHistoryKeys.InventoryHash.name(), history.getState().remove(ExportHistoryKeys.InventoryHashInUpload.name()));
         exportHistoryDAO.update(history);
       } else {
         String sku = history.getSku();
         if (errs.getCode() == 404) {
           //Product was not found - reset all hashes and GoogleProductId to trigger a product export
-          history.getStatus().clear();
+          history.getState().clear();
           exportHistoryDAO.update(history);
           Notifier.article(sku)
               .code("WARN_PRODUCT_NOT_FOUND")//TODO code
@@ -214,7 +214,7 @@ public class InventoryExport extends Job {
   }
 
   private boolean hasChanged(ExportHistory hist, String hashCode) {
-    return !hashCode.equals(hist.getStatus().get(ExportHistoryKeys.InventoryHash.name()));
+    return !hashCode.equals(hist.getState().get(ExportHistoryKeys.InventoryHash.name()));
   }
 
   private static class InventoryWrapper {

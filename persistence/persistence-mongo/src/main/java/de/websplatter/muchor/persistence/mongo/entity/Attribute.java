@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Id;
  */
 @Entity(value = "attribute", noClassnameStored = true)
 @Dependent
-public class Attribute extends de.websplatter.muchor.persistence.entity.Attribute {
+public class Attribute implements de.websplatter.muchor.persistence.entity.Attribute {
 
   @Id
   private String key;

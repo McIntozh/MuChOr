@@ -39,7 +39,7 @@ import javax.persistence.Table;
 //  @NamedQuery(name = "PriStoDel.byChannelInstanceAndSku", query = "SELECT psd FROM PriStoDel psd WHERE psd.channelInstance = :channelInstance AND psd.sku = :sku")
 })
 @Dependent
-public class PriStoDel extends de.websplatter.muchor.persistence.entity.PriStoDel implements Serializable {
+public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriStoDel, Serializable {
 
   @Id
   @Column(name = "sku", length = 36)

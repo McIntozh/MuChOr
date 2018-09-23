@@ -45,7 +45,7 @@ import org.mongodb.morphia.annotations.Indexes;
   )
 })
 @Dependent
-public class ChannelAttribute extends de.websplatter.muchor.persistence.entity.ChannelAttribute {
+public class ChannelAttribute implements de.websplatter.muchor.persistence.entity.ChannelAttribute {
 
   @Id
   private String id;

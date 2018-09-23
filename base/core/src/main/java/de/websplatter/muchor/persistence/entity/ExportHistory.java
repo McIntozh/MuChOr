@@ -21,16 +21,16 @@ import java.util.Map;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ExportHistory {
+public interface ExportHistory {
 
-  public abstract String getSku();
+  public String getSku();
 
-  public abstract void setSku(String sku);
+  public void setSku(String sku);
 
-  public abstract String getChannelInstance();
+  public String getChannelInstance();
 
-  public abstract void setChannelInstance(String channelInstance);
+  public void setChannelInstance(String channelInstance);
 
-  public abstract Map<String,String> getStatus();
+  public Map<String, String> getState();
 
 }

@@ -21,9 +21,8 @@ import java.util.List;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class Variation implements Keyed {
+public interface Variation extends Keyed {
 
-  public abstract List<String> getAttributes();
-
+  public List<String> getAttributes();
 
 }

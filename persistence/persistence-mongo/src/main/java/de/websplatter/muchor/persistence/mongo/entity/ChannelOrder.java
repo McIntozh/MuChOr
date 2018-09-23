@@ -45,18 +45,22 @@ import org.mongodb.morphia.annotations.PrePersist;
   )
 })
 @Dependent
-public class ChannelOrder extends de.websplatter.muchor.persistence.entity.ChannelOrder {
+public class ChannelOrder implements de.websplatter.muchor.persistence.entity.ChannelOrder {
 
   @Id
   private String id;
   private String channelInstance;
   private String orderId;
   private String orderNo;
+  private String currencyCode;
   private Date orderDate;
+  private String customerComment;
+  private String paymentType;
+  private String paymentTxnRef;
   private Date importDate;
   private Map<String, de.websplatter.muchor.persistence.mongo.entity.ChannelOrderParty> parties;
   private List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderLineItem> lineItems;
-  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelOrderCharge> charges;
+  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelCharge> charges;
 
   @PrePersist
   private void genAndSetId() {
@@ -107,6 +111,16 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   }
 
   @Override
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  @Override
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  @Override
   public Date getOrderDate() {
     return orderDate;
   }
@@ -114,6 +128,36 @@ public class ChannelOrder extends de.websplatter.muchor.persistence.entity.Chann
   @Override
   public void setOrderDate(Date orderDate) {
     this.orderDate = orderDate;
+  }
+
+  @Override
+  public String getCustomerComment() {
+    return customerComment;
+  }
+
+  @Override
+  public void setCustomerComment(String customerComment) {
+    this.customerComment = customerComment;
+  }
+
+  @Override
+  public String getPaymentType() {
+    return paymentType;
+  }
+
+  @Override
+  public void setPaymentType(String paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  @Override
+  public String getPaymentTxnRef() {
+    return paymentTxnRef;
+  }
+
+  @Override
+  public void setPaymentTxnRef(String paymentTxnRef) {
+    this.paymentTxnRef = paymentTxnRef;
   }
 
   @Override

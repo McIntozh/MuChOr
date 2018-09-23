@@ -21,22 +21,22 @@ import java.util.Date;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class Category implements Keyed {
+public interface Category extends Keyed {
 
-  public abstract String getChannel();
+  public String getChannel();
 
-  public abstract void setChannel(String channel);
+  public void setChannel(String channel);
 
-  public abstract String getCategorySet();
+  public String getCategorySet();
 
-  public abstract void setCategorySet(String categorySet);
+  public void setCategorySet(String categorySet);
 
-  public abstract String getPath();
+  public String getPath();
 
-  public abstract void setPath(String path);
+  public void setPath(String path);
 
-  public abstract Date getOutdated();
+  public Date getOutdated();
 
-  public abstract void setOutdated(Date outdated);
+  public void setOutdated(Date outdated);
 
 }

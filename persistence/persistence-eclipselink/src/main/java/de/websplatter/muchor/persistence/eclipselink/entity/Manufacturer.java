@@ -29,7 +29,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "manufacturer")
 @Dependent
-public class Manufacturer extends de.websplatter.muchor.persistence.entity.Manufacturer implements Serializable {
+public class Manufacturer implements de.websplatter.muchor.persistence.entity.Manufacturer, Serializable {
 
   @Id
   @Column(name = "id", length = 36)

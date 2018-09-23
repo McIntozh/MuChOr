@@ -25,8 +25,8 @@ import javax.persistence.ManyToOne;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Entity
-@DiscriminatorValue(value = "o")
-public class ChannelOrderCharge extends ChannelCharge {
+@DiscriminatorValue(value = "O")
+public class ChannelOrderCharge extends ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelOrderCharge {
 
   @ManyToOne
   @JoinColumn(name = "channelOrderId")

@@ -25,7 +25,7 @@ import org.mongodb.morphia.annotations.Id;
  */
 @Entity(value = "brand", noClassnameStored = true)
 @Dependent
-public class Brand extends de.websplatter.muchor.persistence.entity.Brand {
+public class Brand implements de.websplatter.muchor.persistence.entity.Brand {
 
   @Id
   private String key;

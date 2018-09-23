@@ -22,63 +22,63 @@ import java.util.List;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelAttribute implements Keyed, Named {
+public interface ChannelAttribute extends Keyed, Named {
 
-  public abstract String getChannel();
+  public String getChannel();
 
-  public abstract void setChannel(String channel);
+  public void setChannel(String channel);
 
-  public abstract String getCategorySet();
+  public String getCategorySet();
 
-  public abstract void setCategorySet(String categorySet);
+  public void setCategorySet(String categorySet);
 
-  public abstract String getCategoryKey();
+  public String getCategoryKey();
 
-  public abstract void setCategoryKey(String categoryKey);
+  public void setCategoryKey(String categoryKey);
 
-  public abstract String getDescription();
+  public String getDescription();
 
-  public abstract void setDescription(String description);
+  public void setDescription(String description);
 
-  public abstract boolean isMandatory();
+  public boolean isMandatory();
 
-  public abstract void setMandatory(boolean mandatory);
+  public void setMandatory(boolean mandatory);
 
-  public abstract int getSort();
+  public int getSort();
 
-  public abstract void setSort(int sort);
+  public void setSort(int sort);
 
-  public abstract Type getType();
+  public Type getType();
 
-  public abstract void setType(Type type);
+  public void setType(Type type);
 
-  public abstract DataType getDataType();
+  public DataType getDataType();
 
-  public abstract void setDataType(DataType dataType);
+  public void setDataType(DataType dataType);
 
-  public abstract List<String> getPossibleValuesKey();
+  public List<String> getPossibleValuesKey();
 
-  public abstract List<String> getPossibleValuesDescription();
+  public List<String> getPossibleValuesDescription();
 
-  public abstract String getUnit();
+  public String getUnit();
 
-  public abstract void setUnit(String unit);
+  public void setUnit(String unit);
 
-  public abstract String getOverwritesAttributeKey();
+  public String getOverwritesAttributeKey();
 
-  public abstract void setOverwritesAttributeKey(String overwritesAttributeKey);
+  public void setOverwritesAttributeKey(String overwritesAttributeKey);
 
-  public abstract boolean isInvisible();
+  public boolean isInvisible();
 
-  public abstract void setInvisible(boolean invisible);
+  public void setInvisible(boolean invisible);
 
-  public abstract Date getOutdated();
+  public Date getOutdated();
 
-  public abstract void setOutdated(Date outdated);
+  public void setOutdated(Date outdated);
 
-  public abstract String getMapping();
+  public String getMapping();
 
-  public abstract void setMapping(String mapping);
+  public void setMapping(String mapping);
 
   public static enum Type {
     SINGLE,

@@ -106,6 +106,9 @@ public class ImportOrders extends Job {
     co.setOrderNo(manoOrder.getOrderRef());
     co.setChannelInstance(getStringParameter("channelInstance"));
     co.setImportDate(new Date());
+    co.setPaymentType(manoOrder.getPaymentSolution());
+    co.setCurrencyCode(manoOrder.getCurrencyCode());
+
     synchronized (MANO_ORDER_DATE_FORMAT) {
       try {
         co.setOrderDate(MANO_ORDER_DATE_FORMAT.parse(manoOrder.getOrderTime()));
@@ -130,16 +133,14 @@ public class ImportOrders extends Job {
     for (Product manoProd : manoOrder.getProductList().getProducts()) {
       ChannelOrderLineItem coli = map(manoProd);
       coli.setLineId(String.valueOf(lineItemCounter));
-      coli.setLineNo(String.valueOf(lineItemCounter));
+      coli.setLineNo(lineItemCounter++);
       co.getLineItems().add(coli);
-      lineItemCounter++;
     }
     if (manoOrder.getShippingPrice().signum() != 0) {
       ChannelOrderCharge charge = CDI.current().select(ChannelOrderCharge.class).get();
       charge.setType(Constants.ORDER_CHARGE_SHIPPING);
       charge.setPrice(manoOrder.getShippingPrice().movePointRight(2).intValue());
-      charge.setName(getStringParameter("shippingCostChargeKey"));
-      charge.setName(getStringParameter("shippingCostChargeName"));
+      charge.setName(getOrDefaultStringParameter("shippingCostChargeName", "Shipping"));
       co.getCharges().add(charge);
     }
 
@@ -165,7 +166,8 @@ public class ImportOrders extends Job {
             .filter(part -> part != null)
             .collect(Collectors.joining("\n")));
 
-    cop.setCity(manoAddress.getZipcode() + " " + manoAddress.getCity());
+    cop.setZipCode(manoAddress.getZipcode());
+    cop.setCity(manoAddress.getCity());
     cop.setCountryCode(manoAddress.getCountryIso());
 
     cop.setPhone(manoAddress.getPhone());
@@ -192,18 +194,13 @@ public class ImportOrders extends Job {
     coli.setName(manoProd.getTitle());
     coli.setOrderQuantity(manoProd.getQuantity().intValue());
     coli.setSinglePrice(manoProd.getPrice().movePointRight(2).intValue());
+    coli.setShippingType(manoProd.getCarrier());
     return coli;
   }
 
   private void verifyParameters() {
     if (getParameter("channelInstance") == null) {
       throw new RuntimeException("Parameter 'channelInstance' is required");
-    }
-    if (getParameter("shippingCostChargeKey") == null) {
-      throw new RuntimeException("Parameter 'shippingCostChargeKey' is required");
-    }
-    if (getParameter("shippingCostChargeName") == null) {
-      throw new RuntimeException("Parameter 'shippingCostChargeName' is required");
     }
   }
 

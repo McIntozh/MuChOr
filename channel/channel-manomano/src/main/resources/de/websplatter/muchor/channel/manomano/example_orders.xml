@@ -6,6 +6,9 @@
       <order_ref><![CDATA[M121100000002]]></order_ref>
       <order_time><![CDATA[2012-11-07 16:34:49]]></order_time>
       <total_price><![CDATA[17.10]]></total_price>
+      <currency><![CDATA[EUR]]></currency>
+      <total_voucher><![CDATA[0]]></total_voucher>
+      <seller_voucher><![CDATA[0.00]]></seller_voucher>
       <payment_solution><![CDATA[1X]]></payment_solution>
       <payment_solution_value><![CDATA[1]]></payment_solution_value>
       <products_price><![CDATA[19.70]]></products_price>

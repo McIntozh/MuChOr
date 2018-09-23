@@ -19,54 +19,54 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class PriStoDel {
+public interface PriStoDel {
 
-  public abstract String getSku();
+  public String getSku();
 
-  public abstract void setSku(String sku);
+  public void setSku(String sku);
 
-  public abstract String getChannelInstance();
+  public String getChannelInstance();
 
-  public abstract void setChannelInstance(String channelInstance);
+  public void setChannelInstance(String channelInstance);
 
-  public abstract int getStockQuantity();
+  public int getStockQuantity();
 
-  public abstract void setStockQuantity(int stockQuantity);
+  public void setStockQuantity(int stockQuantity);
 
-  public abstract int getNetPrice();
+  public int getNetPrice();
 
-  public abstract void setNetPrice(int netPrice);
+  public void setNetPrice(int netPrice);
 
-  public abstract int getGrossPrice();
+  public int getGrossPrice();
 
-  public abstract void setGrossPrice(int grossPrice);
+  public void setGrossPrice(int grossPrice);
 
-  public abstract String getCurrency();
+  public String getCurrency();
 
-  public abstract void setCurrency(String currency);
+  public void setCurrency(String currency);
 
-  public abstract float getVatPercentage();
+  public float getVatPercentage();
 
-  public abstract void setVatPercentage(float vatPercentage);
+  public void setVatPercentage(float vatPercentage);
 
-  public abstract int getProcessingTimeInDays();
+  public int getProcessingTimeInDays();
 
-  public abstract void setProcessingTimeInDays(int processingTimeInDays);
+  public void setProcessingTimeInDays(int processingTimeInDays);
 
-  public abstract boolean isRestockable();
+  public boolean isRestockable();
 
-  public abstract void setRestockable(boolean restockable);
+  public void setRestockable(boolean restockable);
 
-  public abstract int getRestockTimeInDays();
+  public int getRestockTimeInDays();
 
-  public abstract void setRestockTimeInDays(int restockTimeInDays);
+  public void setRestockTimeInDays(int restockTimeInDays);
 
-  public abstract int getRestockQuantity();
+  public int getRestockQuantity();
 
-  public abstract void setRestockQuantity(int restockQuantity);
+  public void setRestockQuantity(int restockQuantity);
 
-  public abstract int getShippingTimeInDays();
+  public int getShippingTimeInDays();
 
-  public abstract void setShippingTimeInDays(int shippingTimeInDays);
+  public void setShippingTimeInDays(int shippingTimeInDays);
 
 }

@@ -21,8 +21,8 @@ import java.util.Map;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelInstanceSpecifics implements Named, MediaLinked, Attributed {
+public interface ChannelInstanceSpecifics extends Named, MediaLinked, Attributed {
 
-  public abstract Map<String, String> getCategoryAssignments();
+  public Map<String, String> getCategoryAssignments();
 
 }

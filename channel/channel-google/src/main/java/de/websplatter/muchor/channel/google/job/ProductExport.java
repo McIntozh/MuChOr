@@ -134,7 +134,7 @@ public class ProductExport extends Job {
             });
 
         if (hasChanged(history, hashCode)) {
-          history.getStatus().put(ExportHistoryKeys.ProductHashInUpload.name(), hashCode);
+          history.getState().put(ExportHistoryKeys.ProductHashInUpload.name(), hashCode);
           exportHistoryDAO.update(history);
           productsToInsert.add(new ProductWrapper(gp, history));
         }
@@ -150,7 +150,7 @@ public class ProductExport extends Job {
       //All updated or unchanged products have been removed from the history map, remaining ones with GoogleProductId need deletion
       List<ExportHistory> productsToDelete = new LinkedList<>();
       for (ExportHistory history : exportHistoryBySku.values().stream()
-          .filter(eh -> eh.getStatus().containsKey(ExportHistoryKeys.GoogleProductId.name()))
+          .filter(eh -> eh.getState().containsKey(ExportHistoryKeys.GoogleProductId.name()))
           .collect(Collectors.toList())) {
 
         productsToDelete.add(history);
@@ -255,8 +255,8 @@ public class ProductExport extends Job {
         //update History
 
         ExportHistory hist = wrapper.history;
-        hist.getStatus().put(ExportHistoryKeys.ProductHash.name(), hist.getStatus().remove(ExportHistoryKeys.ProductHashInUpload.name()));
-        hist.getStatus().put(ExportHistoryKeys.GoogleProductId.name(), entry.getProduct().getId());
+        hist.getState().put(ExportHistoryKeys.ProductHash.name(), hist.getState().remove(ExportHistoryKeys.ProductHashInUpload.name()));
+        hist.getState().put(ExportHistoryKeys.GoogleProductId.name(), entry.getProduct().getId());
         exportHistoryDAO.update(hist);
         if (entry.getProduct().getWarnings() != null) {
           entry.getProduct().getWarnings().forEach((w) -> {
@@ -286,7 +286,7 @@ public class ProductExport extends Job {
       batchEntry.setBatchId(batchId++);
       batchEntry.setMerchantId(merchantId);
       batchEntry.setMethod("delete");
-      batchEntry.setProductId(history.getStatus().get(ExportHistoryKeys.GoogleProductId.name()));
+      batchEntry.setProductId(history.getState().get(ExportHistoryKeys.GoogleProductId.name()));
       batchEntries.add(batchEntry);
 
       batchIdToHistory.put(batchEntry.getBatchId(), history);
@@ -321,9 +321,9 @@ public class ProductExport extends Job {
           ExportHistory product = batchIdToHistory.get(entry.getBatchId());
 
           if (entry.getErrors() == null || entry.getErrors().getCode().equals(404l)) {
-            product.getStatus().remove(ExportHistoryKeys.GoogleProductId.name());
-            product.getStatus().remove(ExportHistoryKeys.ProductHash.name());
-            product.getStatus().remove(ExportHistoryKeys.ProductHashInUpload.name());
+            product.getState().remove(ExportHistoryKeys.GoogleProductId.name());
+            product.getState().remove(ExportHistoryKeys.ProductHash.name());
+            product.getState().remove(ExportHistoryKeys.ProductHashInUpload.name());
             exportHistoryDAO.update(product);
           } else {
             Notifier.article(product.getSku())
@@ -337,7 +337,7 @@ public class ProductExport extends Job {
   }
 
   private boolean hasChanged(ExportHistory hist, String hashCode) {
-    return !hashCode.equals(hist.getStatus().get(ExportHistoryKeys.ProductHash.name()));
+    return !hashCode.equals(hist.getState().get(ExportHistoryKeys.ProductHash.name()));
   }
 
   private static class ProductWrapper {

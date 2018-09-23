@@ -17,7 +17,6 @@ package de.websplatter.muchor.example.filler;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import de.websplatter.muchor.Job;
 import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.persistence.dao.ArticleDAO;
 import de.websplatter.muchor.persistence.dao.AttributeDAO;
@@ -37,7 +36,7 @@ import javax.inject.Inject;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @RequestScoped
-public class ExampleDataImport extends Job {
+public class ExampleDataImport {
 
   @Inject
   private AttributeDAO attributeDAO;
@@ -50,7 +49,6 @@ public class ExampleDataImport extends Job {
   @Inject
   private JobMonitor monitor;
 
-  @Override
   public void run() {
     monitor.begin(ExampleDataImport.class.getSimpleName());
     try {

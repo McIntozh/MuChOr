@@ -25,7 +25,7 @@ import javax.persistence.ManyToOne;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Entity
-@DiscriminatorValue(value = "c")
+@DiscriminatorValue(value = "C")
 public class ChannelAttributeValue extends AttributeValue {
 
   @ManyToOne

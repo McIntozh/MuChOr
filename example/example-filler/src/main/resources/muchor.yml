@@ -7,20 +7,17 @@ persistence:
     pwd: passwd
   eclipselink:
     driver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/muchor?useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false
-    user: muchor
-    password: passwd
+    url: jdbc:mysql://localhost:3306/muchor?useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&useUnicode=yes&characterEncoding=UTF-8
+    user: root
+    password: Hallo
     loggingLevel: WARNING
 #    ddlGeneration: none
     ddlGeneration: drop-and-create-tables
     
 jobs:
-  exampleDataImport:
-    class: de.websplatter.muchor.example.filler.ExampleDataImport
+  test:
+    class: de.websplatter.muchor.example.filler.Test
     runAtStartup: true
     schedule:
       minute: "22"
       hour: "22"
-
-
-

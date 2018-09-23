@@ -48,7 +48,7 @@ import javax.persistence.Table;
   ,
   @NamedQuery(name = "ExportHistory.byChannelInstanceAndSku", query = "SELECT e FROM ExportHistory e WHERE e.channelInstance = :channelInstance AND e.sku = :sku")
 })
-public class ExportHistory extends de.websplatter.muchor.persistence.entity.ExportHistory implements Serializable {
+public class ExportHistory implements de.websplatter.muchor.persistence.entity.ExportHistory, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,7 +62,7 @@ public class ExportHistory extends de.websplatter.muchor.persistence.entity.Expo
   @CollectionTable(name = "export_history_status", joinColumns = @JoinColumn(name = "export_history_id"))
   @MapKeyColumn(name = "status_key")
   @Column(name = "status_value")
-  private Map<String, String> status;
+  private Map<String, String> state;
 
   public Integer getId() {
     return id;
@@ -93,11 +93,11 @@ public class ExportHistory extends de.websplatter.muchor.persistence.entity.Expo
   }
 
   @Override
-  public Map<String, String> getStatus() {
-    if (status == null) {
-      status = new HashMap<>();
+  public Map<String, String> getState() {
+    if (state == null) {
+      state = new HashMap<>();
     }
-    return status;
+    return state;
   }
 
 }

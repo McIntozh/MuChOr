@@ -54,14 +54,14 @@ public class PriStoDel {
     }).orElse(null);
   }
 
-  @PUT
-  @Path("/{sku}/")
-  @Produces(MediaType.APPLICATION_JSON)
-  public void get(@PathParam("sku") String sku, @PathParam("channelInstance") String channelInstance, String priStoDel) {
-    de.websplatter.muchor.persistence.entity.PriStoDel entity = new Gson().fromJson(priStoDel, de.websplatter.muchor.persistence.entity.PriStoDel.class);
-    entity.setChannelInstance(channelInstance);
-    entity.setSku(sku);
-    priStoDelDAO.save(entity);
-  }
+//  @PUT
+//  @Path("/{sku}/")
+//  @Produces(MediaType.APPLICATION_JSON)
+//  public void put(@PathParam("sku") String sku, @PathParam("channelInstance") String channelInstance, String priStoDel) {
+//    de.websplatter.muchor.persistence.entity.PriStoDel entity = new Gson().fromJson(priStoDel, de.websplatter.muchor.persistence.entity.PriStoDel.class);
+//    entity.setChannelInstance(channelInstance);
+//    entity.setSku(sku);
+//    priStoDelDAO.create(entity);
+//  }
 
 }

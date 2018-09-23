@@ -11,42 +11,42 @@ import java.util.Date;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public abstract class ChannelOrderParty {
+public interface ChannelOrderParty extends Named {
 
-  public abstract String getCustomerNo();
+  public String getCustomerNo();
 
-  public abstract void setCustomerNo(String customerNo);
+  public void setCustomerNo(String customerNo);
 
-  public abstract String getName();
+  public String getAddress();
 
-  public abstract void setName(String name);
+  public void setAddress(String address);
 
-  public abstract String getAddress();
+  public String getZipCode();
 
-  public abstract void setAddress(String address);
+  public void setZipCode(String zipCode);
 
-  public abstract String getCity();
+  public String getCity();
 
-  public abstract void setCity(String city);
+  public void setCity(String city);
 
-  public abstract String getRegionCode();
+  public String getRegionCode();
 
-  public abstract void setRegionCode(String regionCode);
+  public void setRegionCode(String regionCode);
 
-  public abstract String getCountryCode();
+  public String getCountryCode();
 
-  public abstract void setCountryCode(String countryCode);
+  public void setCountryCode(String countryCode);
 
-  public abstract String getPhone();
+  public String getPhone();
 
-  public abstract void setPhone(String phone);
+  public void setPhone(String phone);
 
-  public abstract String getEmail();
+  public String getEmail();
 
-  public abstract void setEmail(String email);
+  public void setEmail(String email);
 
-  public abstract Date getBirthDay();
+  public Date getBirthDay();
 
-  public abstract void setBirthDay(Date birthDay);
+  public void setBirthDay(Date birthDay);
 
 }

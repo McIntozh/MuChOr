@@ -22,7 +22,7 @@ import javax.enterprise.context.Dependent;
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class MediaLink extends de.websplatter.muchor.persistence.entity.MediaLink {
+public class MediaLink implements de.websplatter.muchor.persistence.entity.MediaLink {
 
   private int priority;
   private String type;
