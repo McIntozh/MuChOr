@@ -98,7 +98,7 @@ public class ExportShipments extends Job {
             Notifier.builder(Notifier.Severity.WARNING)
                 .channelInstance(channelInstance)
                 .job(ImportOrders.class.getSimpleName())
-                .message("Could not add shipments for order '" + shipment.orderRef + "' Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
+                .message("Could not add shipment for order '" + shipment.orderRef + "'. Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
                 .publish();
           }
         }
