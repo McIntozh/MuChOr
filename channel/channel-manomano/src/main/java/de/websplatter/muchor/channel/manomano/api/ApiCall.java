@@ -69,7 +69,7 @@ public final class ApiCall<RES extends Response> {
   }
 
   public ApiCall addParameter(String key, String value) {
-    this.parameters.put(key, key);
+    this.parameters.put(key, value);
     return this;
   }
 
