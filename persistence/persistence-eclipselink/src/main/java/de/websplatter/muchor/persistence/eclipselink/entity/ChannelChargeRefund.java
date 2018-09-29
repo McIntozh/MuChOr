@@ -15,8 +15,8 @@
  */
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
-import de.websplatter.muchor.persistence.entity.ChannelChargeRefund;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.enterprise.context.Dependent;
@@ -31,31 +31,35 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Entity
-@Table(name = "channel_charge")
+@Table(name = "channel_charge_refund")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "target", discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue(value = "X")
 @Dependent
-public abstract class ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelCharge, Serializable {
+public abstract class ChannelChargeRefund implements de.websplatter.muchor.persistence.entity.ChannelChargeRefund, Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Integer id;
-  @Column(name = "channelChargeKey")
-  private String channelChargeKey;
-  @Column(name = "type")
-  private String type;
-  @Column(name = "price")
-  private int price;
-  @Column(name = "name")
-  private String name;
+  @Column(name = "amount")
+  private int amount;
+  @Column(name = "importTime")
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date importTime;
+  @Column(name = "exportTime")
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date exportTime;
+  @Column(name = "reason")
+  private String reason;
 
   public Integer getId() {
     return id;
@@ -66,51 +70,43 @@ public abstract class ChannelCharge implements de.websplatter.muchor.persistence
   }
 
   @Override
-  public String getChannelChargeKey() {
-    return channelChargeKey;
+  public int getAmount() {
+    return amount;
   }
 
   @Override
-  public void setChannelChargeKey(String channelChargeKey) {
-    this.channelChargeKey = channelChargeKey;
+  public void setAmount(int amount) {
+    this.amount = amount;
   }
 
   @Override
-  public String getType() {
-    return type;
+  public Date getImportTime() {
+    return importTime;
   }
 
   @Override
-  public void setType(String type) {
-    this.type = type;
+  public void setImportTime(Date importTime) {
+    this.importTime = importTime;
   }
 
   @Override
-  public int getPrice() {
-    return price;
+  public Date getExportTime() {
+    return exportTime;
   }
 
   @Override
-  public void setPrice(int price) {
-    this.price = price;
+  public void setExportTime(Date exportTime) {
+    this.exportTime = exportTime;
   }
 
   @Override
-  public String getName() {
-    return name;
+  public String getReason() {
+    return reason;
   }
 
   @Override
-  public void setName(String name) {
-    this.name = name;
+  public void setReason(String reason) {
+    this.reason = reason;
   }
-
-//  @Override
-//  public List<ChannelChargeRefund> getRefunds() {
-//    if (refunds == null) {
-//      refunds = new LinkedList<>();
-//    }
-//    return (List<ChannelChargeRefund>) (List) refunds;
-//  }
 
 }

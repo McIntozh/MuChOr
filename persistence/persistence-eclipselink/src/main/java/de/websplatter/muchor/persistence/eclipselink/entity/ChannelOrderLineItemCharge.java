@@ -15,10 +15,13 @@
  */
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -32,6 +35,9 @@ public class ChannelOrderLineItemCharge extends ChannelCharge implements de.webs
   @JoinColumn(name = "channelOrderLineItemId")
   private ChannelOrderLineItem channelOrderLineItem;
 
+  @OneToMany(mappedBy = "channelOrderLineItemCharge")
+  private List<de.websplatter.muchor.persistence.eclipselink.entity.ChannelOrderLineItemChargeRefund> refunds;
+
   public ChannelOrderLineItem getChannelOrderLineItem() {
     return channelOrderLineItem;
   }
@@ -40,4 +46,11 @@ public class ChannelOrderLineItemCharge extends ChannelCharge implements de.webs
     this.channelOrderLineItem = channelOrderLineItem;
   }
 
+  @Override
+  public List<de.websplatter.muchor.persistence.entity.ChannelChargeRefund> getRefunds() {
+    if (refunds == null) {
+      refunds = new LinkedList<>();
+    }
+    return (List<de.websplatter.muchor.persistence.entity.ChannelChargeRefund>) (List) refunds;
+  }
 }

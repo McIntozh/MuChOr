@@ -8,8 +8,8 @@ persistence:
   eclipselink:
     driver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/muchor?useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&useUnicode=yes&characterEncoding=UTF-8
-    user: root
-    password: Hallo
+    user: muchor
+    password: passwd
     loggingLevel: WARNING
 #    ddlGeneration: none
     ddlGeneration: drop-and-create-tables

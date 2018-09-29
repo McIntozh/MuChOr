@@ -15,14 +15,10 @@
  */
 package de.websplatter.muchor.persistence.eclipselink.entity;
 
-import java.util.LinkedList;
-import java.util.List;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import de.websplatter.muchor.persistence.entity.ChannelChargeRefund;
 
 /**
  *
@@ -30,29 +26,18 @@ import de.websplatter.muchor.persistence.entity.ChannelChargeRefund;
  */
 @Entity
 @DiscriminatorValue(value = "O")
-public class ChannelOrderCharge extends ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelOrderCharge {
+public class ChannelOrderChargeRefund extends ChannelChargeRefund implements de.websplatter.muchor.persistence.entity.ChannelOrderChargeRefund {
 
   @ManyToOne
-  @JoinColumn(name = "channelOrderId")
-  private ChannelOrder channelOrder;
+  @JoinColumn(name = "channelOrderChargeId")
+  private ChannelOrderCharge channelOrderCharge;
 
-  @OneToMany(mappedBy = "channelOrderCharge")
-  private List<de.websplatter.muchor.persistence.eclipselink.entity.ChannelOrderChargeRefund> refunds;
-
-  public ChannelOrder getChannelOrder() {
-    return channelOrder;
+  public ChannelOrderCharge getChannelOrderCharge() {
+    return channelOrderCharge;
   }
 
-  public void setChannelOrder(ChannelOrder channelOrder) {
-    this.channelOrder = channelOrder;
-  }
-
-  @Override
-  public List<ChannelChargeRefund> getRefunds() {
-    if (refunds == null) {
-      refunds = new LinkedList<>();
-    }
-    return (List<ChannelChargeRefund>) (List) refunds;
+  public void setChannelOrderCharge(ChannelOrderCharge channelOrderCharge) {
+    this.channelOrderCharge = channelOrderCharge;
   }
 
 }

@@ -15,19 +15,23 @@
  */
 package de.websplatter.muchor.persistence.mongo.entity;
 
+import java.util.LinkedList;
+import java.util.List;
 import javax.enterprise.context.Dependent;
+import de.websplatter.muchor.persistence.entity.ChannelChargeRefund;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
 @Dependent
-public class ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelOrderCharge,de.websplatter.muchor.persistence.entity.ChannelOrderLineItemCharge {
+public class ChannelCharge implements de.websplatter.muchor.persistence.entity.ChannelOrderCharge, de.websplatter.muchor.persistence.entity.ChannelOrderLineItemCharge {
 
   private String channelChargeKey;
   private String type;
   private int price;
   private String name;
+  private List<de.websplatter.muchor.persistence.mongo.entity.ChannelChargeRefund> refunds;
 
   @Override
   public String getChannelChargeKey() {
@@ -69,4 +73,11 @@ public class ChannelCharge implements de.websplatter.muchor.persistence.entity.C
     this.name = name;
   }
 
+  @Override
+  public List<ChannelChargeRefund> getRefunds() {
+    if (refunds == null) {
+      refunds = new LinkedList<>();
+    }
+    return (List<ChannelChargeRefund>) (List) refunds;
+  }
 }

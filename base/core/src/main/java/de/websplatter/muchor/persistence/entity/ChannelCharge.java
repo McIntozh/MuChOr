@@ -5,6 +5,8 @@
  */
 package de.websplatter.muchor.persistence.entity;
 
+import java.util.List;
+
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
@@ -22,5 +24,7 @@ public interface ChannelCharge extends Named {
   public int getPrice();
 
   public void setPrice(int price);
+
+  public List<ChannelChargeRefund> getRefunds();
 
 }
