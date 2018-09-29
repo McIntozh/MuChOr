@@ -301,7 +301,7 @@ public class DefaultProjectedArticle {
     @Override
     public int compareTo(Media otherMedia) {
       if (getType().equals(otherMedia.getType())) {
-        return Integer.compare(otherMedia.getPriority(), getPriority());
+        return Integer.compare(getPriority(), otherMedia.getPriority());
       }
       return getType().compareTo(otherMedia.getType());
     }
