@@ -20,6 +20,7 @@ import de.websplatter.muchor.annotation.Protocol;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +62,15 @@ public class ProtocolFile extends MuchorProtocol {
       fos.write(bytes);
       fos.flush();
     }
+  }
+
+  @Override
+  public OutputStream openStream(String path, String fileName) throws IOException {
+    File folder = new File(rootPath + path);
+    if (!folder.exists()) {
+      folder.mkdirs();
+    }
+    return new FileOutputStream(new File(folder, fileName));
   }
 
   @Override

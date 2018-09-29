@@ -61,8 +61,8 @@ public class ProtocolSMB extends MuchorProtocol {
   @Override
   protected void connect(Map<String, String> parameters) throws IOException {
     SmbConfig smbConfig = SmbConfig.builder()
-        .withSoTimeout(30, TimeUnit.SECONDS)
-        .build();
+      .withSoTimeout(30, TimeUnit.SECONDS)
+      .build();
 
     smbClient = new SMBClient(smbConfig);
     con = smbClient.connect(parameters.get("host"));
@@ -99,29 +99,87 @@ public class ProtocolSMB extends MuchorProtocol {
 
     path = rootPath + path;
     try (File file = share.openFile(path + (path.endsWith(SEP) ? "" : SEP) + fileName,
-        EnumSet.of(AccessMask.FILE_WRITE_DATA),
-        EnumSet.of(FileAttributes.FILE_ATTRIBUTE_NORMAL),
-        EnumSet.of(SMB2ShareAccess.FILE_SHARE_WRITE),
-        SMB2CreateDisposition.FILE_CREATE,
-        EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS)
+      EnumSet.of(AccessMask.FILE_WRITE_DATA),
+      EnumSet.of(FileAttributes.FILE_ATTRIBUTE_NORMAL),
+      EnumSet.of(SMB2ShareAccess.FILE_SHARE_WRITE),
+      SMB2CreateDisposition.FILE_CREATE,
+      EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS)
     );
-        OutputStream os = file.getOutputStream()) {
+      OutputStream os = file.getOutputStream()) {
       os.write(bytes);
       os.flush();
     }
   }
 
   @Override
-  public void rename(String path, String oldFileName, String newFileName) throws IOException {
+  public OutputStream openStream(String path, String fileName) throws IOException {
+    if (!share.folderExists(rootPath + path)) {
+      String cPath = rootPath;
+      if (!share.folderExists(cPath)) {
+        share.mkdir(cPath);
+      }
+      for (String d : path.split(SEP)) {
+        cPath += SEP + d;
+        if (!share.folderExists(cPath)) {
+          share.mkdir(cPath);
+        }
+      }
+    }
+
     path = rootPath + path;
+    File file = share.openFile(path + (path.endsWith(SEP) ? "" : SEP) + fileName,
+      EnumSet.of(AccessMask.FILE_WRITE_DATA),
+      EnumSet.of(FileAttributes.FILE_ATTRIBUTE_NORMAL),
+      EnumSet.of(SMB2ShareAccess.FILE_SHARE_WRITE),
+      SMB2CreateDisposition.FILE_CREATE,
+      EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS)
+    );
+
+    return new OutputStream() {
+      OutputStream delegate = file.getOutputStream();
+
+      @Override
+      public void write(int b) throws IOException {
+        delegate.write(b);
+      }
+
+      @Override
+      public void close() throws IOException {
+        delegate.close();
+        file.close();
+      }
+
+      @Override
+      public void flush() throws IOException {
+        delegate.flush();
+      }
+
+      @Override
+      public void write(byte[] b, int off, int len) throws IOException {
+        delegate.write(b, off, len);
+      }
+
+      @Override
+      public void write(byte[] b) throws IOException {
+        delegate.write(b);
+      }
+
+    };
+  }
+
+  @Override
+  public void rename(String path, String oldFileName,
+    String newFileName) throws IOException {
+    path = rootPath + path;
+
     try (File file = share.openFile(path + (path.endsWith(SEP) ? "" : SEP) + oldFileName,
-        EnumSet.of(AccessMask.FILE_WRITE_ATTRIBUTES),
-        EnumSet.of(FileAttributes.FILE_ATTRIBUTE_NORMAL),
-        EnumSet.of(SMB2ShareAccess.FILE_SHARE_WRITE),
-        SMB2CreateDisposition.FILE_OPEN,
-        EnumSet.of(SMB2CreateOptions.FILE_RANDOM_ACCESS)
+      EnumSet.of(AccessMask.DELETE, AccessMask.GENERIC_WRITE),
+      null,
+      SMB2ShareAccess.ALL,
+      SMB2CreateDisposition.FILE_OPEN,
+      null
     )) {
-      file.rename(newFileName);
+      file.rename(path + (path.endsWith(SEP) ? "" : SEP) + newFileName);
     }
   }
 

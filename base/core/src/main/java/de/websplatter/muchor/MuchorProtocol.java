@@ -17,6 +17,7 @@ package de.websplatter.muchor;
 
 import de.websplatter.muchor.annotation.Protocol;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 import javax.enterprise.inject.Instance;
@@ -34,6 +35,8 @@ public abstract class MuchorProtocol implements AutoCloseable {
   public abstract List<String> ls(String path) throws IOException;
 
   public abstract void save(String path, String fileName, byte[] bytes) throws IOException;
+
+  public abstract OutputStream openStream(String path, String fileName) throws IOException;
 
   public abstract void rename(String path, String oldFileName, String newFileName) throws IOException;
 
