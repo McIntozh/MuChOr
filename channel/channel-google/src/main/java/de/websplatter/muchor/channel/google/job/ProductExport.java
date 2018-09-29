@@ -25,6 +25,9 @@ import de.websplatter.muchor.Job;
 import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.MuChOr;
 import de.websplatter.muchor.Notifier;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_ENCODING;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_OTHER;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.WARNING_OTHER;
 import de.websplatter.muchor.channel.google.GoogleChannel;
 import de.websplatter.muchor.channel.google.GoogleChannel.ExportHistoryKeys;
 import de.websplatter.muchor.channel.google.GoogleProductMapper;
@@ -241,12 +244,12 @@ public class ProductExport extends Job {
       ofNullable(entry.getErrors()).ifPresent(errs -> {
         errs.getErrors().stream().map((err) -> err.getMessage()).filter((msg) -> (msg != null)).forEach((msg) -> {
           Notifier.article(sku)
-              .channelInstance(msg)
+              .channelInstance(channelInstance)
               .code(msg.contains("Encoding problem")
-                  ? "ERROR_BAD_CHARACTER"
-                  : "ERROR_UNKNOWN"
-              )//TODO code
-              .message(msg)
+                  ? ERROR_ENCODING.getCode()
+                  : ERROR_OTHER.getCode()
+              )
+              .details(msg)
               .publish();
         });
       });
@@ -262,8 +265,8 @@ public class ProductExport extends Job {
           entry.getProduct().getWarnings().forEach((w) -> {
             Notifier.article(sku)
                 .channelInstance(hist.getChannelInstance())
-                .code("WARN_UNKNOWN")//TODO code
-                .message(w.getMessage())
+                .code(WARNING_OTHER.getCode())
+                .details(w.getMessage())
                 .publish();
           });
         }
@@ -328,8 +331,8 @@ public class ProductExport extends Job {
           } else {
             Notifier.article(product.getSku())
                 .channelInstance(product.getChannelInstance())
-                .code("ERROR_UNKNOWN")//TODO Code
-                .message(entry.getErrors().getMessage())
+                .code(ERROR_OTHER.getCode())
+                .details(entry.getErrors().getMessage())
                 .publish();
           }
 

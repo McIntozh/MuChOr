@@ -18,6 +18,11 @@ package de.websplatter.muchor.channel.google;
 import com.google.api.services.content.model.Product;
 import de.websplatter.muchor.CategoryAttributeMapper;
 import de.websplatter.muchor.Notifier;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_INVALID_GTIN;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_NAME_MISSING;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_NO_CATEGORIZATION;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_NO_PICTURES;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.WARNING_NAME_SHORTENED;
 import de.websplatter.muchor.persistence.dao.ChannelAttributeDAO;
 import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import de.websplatter.muchor.projection.DefaultProjectedArticle;
@@ -55,7 +60,7 @@ public class GoogleProductMapper {
 
     Product gp = new Product();
 
-    gp.setChannel("online");//Verkaufbar im Online-Shop
+    gp.setChannel("online");//Sellable online
     gp.setContentLanguage(pa.getLanguageCode());
     gp.setOfferId(pa.getSku());
 
@@ -66,7 +71,7 @@ public class GoogleProductMapper {
     } else {
       Notifier.article(pa.getSku())
           .channelInstance(channelInstance)
-          .code("ERROR_MISSING_GTIN")//TODO define codes
+          .code(ERROR_INVALID_GTIN.getCode())
           .publish();
       return null;
     }
@@ -84,7 +89,7 @@ public class GoogleProductMapper {
     if (title == null) {
       Notifier.article(pa.getSku())
           .channelInstance(channelInstance)
-          .code("ERROR_NAME_MISSING")//TODO define codes
+          .code(ERROR_NAME_MISSING.getCode())
           .publish();
       return null;
     }
@@ -92,7 +97,7 @@ public class GoogleProductMapper {
       title = title.substring(0, 150);
       Notifier.article(pa.getSku())
           .channelInstance(channelInstance)
-          .code("WARN_NAME_SHORTENED")//TODO define codes
+          .code(WARNING_NAME_SHORTENED.getCode())
           .publish();
     }
     gp.setTitle(title);
@@ -103,7 +108,7 @@ public class GoogleProductMapper {
     } else {
       Notifier.article(pa.getSku())
           .channelInstance(channelInstance)
-          .code("ERROR_NO_CATEGORIZATION")//TODO define codes
+          .code(ERROR_NO_CATEGORIZATION.getCode())
           .publish();
       return null;
     }
@@ -124,7 +129,7 @@ public class GoogleProductMapper {
     if (gp.getImageLink() == null || gp.getImageLink().trim().isEmpty()) {
       Notifier.article(pa.getSku())
           .channelInstance(channelInstance)
-          .code("ERROR_NO_PICTURES")//TODO define codes
+          .code(ERROR_NO_PICTURES.getCode())
           .publish();
       return null;
     }

@@ -26,6 +26,8 @@ import de.websplatter.muchor.Job;
 import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.MuChOr;
 import de.websplatter.muchor.Notifier;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.ERROR_OTHER;
+import static de.websplatter.muchor.Notifier.ArticleNotificationBuilder.Code.WARNING_CHANNEL_ARTICLE_NOT_FOUND;
 import de.websplatter.muchor.channel.google.GoogleChannel;
 import de.websplatter.muchor.channel.google.GoogleChannel.ExportHistoryKeys;
 import de.websplatter.muchor.channel.google.GoogleInventoryMapper;
@@ -201,12 +203,12 @@ public class InventoryExport extends Job {
           history.getState().clear();
           exportHistoryDAO.update(history);
           Notifier.article(sku)
-              .code("WARN_PRODUCT_NOT_FOUND")//TODO code
+              .code(WARNING_CHANNEL_ARTICLE_NOT_FOUND.getCode())
               .publish();
         } else {
           Notifier.article(sku)
-              .code("ERROR_UNKNOWN")//TODO code
-              .message(errs.getMessage())
+              .code(ERROR_OTHER.getCode())
+              .details(errs.getMessage())
               .publish();
         }
       }
