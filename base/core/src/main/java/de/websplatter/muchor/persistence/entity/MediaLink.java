@@ -36,7 +36,7 @@ public interface MediaLink extends Comparable<MediaLink> {
   @Override
   public default int compareTo(MediaLink otherMedia) {
     if (getType().equals(otherMedia.getType())) {
-      return Integer.compare(otherMedia.getPriority(), getPriority());
+      return Integer.compare(getPriority(), otherMedia.getPriority());
     }
     return getType().compareTo(otherMedia.getType());
   }
