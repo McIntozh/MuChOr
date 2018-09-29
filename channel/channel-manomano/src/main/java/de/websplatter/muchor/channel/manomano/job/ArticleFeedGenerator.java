@@ -91,7 +91,7 @@ public class ArticleFeedGenerator extends Job {
 
       StringBuilder csv = new StringBuilder();
       csv.append(
-          feedFields.stream().map(l -> l[0]).collect(Collectors.joining("\"\t\"", "\"", "\""))
+        feedFields.stream().map(l -> l[0]).collect(Collectors.joining("\"\t\"", "\"", "\""))
       ).append('\n');
 
       PriStoDel psd;
@@ -102,15 +102,15 @@ public class ArticleFeedGenerator extends Job {
         }
 
         DefaultProjectedArticle pa = projection
-            .forChannel(channelConfig.getKey())
-            .forLanguage(languageCode)
-            .forChannelInstance(getStringParameter("channelInstance"))
-            .project(a, psd);
+          .forChannel(channelConfig.getKey())
+          .forLanguage(languageCode)
+          .forChannelInstance(getStringParameter("channelInstance"))
+          .project(a, psd);
 
         Map<String, String> row = mapArticle(pa);
         if (row != null) {
           csv.append(
-              feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\\\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
+            feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\\\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
           ).append('\n');
         }
       }
@@ -120,11 +120,11 @@ public class ArticleFeedGenerator extends Job {
 
       String fileIdentifier = new SimpleDateFormat("HHmmss").format(new Date()) + ".csv";
       try (OutputStream out = CommunicationArchiver.builder()
-          .channel(channelConfig.getKey())
-          .channelInstance(channelInstance)
-          .fileType("Catalog")
-          .fileName("Catalog_" + fileIdentifier)
-          .build().openStream()) {
+        .channel(channelConfig.getKey())
+        .channelInstance(channelInstance)
+        .fileType("Catalog")
+        .fileName("Catalog_" + fileIdentifier)
+        .build().openStream()) {
         out.write(output);
       }
 
@@ -153,7 +153,7 @@ public class ArticleFeedGenerator extends Job {
   }
 
   private Map<String, String> mapArticle(DefaultProjectedArticle pa) {
-    Set<String> errors = new HashSet<>();
+    boolean rowIsValid = true;
 
     Map<String, String> row = new HashMap<>();
     row.put("sku", pa.getSku());
@@ -161,25 +161,35 @@ public class ArticleFeedGenerator extends Job {
     for (ChannelAttribute ca : channelAttributeDAO.findByChannelAndCategorySet(channelConfig.getKey(), channelConfig.getCategorySets()[0])) {
       Object result = catAttrMapper.map(pa, ca);
       if (ca.isMandatory() && !validString(result)) {
+        rowIsValid = false;
+
+        Notifier.ArticleNotificationBuilder n = Notifier.article(pa.getSku())
+          .channelInstance(pa.getChannelInstance());
+
         switch (ca.getKey()) {
           case "sku_manufacturer":
-            errors.add("ERROR_MISSING_MPN");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_MISSING_MPN.getCode());
             break;
           case "ean":
-            errors.add("ERROR_MISSING_GTIN");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_INVALID_GTIN.getCode());
             break;
           case "manufacturer":
-            errors.add("ERROR_MISSING_MANUFACTURER");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_MANUFACTURER_MISSING.getCode());
             break;
           case "brand":
-            errors.add("ERROR_MISSING_BRAND");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_BRAND_MISSING.getCode());
             break;
           case "title":
-            errors.add("ERROR_NAME_MISSING");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_NAME_MISSING.getCode());
+            break;
+          case "image_1":
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_NO_PICTURES.getCode());
             break;
           default:
-            errors.add("ERROR_OTHER");//TODO Code
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_MANDATORY_FIELD_MISSING.getCode());
+            n.details(ca.getKey());
         }
+        n.publish();
       } else {
         if (result != null) {
           row.put(ca.getKey(), result.toString());
@@ -187,18 +197,12 @@ public class ArticleFeedGenerator extends Job {
       }
     }
 
-    if (errors.isEmpty()) {
+    if (rowIsValid) {
       return row;
     }
 
-    errors.stream().forEach(e -> {
-      Notifier.article(pa.getSku())
-          .channelInstance(pa.getChannelInstance())
-          .code(e)
-          .publish();
-    });
-
     return null;
+
   }
 
   private boolean validString(Object str) {
