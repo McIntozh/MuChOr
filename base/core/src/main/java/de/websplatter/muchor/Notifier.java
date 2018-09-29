@@ -27,8 +27,8 @@ import javax.enterprise.inject.spi.CDI;
  */
 public class Notifier {
 
-  private NotificationBuilder nBuilder;
-  private ArticleNotificationBuilder aBuilder;
+  protected NotificationBuilder nBuilder;
+  protected ArticleNotificationBuilder aBuilder;
 
   protected Notifier() {
   }
@@ -89,7 +89,7 @@ public class Notifier {
       }
     }
     if (aBuilder != null) {
-      String msg = "Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.message != null ? " (" + aBuilder.message + ")" : "") + "'.";
+      String msg = "Article '" + aBuilder.sku + "' in '" + aBuilder.channelInstance + "' has problem: '" + aBuilder.code + (aBuilder.details != null ? " (" + aBuilder.details + ")" : "") + "'.";
       Logger.getLogger(Notifier.class.getName()).log(Level.WARNING, msg);
     }
   }
@@ -99,7 +99,7 @@ public class Notifier {
     private String sku;
     private String channelInstance;
     private String code;
-    private String message;
+    private String details;
 
     private ArticleNotificationBuilder() {
     }
@@ -114,9 +114,25 @@ public class Notifier {
       return this;
     }
 
-    public ArticleNotificationBuilder message(String message) {
-      this.message = message;
+    public ArticleNotificationBuilder details(String details) {
+      this.details = details;
       return this;
+    }
+
+    public String getSku() {
+      return sku;
+    }
+
+    public String getChannelInstance() {
+      return channelInstance;
+    }
+
+    public String getCode() {
+      return code;
+    }
+
+    public String getDetails() {
+      return details;
     }
 
     public Notifier build() {
@@ -132,6 +148,28 @@ public class Notifier {
 
     public void publish() {
       build().publish();
+    }
+
+    public enum Code {
+      ERROR_OTHER("E0000"),
+      ERROR_NAME_MISSING("E0002"),
+      ERROR_MISSING_MPN("E0020"),
+      ERROR_INVALID_GTIN("E0007"),
+      ERROR_MANUFACTURER_MISSING("E0014"),
+      ERROR_NO_PICTURES("E0016"),
+      ERROR_MANDATORY_FIELD_MISSING("E0018"),
+      ERROR_BRAND_MISSING("E0021");
+
+      private String code;
+
+      private Code(String code) {
+        this.code = code;
+      }
+
+      public String getCode() {
+        return code;
+      }
+
     }
   }
 
@@ -180,6 +218,27 @@ public class Notifier {
     public void publish() {
       build().publish();
     }
+
+    public Severity getSeverity() {
+      return severity;
+    }
+
+    public Exception getException() {
+      return exception;
+    }
+
+    public String getMessage() {
+      return message;
+    }
+
+    public String getChannelInstance() {
+      return channelInstance;
+    }
+
+    public String getJob() {
+      return job;
+    }
+
   }
 
   public enum Severity {
