@@ -30,9 +30,9 @@ import javax.enterprise.inject.spi.CDI;
  */
 public class CommunicationArchiver {
 
-  private static final SimpleDateFormat FOLDER_TIME_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
+  protected static final SimpleDateFormat FOLDER_TIME_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
 
-  private ArchiveBuilder builder;
+  protected ArchiveBuilder builder;
 
   protected CommunicationArchiver() {
   }
@@ -103,6 +103,27 @@ public class CommunicationArchiver {
       }
       return ca.build(this);
     }
+
+    public String getChannel() {
+      return channel;
+    }
+
+    public String getChannelInstance() {
+      return channelInstance;
+    }
+
+    public Date getTime() {
+      return time;
+    }
+
+    public String getFileType() {
+      return fileType;
+    }
+
+    public String getFileName() {
+      return fileName;
+    }
+
   }
 
 }
