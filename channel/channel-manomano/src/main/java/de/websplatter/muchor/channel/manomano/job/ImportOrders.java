@@ -180,7 +180,8 @@ public class ImportOrders extends Job {
     cop.setName(manoRelay.getName());
     cop.setAddress(manoRelay.getAddress() + "\n" + manoRelay.getId());
 
-    cop.setCity(manoRelay.getZipcode() + " " + manoRelay.getCity());
+    cop.setZipCode(manoRelay.getZipcode());
+    cop.setCity(manoRelay.getZipcode());
     cop.setCountryCode(manoRelay.getCountryIso());
 
     return cop;
