@@ -1,0 +1,7 @@
+
+persistence:
+  mongo:
+    cluster: localhost
+    user: muchor
+    db: muchor
+    pwd: passwd

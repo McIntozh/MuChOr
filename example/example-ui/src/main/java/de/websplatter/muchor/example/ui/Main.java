@@ -15,13 +15,18 @@
  */
 package de.websplatter.muchor.example.ui;
 
+import com.sun.net.httpserver.HttpServer;
+import de.websplatter.muchor.example.ui.page.Article;
+import de.websplatter.muchor.example.ui.page.Articles;
+import de.websplatter.muchor.example.ui.page.Index;
+import de.websplatter.muchor.example.ui.page.Orders;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 
-import java.net.URI;
-
-import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
-import org.glassfish.jersey.server.ResourceConfig;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jboss.weld.environment.se.Weld;
+import org.jboss.weld.environment.se.WeldContainer;
 
 /**
  *
@@ -29,21 +34,19 @@ import org.glassfish.jersey.server.ResourceConfig;
  */
 public class Main {
 
-  private static final URI BASE_URI = URI.create("http://localhost:8080/api");
-
   public static void main(String[] args) throws IOException {
-    final ResourceConfig rc = new ResourceConfig().packages("de.websplatter.muchor.example.ui.rest");
-
-    final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, rc);
-    server.getServerConfiguration().addHttpHandler(
-        new org.glassfish.grizzly.http.server.CLStaticHttpHandler(Main.class.getClassLoader(), "/webapp/"), "/");
-
-    server.start();
-    System.out.println(String.format("Application started.\nTry out %s\nStop the application using CTRL+C",
-        BASE_URI));
-    System.in.read();
-    server.shutdownNow();
-
+    Weld weld = new Weld();
+    try (WeldContainer container = weld.initialize()) {
+      Logger.getLogger(Main.class.getName()).log(Level.INFO, "Starting HttpServer");
+      HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+      server.createContext("/", new RequestHandler(Index.class));
+      server.createContext("/articles", new RequestHandler(Articles.class));
+      server.createContext("/orders", new RequestHandler(Orders.class));
+      server.setExecutor(null);
+      server.start();
+      Logger.getLogger(Main.class.getName()).log(Level.INFO, "Starting HttpServer done");
+      System.in.read();
+    }
   }
 
 }

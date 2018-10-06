@@ -13,35 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.websplatter.muchor.example.ui.rest;
+package de.websplatter.muchor.example.ui.page;
 
-import com.google.gson.Gson;
-import de.websplatter.muchor.persistence.dao.ArticleDAO;
-import java.util.Optional;
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import de.websplatter.muchor.example.ui.page.include.Navigation;
+import java.net.URI;
+import javax.enterprise.context.RequestScoped;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-@Path("/article")
-public class Article {
+@RequestScoped
+public class Index extends HTMLPage {
 
-  @Inject
-  ArticleDAO articleDAO;
+  private static final Navigation NAVI = new Navigation();
 
-  @GET
-  @Path("/{sku}/")
-  @Produces(MediaType.APPLICATION_JSON)
-  public String get(@PathParam("sku") String sku) {
-    return Optional.of(articleDAO.findBySKU(sku)).map(a -> {
-      return new Gson().toJson(a);
-    }).orElse(null);
+  @Override
+  protected String getBody(URI requestURI) {
+    StringBuilder sb = new StringBuilder();
+    sb.append(NAVI.get("home"));
+    sb.append("</div>");
+    sb.append("<div>");
+    sb.append("<h1>MuChOr - Your <strong>Mu</strong>lti <strong>Ch</strong>annel <strong>Or</strong>ganizer</h1>");
+    sb.append("</div>");
+    return sb.toString();
   }
 
 }
