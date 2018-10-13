@@ -112,8 +112,8 @@ public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriSt
   }
 
   @Override
-  public void setGrossPrice(int netPrice) {
-    this.netPrice = netPrice;
+  public void setGrossPrice(int grossPrice) {
+    this.grossPrice = grossPrice;
   }
 
   @Override
