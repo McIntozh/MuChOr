@@ -67,8 +67,8 @@ public class Dispatch implements de.websplatter.muchor.persistence.entity.Dispat
   }
 
   @Override
-  public void setGrossPrice(int netPrice) {
-    this.netPrice = netPrice;
+  public void setGrossPrice(int grossPrice) {
+    this.grossPrice = grossPrice;
   }
 
   @Override
