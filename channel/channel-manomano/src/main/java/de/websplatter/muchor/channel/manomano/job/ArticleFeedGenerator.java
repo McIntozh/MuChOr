@@ -91,8 +91,10 @@ public class ArticleFeedGenerator extends Job {
 
       StringBuilder csv = new StringBuilder();
       csv.append(
-        feedFields.stream().map(l -> l[0]).collect(Collectors.joining("\"\t\"", "\"", "\""))
+          feedFields.stream().map(l -> l[0]).collect(Collectors.joining("\"\t\"", "\"", "\""))
       ).append('\n');
+
+      Set<String> gtins = new HashSet<>();
 
       PriStoDel psd;
       while ((psd = psds.poll()) != null) {
@@ -102,15 +104,23 @@ public class ArticleFeedGenerator extends Job {
         }
 
         DefaultProjectedArticle pa = projection
-          .forChannel(channelConfig.getKey())
-          .forLanguage(languageCode)
-          .forChannelInstance(getStringParameter("channelInstance"))
-          .project(a, psd);
+            .forChannel(channelConfig.getKey())
+            .forLanguage(languageCode)
+            .forChannelInstance(getStringParameter("channelInstance"))
+            .project(a, psd);
 
         Map<String, String> row = mapArticle(pa);
         if (row != null) {
+          if (!gtins.add(row.get("ean"))) {
+            Notifier.ArticleNotificationBuilder n = Notifier.article(pa.getSku())
+                .channelInstance(pa.getChannelInstance());
+            n.code(Notifier.ArticleNotificationBuilder.Code.ERROR_AMBIGOUS_GTIN.getCode());
+            n.publish();
+            continue;
+          }
+
           csv.append(
-            feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\\\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
+              feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\\\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
           ).append('\n');
         }
       }
@@ -120,11 +130,11 @@ public class ArticleFeedGenerator extends Job {
 
       String fileIdentifier = new SimpleDateFormat("HHmmss").format(new Date()) + ".csv";
       try (OutputStream out = CommunicationArchiver.builder()
-        .channel(channelConfig.getKey())
-        .channelInstance(channelInstance)
-        .fileType("Catalog")
-        .fileName("Catalog_" + fileIdentifier)
-        .build().openStream()) {
+          .channel(channelConfig.getKey())
+          .channelInstance(channelInstance)
+          .fileType("Catalog")
+          .fileName("Catalog_" + fileIdentifier)
+          .build().openStream()) {
         out.write(output);
       }
 
@@ -164,7 +174,7 @@ public class ArticleFeedGenerator extends Job {
         rowIsValid = false;
 
         Notifier.ArticleNotificationBuilder n = Notifier.article(pa.getSku())
-          .channelInstance(pa.getChannelInstance());
+            .channelInstance(pa.getChannelInstance());
 
         switch (ca.getKey()) {
           case "sku_manufacturer":
