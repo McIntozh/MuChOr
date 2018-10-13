@@ -13,16 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.websplatter.muchor.persistence.entity;
+package de.websplatter.muchor.persistence.eclipselink.entity;
 
-import java.util.Map;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public interface ChannelInstanceSpecifics extends Named, MediaLinked, Attributed, Dispatched {
+@Entity
+@DiscriminatorValue(value = "C")
+public class ChannelDispatch extends Dispatch {
 
-  public Map<String, String> getCategoryAssignments();
+  @OneToOne
+  @JoinColumn(name = "channelSpecificId")
+  private ChannelSpecifics channelSpecific;
+
+  public ChannelSpecifics getChannelSpecific() {
+    return channelSpecific;
+  }
+
+  public void setChannelSpecific(ChannelSpecifics channelSpecific) {
+    this.channelSpecific = channelSpecific;
+  }
 
 }

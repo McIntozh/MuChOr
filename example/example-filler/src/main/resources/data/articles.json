@@ -5,6 +5,14 @@
     "gtin": "6901443178254",
     "name": "MediaPad T3 Space Gray LTE 16GB",
     "mpn": "53018672",
+    "dispatch": {
+      "carrier": "DHL",
+      "shippingTimeInDays": 1,
+      "netPrice": 500,
+      "grossPrice": 595,
+      "currency": "EUR",
+      "vatPercentage": 19
+    },
     "mediaLinks": [
       {
         "priority": 0,
@@ -68,9 +76,17 @@
   {
     "sku": "fooHMT3GrW16",
     "variationKey": "fooHMT3",
-    "gtin": "6901443178254",
+    "gtin": "6901443178230",
     "name": "MediaPad T3 Space Gray WiFi 16GB",
     "mpn": "53018679",
+    "dispatch": {
+      "carrier": "DHL",
+      "shippingTimeInDays": 1,
+      "netPrice": 500,
+      "grossPrice": 595,
+      "currency": "EUR",
+      "vatPercentage": 19
+    },
     "mediaLinks": [
       {
         "priority": 0,
@@ -134,9 +150,17 @@
   {
     "sku": "fooHMT3GoW16",
     "variationKey": "fooHMT3",
-    "gtin": "6901443178254",
+    "gtin": "6901443178255",
     "name": "MediaPad T3 Luxurious Gold WiFi 32GB",
-    "mpn": "53018679",
+    "mpn": "53018689",
+    "dispatch": {
+      "carrier": "DHL",
+      "shippingTimeInDays": 1,
+      "netPrice": 500,
+      "grossPrice": 595,
+      "currency": "EUR",
+      "vatPercentage": 19
+    },
     "mediaLinks": [
       {
         "priority": 0,

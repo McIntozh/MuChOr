@@ -24,6 +24,7 @@ import de.websplatter.muchor.persistence.entity.Attributed;
 import de.websplatter.muchor.persistence.entity.Brand;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
+import de.websplatter.muchor.persistence.entity.Dispatched;
 import de.websplatter.muchor.persistence.entity.LanguageSpecifics;
 import de.websplatter.muchor.persistence.entity.Manufacturer;
 import de.websplatter.muchor.persistence.entity.MediaLinked;
@@ -115,6 +116,7 @@ public class DefaultArticleProjection {
     mapNamed(article, pa);
     mapAttributed(article, pa);
     mapMediaLinked(article, pa);
+    mapDispatched(article, pa);
 
     if (this.languageCode != null) {
       mapLanguageSpecifics(article.getLanguageSpecifics().get(this.languageCode), pa);
@@ -145,7 +147,6 @@ public class DefaultArticleProjection {
       s.setRestockQuantity(priStoDel.getRestockQuantity());
       s.setRestockTimeInDays(priStoDel.getRestockTimeInDays());
       s.setRestockable(priStoDel.isRestockable());
-      s.setShippingTimeInDays(priStoDel.getShippingTimeInDays());
       pa.setStock(s);
     }
 
@@ -167,6 +168,7 @@ public class DefaultArticleProjection {
       mapNamed(cs, pa);
       mapAttributed(cs, pa);
       mapMediaLinked(cs, pa);
+      mapDispatched(cs, pa);
     }
   }
 
@@ -176,6 +178,7 @@ public class DefaultArticleProjection {
       mapNamed(cis, pa);
       mapAttributed(cis, pa);
       mapMediaLinked(cis, pa);
+      mapDispatched(cis, pa);
     }
   }
 
@@ -222,5 +225,25 @@ public class DefaultArticleProjection {
       }
       list.add(m);
     });
+  }
+
+  protected void mapDispatched(Dispatched d, DefaultProjectedArticle pa) {
+    if (d.getDispatch() == null) {
+      return;
+    }
+
+    if (pa.getDispatch() == null) {
+      pa.setDispatch(new DefaultProjectedArticle.Dispatch());
+      pa.setPrice(new DefaultProjectedArticle.Price());
+    }
+
+    DefaultProjectedArticle.Dispatch dp = pa.getDispatch();
+    dp.setCarrier(d.getDispatch().getCarrier());
+    dp.setShippingTimeInDays(d.getDispatch().getShippingTimeInDays());
+    DefaultProjectedArticle.Price dpp = dp.getPrice();
+    dpp.setCurrency(d.getDispatch().getCurrency());
+    dpp.setGrossPrice(d.getDispatch().getGrossPrice());
+    dpp.setNetPrice(d.getDispatch().getNetPrice());
+    dpp.setVatPercentage(d.getDispatch().getVatPercentage());
   }
 }

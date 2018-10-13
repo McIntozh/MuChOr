@@ -65,8 +65,6 @@ public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriSt
   private int restockTimeInDays;
   @Column(name = "restockQuantity")
   private int restockQuantity;
-  @Column(name = "shippingTimeInDays")
-  private int shippingTimeInDays;
 
   @Override
   public String getSku() {
@@ -176,16 +174,6 @@ public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriSt
   @Override
   public void setRestockQuantity(int restockQuantity) {
     this.restockQuantity = restockQuantity;
-  }
-
-  @Override
-  public int getShippingTimeInDays() {
-    return shippingTimeInDays;
-  }
-
-  @Override
-  public void setShippingTimeInDays(int shippingTimeInDays) {
-    this.shippingTimeInDays = shippingTimeInDays;
   }
 
   public static class PK implements Serializable {

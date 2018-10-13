@@ -19,6 +19,7 @@ import de.websplatter.muchor.channel.manomano.ManoManoChannel;
 import de.websplatter.muchor.persistence.dao.ChannelAttributeDAO;
 import de.websplatter.muchor.persistence.entity.ChannelAttribute;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.LogManager;
@@ -78,10 +79,12 @@ public class Main {
           entity.setMapping("return article.name;");
           break;
         case "product_price_vat_inc":
-          entity.setMapping("return ''+(article.price.grossPrice/100.0);");
+          entity.setMapping("return java.text.NumberFormat.getNumberInstance(java.util.Locale.FRANCE).format("
+              + "article.price.grossPrice/100.0"
+              + ");");
           break;
         case "shipping_price_vat_inc":
-          entity.setMapping("return '0.0';");
+          entity.setMapping("if(article.dispatch) return java.text.NumberFormat.getNumberInstance(java.util.Locale.FRANCE).format(article.dispatch.price.grossPrice); return '0,0'");
           break;
         case "quantity":
           entity.setMapping("return ''+article.stock.quantity;");
@@ -96,10 +99,10 @@ public class Main {
           entity.setMapping("if(article.media['IMAGE'] && article.media['IMAGE'].length>0)\n  return article.media['IMAGE'][0].url;");
           break;
         case "carrier":
-          entity.setMapping("return 'DHL';");
+          entity.setMapping("if(article.dispatch) return article.dispatch.carrier; return 'Default'");
           break;
         case "shipping_time":
-          entity.setMapping("return article.stock.processingTimeInDays;");
+          entity.setMapping("return java.text.NumberFormat.getNumberInstance(java.util.Locale.FRANCE).format(article.stock.processingTimeInDays+(article.dispatch?article.dispatch.shippingTimeInDays:0));");
           break;
         case "use_grid":
           entity.setMapping("return '0';");

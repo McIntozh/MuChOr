@@ -21,7 +21,7 @@ import java.util.Map;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public interface Article extends Named, MediaLinked, Attributed {
+public interface Article extends Named, MediaLinked, Attributed, Dispatched {
 
   public String getSku();
 

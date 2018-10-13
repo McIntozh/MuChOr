@@ -43,6 +43,7 @@ public class DefaultProjectedArticle {
   private Map<String, Attribute> attributes;
   private Map<String, List<Media>> media;
   private Map<String, String> category;
+  private Dispatch dispatch;
   private Price price;
   private Stock stock;
 
@@ -155,6 +156,14 @@ public class DefaultProjectedArticle {
     return category;
   }
 
+  public Dispatch getDispatch() {
+    return dispatch;
+  }
+
+  public void setDispatch(Dispatch dispatch) {
+    this.dispatch = dispatch;
+  }
+
   public Price getPrice() {
     return price;
   }
@@ -220,7 +229,7 @@ public class DefaultProjectedArticle {
   public static class Variation {
 
     private String key;
-    private List<String> attributes = new LinkedList<>();
+    private final List<String> attributes = new LinkedList<>();
 
     public String getKey() {
       return key;
@@ -232,6 +241,38 @@ public class DefaultProjectedArticle {
 
     public List<String> getAttributes() {
       return attributes;
+    }
+
+  }
+
+  public static class Dispatch {
+
+    private String carrier;
+    private int shippingTimeInDays;
+    private Price price;
+
+    public String getCarrier() {
+      return carrier;
+    }
+
+    public void setCarrier(String carrier) {
+      this.carrier = carrier;
+    }
+
+    public int getShippingTimeInDays() {
+      return shippingTimeInDays;
+    }
+
+    public void setShippingTimeInDays(int shippingTimeInDays) {
+      this.shippingTimeInDays = shippingTimeInDays;
+    }
+
+    public Price getPrice() {
+      return price;
+    }
+
+    public void setPrice(Price price) {
+      this.price = price;
     }
 
   }
@@ -396,14 +437,6 @@ public class DefaultProjectedArticle {
 
     public void setRestockQuantity(int restockQuantity) {
       this.restockQuantity = restockQuantity;
-    }
-
-    public int getShippingTimeInDays() {
-      return shippingTimeInDays;
-    }
-
-    public void setShippingTimeInDays(int shippingTimeInDays) {
-      this.shippingTimeInDays = shippingTimeInDays;
     }
 
   }

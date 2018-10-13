@@ -22,10 +22,13 @@ import de.websplatter.muchor.persistence.entity.Attribute;
 import de.websplatter.muchor.persistence.entity.AttributeValue;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
+import de.websplatter.muchor.persistence.entity.Dispatch;
 import de.websplatter.muchor.persistence.entity.LanguageSpecifics;
 import de.websplatter.muchor.persistence.entity.MediaLink;
 import java.net.URI;
+import java.text.NumberFormat;
 import java.util.Collection;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,6 +78,7 @@ public class Article extends HTMLPage {
       sb.append(keyValue("Name (default)", a.getName()));
     }
     sb.append(keyValue("Variation of", a.getVariationKey()))
+        .append(keyValue("Dispatch", createDisptachTable(a.getDispatch())))
         .append(keyValue("Attributes", createAttributeTable(a.getAttributes())))
         .append(keyValue("Media", createMediaTable(a.getMediaLinks())))
         .append(keyValue("per Language", createTabHead(a.getLanguageSpecifics().keySet()).append(createTabLanguageSpecificsContent(a.getLanguageSpecifics()))))
@@ -168,6 +172,7 @@ public class Article extends HTMLPage {
           .append("<th>").append("Categories").append("</th>")
           .append("<td>TODO: ").append(cs.getCategoryAssignments().size()).append("</td>")
           .append("</tr>");
+      sb.append(keyValue("Dispatch", createDisptachTable(cs.getDispatch())));
       sb.append(keyValue("Attributes", createAttributeTable(cs.getAttributes())));
       sb.append(keyValue("Media", createMediaTable(cs.getMediaLinks())));
       sb.append("</table>");
@@ -203,6 +208,7 @@ public class Article extends HTMLPage {
           .append("<th>").append("Categories").append("</th>")
           .append("<td>TODO: ").append(cs.getCategoryAssignments().size()).append("</td>")
           .append("</tr>");
+      sb.append(keyValue("Dispatch", createDisptachTable(cs.getDispatch())));
       sb.append(keyValue("Attributes", createAttributeTable(cs.getAttributes())));
       sb.append(keyValue("Media", createMediaTable(cs.getMediaLinks())));
       sb.append("</table>");
@@ -274,6 +280,25 @@ public class Article extends HTMLPage {
         .append("<th>").append(key).append("</th>")
         .append("<td>").append(value).append("</td>")
         .append("</tr>");
+  }
+
+  private StringBuilder createDisptachTable(Dispatch dispatch) {
+    StringBuilder sb = new StringBuilder();
+
+    if (dispatch != null) {
+      NumberFormat nf = NumberFormat.getCurrencyInstance();
+      nf.setCurrency(Currency.getInstance(dispatch.getCurrency()));
+
+      sb.append("<table class=\"table\">")
+          .append("<tr>").append("<th>Carrier</th>").append("<td>").append(dispatch.getCarrier()).append("</td>").append("</tr>")
+          .append("<tr>").append("<th>Shipping time</th>").append("<td>").append(dispatch.getShippingTimeInDays()).append(" day(s)</td>").append("</tr>")
+          .append("<tr>").append("<th>Gross price</th>").append("<td>").append(nf.format(dispatch.getGrossPrice())).append("</td>").append("</tr>")
+          .append("<tr>").append("<th>Net price</th>").append("<td>").append(nf.format(dispatch.getNetPrice())).append("</td>").append("</tr>")
+          .append("<tr>").append("<th>VAT</th>").append("<td>").append(dispatch.getVatPercentage()).append("%</td>").append("</tr>")
+          .append("</table>");
+    }
+
+    return sb;
   }
 
 }

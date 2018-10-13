@@ -20,6 +20,7 @@ import de.websplatter.muchor.persistence.entity.MediaLink;
 import de.websplatter.muchor.persistence.entity.LanguageSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
+import de.websplatter.muchor.persistence.entity.Dispatch;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -33,6 +34,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MapKey;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -59,6 +61,8 @@ public class Article implements de.websplatter.muchor.persistence.entity.Article
   private String mpn;
   @Column(name = "brandKey")
   private String brandKey;
+  @OneToOne(mappedBy = "article", cascade = CascadeType.ALL)
+  private de.websplatter.muchor.persistence.eclipselink.entity.ArticleDispatch dispatch;
   @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
   private List<de.websplatter.muchor.persistence.eclipselink.entity.ArticleMediaLink> mediaLinks;
 
@@ -79,6 +83,7 @@ public class Article implements de.websplatter.muchor.persistence.entity.Article
   @PrePersist
   @PreUpdate
   public void prePersist() {
+    Optional.ofNullable(dispatch).ifPresent(d -> d.setArticle(this));
     Optional.ofNullable(mediaLinks).ifPresent(n -> n.forEach(e -> {
       e.setArticle(this);
     }));
@@ -158,6 +163,16 @@ public class Article implements de.websplatter.muchor.persistence.entity.Article
   @Override
   public void setName(String name) {
     this.name = name;
+  }
+
+  @Override
+  public Dispatch getDispatch() {
+    return dispatch;
+  }
+
+  @Override
+  public void setDispatch(Dispatch dispatch) {
+    this.dispatch = (ArticleDispatch) dispatch;
   }
 
   @Override

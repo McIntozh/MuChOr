@@ -36,6 +36,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapKey;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -55,6 +56,8 @@ public class ChannelSpecifics implements de.websplatter.muchor.persistence.entit
   private Integer id;
   @Column(name = "name")
   private String name;
+  @OneToOne(mappedBy = "article", cascade = CascadeType.ALL)
+  private de.websplatter.muchor.persistence.eclipselink.entity.ChannelDispatch dispatch;
   @OneToMany(mappedBy = "channelSpecific", cascade = CascadeType.ALL)
   private List<de.websplatter.muchor.persistence.eclipselink.entity.ChannelMediaLink> mediaLinks;
   @OneToMany(mappedBy = "channelSpecific", cascade = CascadeType.ALL)
@@ -75,6 +78,7 @@ public class ChannelSpecifics implements de.websplatter.muchor.persistence.entit
   @PrePersist
   @PreUpdate
   public void prePersist() {
+    Optional.ofNullable(dispatch).ifPresent(d -> d.setChannelSpecific(this));
     Optional.ofNullable(mediaLinks).ifPresent(n -> n.forEach(e -> {
       e.setChannelSpecific(this);
     }));
@@ -100,6 +104,16 @@ public class ChannelSpecifics implements de.websplatter.muchor.persistence.entit
   @Override
   public void setName(String name) {
     this.name = name;
+  }
+
+  @Override
+  public de.websplatter.muchor.persistence.entity.Dispatch getDispatch() {
+    return dispatch;
+  }
+
+  @Override
+  public void setDispatch(de.websplatter.muchor.persistence.entity.Dispatch dispatch) {
+    this.dispatch = (ChannelDispatch) dispatch;
   }
 
   @Override

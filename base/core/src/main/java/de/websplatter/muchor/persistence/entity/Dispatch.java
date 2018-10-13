@@ -19,34 +19,14 @@ package de.websplatter.muchor.persistence.entity;
  *
  * @author Dennis Schwarz <McIntozh@gmx.net>
  */
-public interface PriStoDel extends Priced {
+public interface Dispatch extends Priced {
 
-  public String getSku();
+  public String getCarrier();
 
-  public void setSku(String sku);
+  public void setCarrier(String carrier);
 
-  public String getChannelInstance();
+  public int getShippingTimeInDays();
 
-  public void setChannelInstance(String channelInstance);
-
-  public int getStockQuantity();
-
-  public void setStockQuantity(int stockQuantity);
-
-  public int getProcessingTimeInDays();
-
-  public void setProcessingTimeInDays(int processingTimeInDays);
-
-  public boolean isRestockable();
-
-  public void setRestockable(boolean restockable);
-
-  public int getRestockTimeInDays();
-
-  public void setRestockTimeInDays(int restockTimeInDays);
-
-  public int getRestockQuantity();
-
-  public void setRestockQuantity(int restockQuantity);
+  public void setShippingTimeInDays(int shippingTimeInDays);
 
 }

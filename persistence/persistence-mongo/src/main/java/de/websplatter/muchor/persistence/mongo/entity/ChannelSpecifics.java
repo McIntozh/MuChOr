@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import de.websplatter.muchor.persistence.entity.Dispatch;
 import javax.enterprise.context.Dependent;
 
 /**
@@ -31,6 +32,7 @@ import javax.enterprise.context.Dependent;
 public class ChannelSpecifics implements de.websplatter.muchor.persistence.entity.ChannelSpecifics {
 
   private String name;
+  private de.websplatter.muchor.persistence.mongo.entity.Dispatch dispatch;
   private List<de.websplatter.muchor.persistence.mongo.entity.MediaLink> mediaLinks;
   private Map<String, de.websplatter.muchor.persistence.mongo.entity.AttributeValue> attributes;
   private String catalogId;
@@ -44,6 +46,16 @@ public class ChannelSpecifics implements de.websplatter.muchor.persistence.entit
   @Override
   public void setName(String name) {
     this.name = name;
+  }
+
+  @Override
+  public Dispatch getDispatch() {
+    return dispatch;
+  }
+
+  @Override
+  public void setDispatch(Dispatch dispatch) {
+    this.dispatch = (de.websplatter.muchor.persistence.mongo.entity.Dispatch) dispatch;
   }
 
   @Override

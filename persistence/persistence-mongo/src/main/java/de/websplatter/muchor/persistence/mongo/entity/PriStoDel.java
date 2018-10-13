@@ -52,7 +52,6 @@ public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriSt
   private boolean restockable;
   private int restockTimeInDays;
   private int restockQuantity;
-  private int shippingTimeInDays;
 
   @PrePersist
   private void genAndSetId() {
@@ -180,16 +179,6 @@ public class PriStoDel implements de.websplatter.muchor.persistence.entity.PriSt
   @Override
   public void setRestockQuantity(int restockQuantity) {
     this.restockQuantity = restockQuantity;
-  }
-
-  @Override
-  public int getShippingTimeInDays() {
-    return shippingTimeInDays;
-  }
-
-  @Override
-  public void setShippingTimeInDays(int shippingTimeInDays) {
-    this.shippingTimeInDays = shippingTimeInDays;
   }
 
 }

@@ -20,6 +20,7 @@ import de.websplatter.muchor.persistence.entity.MediaLink;
 import de.websplatter.muchor.persistence.entity.LanguageSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
+import de.websplatter.muchor.persistence.entity.Dispatch;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,6 +44,7 @@ public class Article implements de.websplatter.muchor.persistence.entity.Article
   private String name;
   private String mpn;
   private String brandKey;
+  private de.websplatter.muchor.persistence.mongo.entity.Dispatch dispatch;
   private List<de.websplatter.muchor.persistence.mongo.entity.MediaLink> mediaLinks;
   private Map<String, de.websplatter.muchor.persistence.mongo.entity.AttributeValue> attributes;
   private HashMap<String, de.websplatter.muchor.persistence.mongo.entity.LanguageSpecifics> languageSpecifics;
@@ -97,6 +99,16 @@ public class Article implements de.websplatter.muchor.persistence.entity.Article
   @Override
   public void setBrandKey(String brandKey) {
     this.brandKey = brandKey;
+  }
+
+  @Override
+  public Dispatch getDispatch() {
+    return dispatch;
+  }
+
+  @Override
+  public void setDispatch(Dispatch dispatch) {
+    this.dispatch = (de.websplatter.muchor.persistence.mongo.entity.Dispatch) dispatch;
   }
 
   @Override
