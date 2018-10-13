@@ -19,10 +19,14 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import de.websplatter.muchor.JobMonitor;
 import de.websplatter.muchor.persistence.dao.ArticleDAO;
+import de.websplatter.muchor.persistence.dao.ManufacturerDAO;
+import de.websplatter.muchor.persistence.dao.BrandDAO;
 import de.websplatter.muchor.persistence.dao.AttributeDAO;
 import de.websplatter.muchor.persistence.dao.PriStoDelDAO;
 import de.websplatter.muchor.persistence.dao.VariationDAO;
 import de.websplatter.muchor.persistence.mongo.entity.Article;
+import de.websplatter.muchor.persistence.mongo.entity.Brand;
+import de.websplatter.muchor.persistence.mongo.entity.Manufacturer;
 import de.websplatter.muchor.persistence.mongo.entity.Attribute;
 import de.websplatter.muchor.persistence.mongo.entity.PriStoDel;
 import de.websplatter.muchor.persistence.mongo.entity.Variation;
@@ -41,6 +45,10 @@ public class ExampleDataImport {
   @Inject
   private AttributeDAO attributeDAO;
   @Inject
+  private ManufacturerDAO manufacturerDAO;
+  @Inject
+  private BrandDAO brandDAO;
+  @Inject
   private VariationDAO variationDAO;
   @Inject
   private ArticleDAO articleDAO;
@@ -58,6 +66,12 @@ public class ExampleDataImport {
       monitor.log("Importing Attributes");
       Arrays.stream((Attribute[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/attributes.json"))), Attribute[].class))
           .forEach(attributeDAO::create);
+      monitor.log("Importing Manufacturers");
+      Arrays.stream((Manufacturer[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/manufacturers.json"))), Manufacturer[].class))
+          .forEach(manufacturerDAO::create);
+      monitor.log("Importing Brands");
+      Arrays.stream((Brand[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/brands.json"))), Brand[].class))
+          .forEach(brandDAO::create);
       monitor.log("Importing Variations");
       Arrays.stream((Variation[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/variations.json"))), Variation[].class))
           .forEach(variationDAO::create);
@@ -67,8 +81,6 @@ public class ExampleDataImport {
       monitor.log("Importing PriStoDels");
       Arrays.stream((PriStoDel[]) g.fromJson(new JsonReader(new InputStreamReader(getClass().getResourceAsStream("/data/pristodel.json"))), PriStoDel[].class))
           .forEach(priStoDelDAO::create);
-
-      System.out.println(articleDAO.findBySKU("fooHMT3GrL16").getLanguageSpecifics().size());
       monitor.succeed();
     } catch (Exception e) {
       monitor.fail();

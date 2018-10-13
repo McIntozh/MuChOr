@@ -5,10 +5,18 @@
   },
   {
     "key": "200",
+    "name": "Length"
+  },
+  {
+    "key": "220",
+    "name": "Classification"
+  },
+  {
+    "key": "250",
     "name": "ROM"
   },
   {
-    "key": "201",
+    "key": "251",
     "name": "RAM"
   },
   {

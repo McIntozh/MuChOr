@@ -1,221 +1,7069 @@
-[
-  {
-    "sku": "fooHMT3GrL16",
-    "variationKey": "fooHMT3",
-    "gtin": "6901443178254",
-    "name": "MediaPad T3 Space Gray LTE 16GB",
-    "mpn": "53018672",
-    "dispatch": {
-      "carrier": "DHL",
-      "shippingTimeInDays": 1,
-      "netPrice": 500,
-      "grossPrice": 595,
-      "currency": "EUR",
-      "vatPercentage": 19
+[{
+  "sku": "NDA0NDk1MTAxNTEwOA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015108",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Grey",
+  "mpn": "4044951015108",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTEwOA_1.png"
     },
-    "mediaLinks": [
-      {
-        "priority": 0,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_0.png"
-      },
-      {
-        "priority": 1,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_1.png"
-      }],
-    "attributes": {
-      "100": {
-        "value": "Gray"
-      },
-      "200": {
-        "value": "16",
-        "unit": "GB"
-      },
-      "201": {
-        "value": "2",
-        "unit": "GB"
-      },
-      "300": {
-        "value": "LTE"
-      }
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTEwOA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
     },
-    "languageSpecifics": {
-      "de": {
-        "attributes": {
-          "100": {
-            "value": "Grau"
-          }
-        }
-      },
-      "fr": {
-        "name": "MediaPad T3 Space Gray LTE 16GO",
-        "attributes": {
-          "100": {
-            "value": "Gris"
-          }
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
         }
       }
     },
-    "channelSpecifics": {
-      "GOOG": {
-        "categoryAssignments": {
-          "taxonomy": "4745"
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
         }
-      },
-      "AMZN": {
-        "catalogId": "B06XWKF7TD"
-      }
-    },
-    "channelInstanceSpecifics": {
-      "FooShopGOOG": {
       }
     }
   },
-
-  {
-    "sku": "fooHMT3GrW16",
-    "variationKey": "fooHMT3",
-    "gtin": "6901443178230",
-    "name": "MediaPad T3 Space Gray WiFi 16GB",
-    "mpn": "53018679",
-    "dispatch": {
-      "carrier": "DHL",
-      "shippingTimeInDays": 1,
-      "netPrice": 500,
-      "grossPrice": 595,
-      "currency": "EUR",
-      "vatPercentage": 19
-    },
-    "mediaLinks": [
-      {
-        "priority": 0,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_0.png"
-      },
-      {
-        "priority": 1,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_1.png"
-      }],
-    "attributes": {
-      "100": {
-        "value": "Gray"
-      },
-      "200": {
-        "value": "16",
-        "unit": "GB"
-      },
-      "201": {
-        "value": "2",
-        "unit": "GB"
-      },
-      "300": {
-        "value": "WiFi"
-      }
-    },
-    "languageSpecifics": {
-      "de": {
-        "attributes": {
-          "100": {
-            "value": "Grau"
-          }
-        }
-      },
-      "fr": {
-        "name": "MediaPad T3 Space Gray WiFi 16GO",
-        "attributes": {
-          "100": {
-            "value": "Gris"
-          }
-        }
-      }
-    },
-    "channelSpecifics": {
-      "GOOG": {
-        "categoryAssignments": {
-          "taxonomy": "4745"
-        }
-      },
-      "AMZN": {
-        "catalogId": "B06XX31L73"
-      }
-    },
-    "channelInstanceSpecifics": {
-      "FooShopGOOG": {
-      }
-    }
-  },
-
-  {
-    "sku": "fooHMT3GoW16",
-    "variationKey": "fooHMT3",
-    "gtin": "6901443178255",
-    "name": "MediaPad T3 Luxurious Gold WiFi 32GB",
-    "mpn": "53018689",
-    "dispatch": {
-      "carrier": "DHL",
-      "shippingTimeInDays": 1,
-      "netPrice": 500,
-      "grossPrice": 595,
-      "currency": "EUR",
-      "vatPercentage": 19
-    },
-    "mediaLinks": [
-      {
-        "priority": 0,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_0.png"
-      },
-      {
-        "priority": 1,
-        "type": "IMAGE",
-        "url": "http://foo.bar/media/fooHMT3_1.png"
-      }],
-    "attributes": {
-      "100": {
-        "value": "Gold"
-      },
-      "200": {
-        "value": "32",
-        "unit": "GB"
-      },
-      "201": {
-        "value": "2",
-        "unit": "GB"
-      },
-      "300": {
-        "value": "WiFi"
-      }
-    },
-    "languageSpecifics": {
-      "de": {
-        "attributes": {
-          "100": {
-            "value": "Gold"
-          }
-        }
-      },
-      "fr": {
-        "name": "MediaPad T3 Luxurious Gold WiFi 16GO",
-        "attributes": {
-          "100": {
-            "value": "Or"
-          }
-        }
-      }
-    },
-    "channelSpecifics": {
-      "GOOG": {
-        "categoryAssignments": {
-          "taxonomy": "4745"
-        }
-      }
-    },
-    "channelInstanceSpecifics": {
-      "FooShopGOOG": {
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
       }
     }
   }
-
-]
+},{
+  "sku": "NDA0NDk1MTAxNDgwNA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014804",
+  "name": "Sharkoon Patch Cable Cat.6 5m Yellow",
+  "mpn": "4044951014804",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgwNA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgwNA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM5Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014392",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Green",
+  "mpn": "4044951014392",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM5Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM5Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzcyMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003723",
+  "name": "Sharkoon Patch Cable Cat.6 10m Grey",
+  "mpn": "4044951003723",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzcyMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzcyMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTAwOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015009",
+  "name": "Sharkoon Patch Cable Cat.6 3m Black",
+  "mpn": "4044951015009",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAwOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAwOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDIxNw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014217",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Blue",
+  "mpn": "4044951014217",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIxNw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIxNw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU4Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014583",
+  "name": "Sharkoon Patch Cable Cat.5e 3m White",
+  "mpn": "4044951014583",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU4Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU4Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI3OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014279",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Yellow",
+  "mpn": "4044951014279",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI3OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI3OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQyMg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014422",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Red",
+  "mpn": "4044951014422",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQyMg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQyMg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDIyNA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014224",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Blue",
+  "mpn": "4044951014224",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIyNA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIyNA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI1NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014255",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Blue",
+  "mpn": "4044951014255",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI1NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI1NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM1NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014354",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Green",
+  "mpn": "4044951014354",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM1NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM1NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ4NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014484",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Black",
+  "mpn": "4044951014484",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ4NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ4NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM4NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014385",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Green",
+  "mpn": "4044951014385",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM4NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM4NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzc2OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017768",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Blue",
+  "mpn": "4044951017768",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc2OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc2OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDcxMg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014712",
+  "name": "Sharkoon Patch Cable Cat.6 2m Blue",
+  "mpn": "4044951014712",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcxMg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcxMg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQzOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014439",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Red",
+  "mpn": "4044951014439",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQzOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQzOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ1Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014453",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Red",
+  "mpn": "4044951014453",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ1Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ1Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDUxNA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014514",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Black",
+  "mpn": "4044951014514",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUxNA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUxNA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU2OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014569",
+  "name": "Sharkoon Patch Cable Cat.5e 1m White",
+  "mpn": "4044951014569",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU2OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU2OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ0Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014446",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Red",
+  "mpn": "4044951014446",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ0Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ0Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDkxMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014910",
+  "name": "Sharkoon Patch Cable Cat.6 1m Red",
+  "mpn": "4044951014910",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkxMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkxMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQxNQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014415",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Red",
+  "mpn": "4044951014415",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQxNQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQxNQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY5OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014699",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Blue",
+  "mpn": "4044951014699",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY5OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY5OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDUzOA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014538",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Black",
+  "mpn": "4044951014538",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUzOA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUzOA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDkzNA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014934",
+  "name": "Sharkoon Patch Cable Cat.6 3m Red",
+  "mpn": "4044951014934",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkzNA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkzNA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU5MA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014590",
+  "name": "Sharkoon Patch Cable Cat.5e 5m White",
+  "mpn": "4044951014590",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU5MA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU5MA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzczNw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017737",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Yellow",
+  "mpn": "4044951017737",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzczNw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzczNw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDczNg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014736",
+  "name": "Sharkoon Patch Cable Cat.6 5m Blue",
+  "mpn": "4044951014736",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDczNg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDczNg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDUwNw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014507",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Black",
+  "mpn": "4044951014507",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUwNw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUwNw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzcyMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017720",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Grey",
+  "mpn": "4044951017720",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzcyMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzcyMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA4NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015085",
+  "name": "Sharkoon Patch Cable Cat.6 5m White",
+  "mpn": "4044951015085",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA4NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA4NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDgyOA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014828",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Green",
+  "mpn": "4044951014828",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgyOA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgyOA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA0Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015047",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m White",
+  "mpn": "4044951015047",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA0Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA0Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk5Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014996",
+  "name": "Sharkoon Patch Cable Cat.6 2m Black",
+  "mpn": "4044951014996",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk5Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk5Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTAyMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015023",
+  "name": "Sharkoon Patch Cable Cat.6 10m Black",
+  "mpn": "4044951015023",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAyMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAyMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI2Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014262",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Yellow",
+  "mpn": "4044951014262",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI2Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI2Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU3Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014576",
+  "name": "Sharkoon Patch Cable Cat.5e 2m White",
+  "mpn": "4044951014576",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU3Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU3Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDcyOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014729",
+  "name": "Sharkoon Patch Cable Cat.6 3m Blue",
+  "mpn": "4044951014729",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcyOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcyOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDIwMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014200",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Blue",
+  "mpn": "4044951014200",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIwMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIwMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDE5NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014194",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Blue",
+  "mpn": "4044951014194",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDE5NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDE5NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzc1MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017751",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Red",
+  "mpn": "4044951017751",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc1MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc1MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA5Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015092",
+  "name": "Sharkoon Patch Cable Cat.6 10m White",
+  "mpn": "4044951015092",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA5Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA5Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDMxNg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014316",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Yellow",
+  "mpn": "4044951014316",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMxNg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMxNg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDYxMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014613",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Grey",
+  "mpn": "4044951014613",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYxMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYxMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDYyMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014620",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Grey",
+  "mpn": "4044951014620",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYyMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYyMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzg2Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017867",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m White",
+  "mpn": "4044951017867",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg2Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg2Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk4OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014989",
+  "name": "Sharkoon Patch Cable Cat.6 1m Black",
+  "mpn": "4044951014989",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk4OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk4OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU0NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014545",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m White",
+  "mpn": "4044951014545",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU0NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU0NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM0Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014347",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m Green",
+  "mpn": "4044951014347",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM0Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM0Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDYzNw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014637",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Grey",
+  "mpn": "4044951014637",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYzNw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYzNw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk0MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014941",
+  "name": "Sharkoon Patch Cable Cat.6 5m Red",
+  "mpn": "4044951014941",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk0MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk0MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc1MA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014750",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Yellow",
+  "mpn": "4044951014750",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc1MA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc1MA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY3NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014675",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Grey",
+  "mpn": "4044951014675",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY3NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY3NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzgzNg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017836",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Green",
+  "mpn": "4044951017836",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgzNg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgzNg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA2MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015061",
+  "name": "Sharkoon Patch Cable Cat.6 2m White",
+  "mpn": "4044951015061",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA2MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA2MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzc0NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017744",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Green",
+  "mpn": "4044951017744",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc0NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc0NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzg1MA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017850",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Blue",
+  "mpn": "4044951017850",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg1MA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg1MA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDkwMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014903",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Red",
+  "mpn": "4044951014903",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkwMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkwMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg0Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014842",
+  "name": "Sharkoon Patch Cable Cat.6 1m Green",
+  "mpn": "4044951014842",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg0Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg0Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzY4Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003686",
+  "name": "Sharkoon Patch Cable Cat.6 1m Grey",
+  "mpn": "4044951003686",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY4Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY4Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg2Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014866",
+  "name": "Sharkoon Patch Cable Cat.6 3m Green",
+  "mpn": "4044951014866",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg2Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg2Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzgwNQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017805",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Black",
+  "mpn": "4044951017805",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgwNQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgwNQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg5Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014897",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Red",
+  "mpn": "4044951014897",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg5Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg5Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzgyOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017829",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Yellow",
+  "mpn": "4044951017829",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgyOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgyOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzc0Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003747",
+  "name": "Sharkoon Patch Cable Cat.6 20m Grey",
+  "mpn": "4044951003747",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzc0Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzc0Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "20",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ3Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014477",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Black",
+  "mpn": "4044951014477",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ3Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ3Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY1MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014651",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Grey",
+  "mpn": "4044951014651",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY1MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY1MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDgzNQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014835",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Green",
+  "mpn": "4044951014835",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgzNQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgzNQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTAzMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015030",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m White",
+  "mpn": "4044951015030",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAzMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAzMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzg0Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017843",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Red",
+  "mpn": "4044951017843",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg0Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzg0Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzc2MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003761",
+  "name": "Sharkoon Patch Cable Cat.6 100m Grey",
+  "mpn": "4044951003761",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzc2MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzc2MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "100",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDkyNw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014927",
+  "name": "Sharkoon Patch Cable Cat.6 2m Red",
+  "mpn": "4044951014927",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkyNw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDkyNw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzY3OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003679",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Grey",
+  "mpn": "4044951003679",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY3OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY3OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzgxMg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017812",
+  "name": "Sharkoon Patch Cable Cat.6 1.5m Grey",
+  "mpn": "4044951017812",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgxMg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzgxMg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDMzMA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014330",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Green",
+  "mpn": "4044951014330",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMzMA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMzMA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg1OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014859",
+  "name": "Sharkoon Patch Cable Cat.6 2m Green",
+  "mpn": "4044951014859",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg1OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg1OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk1OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014958",
+  "name": "Sharkoon Patch Cable Cat.6 10m Red",
+  "mpn": "4044951014958",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk1OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk1OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ5MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014491",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Black",
+  "mpn": "4044951014491",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ5MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ5MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI5Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014293",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Yellow",
+  "mpn": "4044951014293",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI5Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI5Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDMwOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014309",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Yellow",
+  "mpn": "4044951014309",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMwOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMwOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk2NQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014965",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Black",
+  "mpn": "4044951014965",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk2NQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk2NQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc5OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014798",
+  "name": "Sharkoon Patch Cable Cat.6 3m Yellow",
+  "mpn": "4044951014798",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc5OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc5OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg4MA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014880",
+  "name": "Sharkoon Patch Cable Cat.6 10m Green",
+  "mpn": "4044951014880",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg4MA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg4MA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI4Ng",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014286",
+  "name": "Sharkoon Patch Cable Cat.5e 1m Yellow",
+  "mpn": "4044951014286",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI4Ng_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI4Ng_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDU1Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014552",
+  "name": "Sharkoon Patch Cable Cat.5e 0.5m White",
+  "mpn": "4044951014552",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU1Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDU1Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDgxMQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014811",
+  "name": "Sharkoon Patch Cable Cat.6 10m Yellow",
+  "mpn": "4044951014811",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgxMQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDgxMQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc2Nw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014767",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Yellow",
+  "mpn": "4044951014767",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc2Nw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc2Nw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA1NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015054",
+  "name": "Sharkoon Patch Cable Cat.6 1m White",
+  "mpn": "4044951015054",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA1NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA1NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDMyMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014323",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Yellow",
+  "mpn": "4044951014323",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMyMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDMyMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDg3Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014873",
+  "name": "Sharkoon Patch Cable Cat.6 5m Green",
+  "mpn": "4044951014873",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg3Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDg3Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDYwNg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014606",
+  "name": "Sharkoon Patch Cable Cat.5e 10m White",
+  "mpn": "4044951014606",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYwNg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDYwNg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTA3OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015078",
+  "name": "Sharkoon Patch Cable Cat.6 3m White",
+  "mpn": "4044951015078",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA3OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTA3OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQ2MA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014460",
+  "name": "Sharkoon Patch Cable Cat.5e 10m Red",
+  "mpn": "4044951014460",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ2MA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQ2MA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTAxNg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015016",
+  "name": "Sharkoon Patch Cable Cat.6 5m Black",
+  "mpn": "4044951015016",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAxNg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTAxNg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNTExNQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951015115",
+  "name": "Sharkoon Patch Cable Cat.6 2m Grey",
+  "mpn": "4044951015115",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTExNQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNTExNQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzcxMw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017713",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m Black",
+  "mpn": "4044951017713",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzcxMw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzcxMw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDIzMQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014231",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Blue",
+  "mpn": "4044951014231",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIzMQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDIzMQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDI0OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014248",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Blue",
+  "mpn": "4044951014248",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI0OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDI0OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY0NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014644",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Grey",
+  "mpn": "4044951014644",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY0NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY0NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY2OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014668",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Grey",
+  "mpn": "4044951014668",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY2OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY2OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc4MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014781",
+  "name": "Sharkoon Patch Cable Cat.6 2m Yellow",
+  "mpn": "4044951014781",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc4MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc4MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzcwOQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003709",
+  "name": "Sharkoon Patch Cable Cat.6 5m Grey",
+  "mpn": "4044951003709",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzcwOQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzcwOQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDUyMQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014521",
+  "name": "Sharkoon Patch Cable Cat.5e 5m Black",
+  "mpn": "4044951014521",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUyMQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDUyMQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDY4Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014682",
+  "name": "Sharkoon Patch Cable Cat.6 0.25m Blue",
+  "mpn": "4044951014682",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY4Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDY4Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDQwOA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014408",
+  "name": "Sharkoon Patch Cable Cat.5e 0.25m Red",
+  "mpn": "4044951014408",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQwOA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDQwOA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Red"
+    },
+    "200": {
+      "value": "0.25",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Rot"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Rouge"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNzc5OQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951017799",
+  "name": "Sharkoon Patch Cable Cat.5e 1.5m White",
+  "mpn": "4044951017799",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc5OQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNzc5OQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "White"
+    },
+    "200": {
+      "value": "1.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Weiß"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Blanc"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDk3Mg",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014972",
+  "name": "Sharkoon Patch Cable Cat.6 0.5m Black",
+  "mpn": "4044951014972",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk3Mg_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDk3Mg_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Black"
+    },
+    "200": {
+      "value": "0.5",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Schwarz"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Noir"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM2MQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014361",
+  "name": "Sharkoon Patch Cable Cat.5e 2m Green",
+  "mpn": "4044951014361",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM2MQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM2MQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "2",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc0Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014743",
+  "name": "Sharkoon Patch Cable Cat.6 10m Blue",
+  "mpn": "4044951014743",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc0Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc0Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "10",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDM3OA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014378",
+  "name": "Sharkoon Patch Cable Cat.5e 3m Green",
+  "mpn": "4044951014378",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM3OA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDM3OA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.5e"
+    },
+    "100": {
+      "value": "Green"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grün"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Vert"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDcwNQ",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014705",
+  "name": "Sharkoon Patch Cable Cat.6 1m Blue",
+  "mpn": "4044951014705",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcwNQ_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDcwNQ_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Blue"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Blau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Bleu"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAwMzY5Mw",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951003693",
+  "name": "Sharkoon Patch Cable Cat.6 3m Grey",
+  "mpn": "4044951003693",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY5Mw_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAwMzY5Mw_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Grey"
+    },
+    "200": {
+      "value": "3",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Grau"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Gris"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+},{
+  "sku": "NDA0NDk1MTAxNDc3NA",
+  "variationKey": "UGF0Y2ggQ2FibGU",
+  "gtin": "4044951014774",
+  "name": "Sharkoon Patch Cable Cat.6 1m Yellow",
+  "mpn": "4044951014774",
+  "brandKey": "U2hhcmtvb24",
+  "dispatch": {
+    "carrier": "DHL",
+    "shippingTimeInDays": 1,
+    "netPrice": 500,
+    "grossPrice": 0,
+    "currency": "EUR",
+    "vatPercentage": 19.0
+  },
+  "mediaLinks": [
+    {
+      "priority": 0,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc3NA_1.png"
+    },
+    {
+      "priority": 1,
+      "type": "IMAGE",
+      "url": "http://foo.bar/media/NDA0NDk1MTAxNDc3NA_2.png"
+    }
+  ],
+  "attributes": {
+    "220": {
+      "value": "Cat.6"
+    },
+    "100": {
+      "value": "Yellow"
+    },
+    "200": {
+      "value": "1",
+      "unit": "m"
+    }
+  },
+  "languageSpecifics": {
+    "de": {
+      "attributes": {
+        "100": {
+          "value": "Gelb"
+        }
+      }
+    },
+    "fr": {
+      "attributes": {
+        "100": {
+          "value": "Jaune"
+        }
+      }
+    }
+  },
+  "channelSpecifics": {
+    "GOOG": {
+      "categoryAssignments": {
+        "taxonomy": "1480"
+      }
+    }
+  }
+}]
