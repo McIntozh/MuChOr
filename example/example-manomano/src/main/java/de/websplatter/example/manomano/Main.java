@@ -84,7 +84,7 @@ public class Main {
               + ");");
           break;
         case "shipping_price_vat_inc":
-          entity.setMapping("if(article.dispatch) return java.text.NumberFormat.getNumberInstance(java.util.Locale.FRANCE).format(article.dispatch.price.grossPrice); return '0,0'");
+          entity.setMapping("if(article.dispatch) return java.text.NumberFormat.getNumberInstance(java.util.Locale.FRANCE).format(article.dispatch.price.grossPrice/100.0); return '0,0'");
           break;
         case "quantity":
           entity.setMapping("return ''+article.stock.quantity;");
