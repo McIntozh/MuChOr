@@ -120,7 +120,7 @@ public class ArticleFeedGenerator extends Job {
           }
 
           csv.append(
-              feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\\\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
+              feedFields.stream().map(l -> Optional.ofNullable(row.get(l[0])).map(v -> v.replaceAll("\"", "\"\"")).orElse("")).collect(Collectors.joining("\"\t\"", "\"", "\""))
           ).append('\n');
         }
       }
