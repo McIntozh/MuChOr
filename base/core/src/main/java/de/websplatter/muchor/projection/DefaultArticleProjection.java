@@ -232,15 +232,16 @@ public class DefaultArticleProjection {
       return;
     }
 
-    if (pa.getDispatch() == null) {
-      pa.setDispatch(new DefaultProjectedArticle.Dispatch());
-      pa.setPrice(new DefaultProjectedArticle.Price());
-    }
-
     DefaultProjectedArticle.Dispatch dp = pa.getDispatch();
+    if (dp == null) {
+      dp = new DefaultProjectedArticle.Dispatch();
+      pa.setDispatch(dp);
+      dp.setPrice(new DefaultProjectedArticle.Price());
+    }
+    DefaultProjectedArticle.Price dpp = dp.getPrice();
+
     dp.setCarrier(d.getDispatch().getCarrier());
     dp.setShippingTimeInDays(d.getDispatch().getShippingTimeInDays());
-    DefaultProjectedArticle.Price dpp = dp.getPrice();
     dpp.setCurrency(d.getDispatch().getCurrency());
     dpp.setGrossPrice(d.getDispatch().getGrossPrice());
     dpp.setNetPrice(d.getDispatch().getNetPrice());
