@@ -18,8 +18,10 @@ package de.websplatter.muchor.example.ui.page;
 import de.websplatter.muchor.example.ui.page.include.Navigation;
 import de.websplatter.muchor.persistence.dao.ArticleDAO;
 import de.websplatter.muchor.persistence.dao.AttributeDAO;
+import de.websplatter.muchor.persistence.dao.BrandDAO;
 import de.websplatter.muchor.persistence.entity.Attribute;
 import de.websplatter.muchor.persistence.entity.AttributeValue;
+import de.websplatter.muchor.persistence.entity.Brand;
 import de.websplatter.muchor.persistence.entity.ChannelInstanceSpecifics;
 import de.websplatter.muchor.persistence.entity.ChannelSpecifics;
 import de.websplatter.muchor.persistence.entity.Dispatch;
@@ -50,8 +52,11 @@ public class Article extends HTMLPage {
   private ArticleDAO articleDAO;
   @Inject
   private AttributeDAO attributeDAO;
-
   private final Map<String, Attribute> attributeCache = new HashMap<>();
+
+  @Inject
+  private BrandDAO brandDAO;
+  private final Map<String, Brand> brandCache = new HashMap<>();
 
   @Override
   protected String getBody(URI requestURI) {
@@ -71,9 +76,15 @@ public class Article extends HTMLPage {
 
     sb.append("<table class=\"table\">");
 
+    Brand brand = brandCache.get(a.getBrandKey());
+    if (brand == null) {
+      brand = brandDAO.findByKey(a.getBrandKey());
+      brandCache.put(a.getBrandKey(), brand);
+    }
+
     sb.append(keyValue("GTIN", a.getGtin()))
         .append(keyValue("MPN", a.getMpn()))
-        .append(keyValue("Brand (key)", a.getBrandKey()));
+        .append(keyValue("Brand (key)", brand != null ? brand.getName() + " (" + a.getBrandKey() + ")" : "-"));
     if (a.getName() != null) {
       sb.append(keyValue("Name (default)", a.getName()));
     }
@@ -163,7 +174,7 @@ public class Article extends HTMLPage {
       sb.append("<table class=\"table\">");
       sb.append("<tr>")
           .append("<th>").append("CatalogId").append("</th>")
-          .append("<td>").append(cs.getCatalogId()).append("</td>")
+          .append("<td>").append(cs.getCatalogId() != null ? cs.getCatalogId() : "-").append("</td>")
           .append("</tr>");
       if (cs.getName() != null) {
         sb.append(keyValue("Name", cs.getName()));
@@ -292,8 +303,8 @@ public class Article extends HTMLPage {
       sb.append("<table class=\"table\">")
           .append("<tr>").append("<th>Carrier</th>").append("<td>").append(dispatch.getCarrier()).append("</td>").append("</tr>")
           .append("<tr>").append("<th>Shipping time</th>").append("<td>").append(dispatch.getShippingTimeInDays()).append(" day(s)</td>").append("</tr>")
-          .append("<tr>").append("<th>Gross price</th>").append("<td>").append(nf.format(dispatch.getGrossPrice())).append("</td>").append("</tr>")
-          .append("<tr>").append("<th>Net price</th>").append("<td>").append(nf.format(dispatch.getNetPrice())).append("</td>").append("</tr>")
+          .append("<tr>").append("<th>Gross price</th>").append("<td>").append(nf.format(dispatch.getGrossPrice() / 100f)).append("</td>").append("</tr>")
+          .append("<tr>").append("<th>Net price</th>").append("<td>").append(nf.format(dispatch.getNetPrice() / 100f)).append("</td>").append("</tr>")
           .append("<tr>").append("<th>VAT</th>").append("<td>").append(dispatch.getVatPercentage()).append("%</td>").append("</tr>")
           .append("</table>");
     }

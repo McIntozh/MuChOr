@@ -17,8 +17,12 @@ package de.websplatter.muchor.example.ui.page;
 
 import de.websplatter.muchor.annotation.MuChOr;
 import de.websplatter.muchor.example.ui.page.include.Navigation;
+import de.websplatter.muchor.persistence.dao.BrandDAO;
+import de.websplatter.muchor.persistence.entity.Brand;
 import de.websplatter.muchor.persistence.mongo.entity.Article;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import org.mongodb.morphia.Datastore;
@@ -38,6 +42,10 @@ public class Articles extends HTMLPage {
   Datastore datastore;
   @Inject
   de.websplatter.muchor.example.ui.page.Article articlePage;
+
+  @Inject
+  private BrandDAO brandDAO;
+  private final Map<String, Brand> brandCache = new HashMap<>();
 
   @Override
   protected String getBody(URI requestURI) {
@@ -60,10 +68,16 @@ public class Articles extends HTMLPage {
     sb.append("</thead>");
 
     datastore.find(Article.class).asList(new FindOptions().limit(500)).forEach(a -> {
+      Brand brand = brandCache.get(a.getBrandKey());
+      if (brand == null) {
+        brand = brandDAO.findByKey(a.getBrandKey());
+        brandCache.put(a.getBrandKey(), brand);
+      }
+
       sb.append("<tr>");
       sb.append("<td><a href=\"/articles/").append(a.getSku()).append("\">").append(a.getSku()).append("</a></td>");
       sb.append("<td>").append(a.getGtin()).append("</td>");
-      sb.append("<td>").append(a.getBrandKey()).append("</td>");
+      sb.append("<td>").append(brand != null ? brand.getName() : "-").append("</td>");
       sb.append("<td>").append(a.getMpn()).append("</td>");
       sb.append("<td>").append(a.getName()).append("</td>");
       sb.append("</tr>");
