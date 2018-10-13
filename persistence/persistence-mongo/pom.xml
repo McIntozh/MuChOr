@@ -20,14 +20,7 @@
       <version>${muchor.version}</version>
       <scope>provided</scope>
     </dependency>
-    
 
-    <dependency>
-      <groupId>org.mongodb</groupId>
-      <artifactId>mongodb-driver</artifactId>
-      <version>3.8.1</version>
-      <scope>compile</scope>
-    </dependency>
     <dependency>
       <groupId>org.mongodb.morphia</groupId>
       <artifactId>morphia</artifactId>

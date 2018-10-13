@@ -23,6 +23,7 @@ import com.mongodb.client.MongoDatabase;
 import de.websplatter.muchor.MuChOr.Config;
 import de.websplatter.muchor.annotation.MuChOr;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,7 +72,7 @@ public class DatastoreProducer {
     List<ServerAddress> serverAddresses = Arrays.stream(((String) config.get("persistence.mongo.cluster")).split(",")).map(ServerAddress::new).collect(Collectors.toList());
     MongoCredential credentials = MongoCredential.createCredential((String) config.get("persistence.mongo.user"), (String) config.get("persistence.mongo.db"), ((String) config.get("persistence.mongo.pwd")).toCharArray());
 
-    this.mongoClient = new MongoClient(serverAddresses, credentials, mongoClientOptions);
+    this.mongoClient = new MongoClient(serverAddresses, Collections.singletonList(credentials), mongoClientOptions);
     this.database = mongoClient.getDatabase(credentials.getSource());
     this.database.listCollectionNames();
     this.morphia = new Morphia();
