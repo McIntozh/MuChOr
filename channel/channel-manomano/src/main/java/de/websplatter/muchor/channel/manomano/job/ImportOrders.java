@@ -162,7 +162,7 @@ public class ImportOrders extends Job {
               manoAddress.getAddress3(),
               receiver
             })
-            .filter(part -> part != null)
+            .filter(part -> part != null && !part.trim().isEmpty())
             .collect(Collectors.joining("\n")));
 
     cop.setZipCode(manoAddress.getZipcode());
