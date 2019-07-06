@@ -72,7 +72,7 @@ public class Api {
           }).collect(Collectors.joining("&"))
       ));
 
-      Logger.getLogger(Api.class.getName()).log(Level.INFO, "Calling: {0}", url.toString());
+      Logger.getLogger(Api.class.getName()).log(Level.INFO, "Calling: {0}", url.toString().replaceAll("password=[^&]+&", "password=****&"));
       connection = (HttpURLConnection) url.openConnection();
 
       connection.setConnectTimeout(CONNECT_TIMEOUT_IN_MILLIS);
