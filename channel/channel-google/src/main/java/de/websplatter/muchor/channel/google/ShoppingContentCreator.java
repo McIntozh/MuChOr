@@ -55,13 +55,25 @@ public class ShoppingContentCreator {
     }
   }
 
+  private static final char[] KS_PASS = new char[]{
+    'n',
+    'o',
+    't',
+    'a',
+    's',
+    'e',
+    'c',
+    'r',
+    'e',
+    't'
+  };
+
   public ShoppingContent createForChannelInstance(String channelInstance) throws GeneralSecurityException, IOException {
     Map<String, Object> gConfig = (Map<String, Object>) config.get("channel." + channelDescription.getKey() + "." + channelInstance);
-
     KeyStore pkcs12Store = KeyStore.getInstance("PKCS12", "SunJSSE");
     pkcs12Store.load(getClass().getResourceAsStream("/" + gConfig.get("p12File").toString()), null);
 
-    PrivateKey pk = (PrivateKey) pkcs12Store.getKey("privatekey", "notasecret".toCharArray());
+    PrivateKey pk = (PrivateKey) pkcs12Store.getKey("privatekey", KS_PASS);
 
     GoogleCredential credential = new GoogleCredential.Builder().setTransport(httpTransport)
         .setJsonFactory(jsonFactory)
