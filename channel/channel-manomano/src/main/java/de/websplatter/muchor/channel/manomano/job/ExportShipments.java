@@ -95,11 +95,22 @@ public class ExportShipments extends Job {
               item.entity.setExportTime(new Date());
             });
           } else {
-            Notifier.builder(Notifier.Severity.WARNING)
+            if ("3".equals(apiResponse.getCode()) && "Product already in package".equals(apiResponse.getMessage())) {
+              shipment.products.forEach((item) -> {
+                item.entity.setExportTime(new Date());
+              });
+              Notifier.builder(Notifier.Severity.INFO)
+                .channelInstance(channelInstance)
+                .job(ImportOrders.class.getSimpleName())
+                .message("Could not submit shipment for order '" + shipment.orderRef + "' because it is already marked as shipped. Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
+                .publish();
+            } else {
+              Notifier.builder(Notifier.Severity.WARNING)
                 .channelInstance(channelInstance)
                 .job(ImportOrders.class.getSimpleName())
                 .message("Could not submit shipment for order '" + shipment.orderRef + "'. Got response code '" + apiResponse.getCode() + "' (" + apiResponse.getMessage() + ")")
                 .publish();
+            }
           }
         }
         channelOrderDAO.update(co);
